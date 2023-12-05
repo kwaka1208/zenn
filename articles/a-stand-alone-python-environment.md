@@ -2,7 +2,7 @@
 title: "管理者権限がなく、pipでモジュールインストールできないWindows PCにPython環境を構築する手順"
 emoji: "🐍"
 type: tech
-topics: [python][windows]
+topics: [python,windows]
 published: true
 ---
 ## 概要
