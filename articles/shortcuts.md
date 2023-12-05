@@ -2,7 +2,7 @@
 title: ショートカット集（iOS/iPadOS)
 emoji: ""
 type: idea
-topics: [kids, programming, scratch]
+topics: [iPhone, iPad, shortcut]
 published: false
 ---
 ## 概要
