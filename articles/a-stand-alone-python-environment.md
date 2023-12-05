@@ -3,7 +3,7 @@ title: "管理者権限がなく、pipでモジュールインストールでき
 emoji: "🐍"
 type: tech
 topics: [python]
-published: false
+published: true
 ---
 ## 概要
 このページでは、限られた条件下にあるPCにPythonの動作環境を構築する手順を説明しています。対象はWindows PCのみとなります。
