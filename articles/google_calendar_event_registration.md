@@ -3,7 +3,7 @@ title: Googleカレンダー一括イベント登録
 emoji: "📅"
 type: tech
 topics: [Google Calendar,Google Workspace]
-published: false
+published: true
 ---
 ## 概要
 Googleカレンダーに複数のイベントを一括登録するツールです。繰り返しイベントだとGoogleカレンダーの機能で登録できますが、こちらは不定期開催のイベントの登録やイベントタイトルに一連番号をつけられます。
