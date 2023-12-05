@@ -3,7 +3,7 @@ title: ショートカット集（iOS/iPadOS)
 emoji: ""
 type: idea
 topics: [iPhone, iPad, shortcut]
-published: false
+published: true
 ---
 ## 概要
 このページのショートカットとは、iOS/iPadOS/macOSの「ショートカット」機能のことで、OS標準もしくはアプリの機能を組み合わせてオリジナルの機能を作れるマクロ機能のことです。ショートカットキーではありません。
