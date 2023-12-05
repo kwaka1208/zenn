@@ -6,7 +6,6 @@ topics: [Google Drive,Google Workspace]
 published: false
 ---
 ## 概要
-
 Google Driveでは、フォルダの内容（ファイル、サブフォルダ）をまとめて一括で移動はできますが、コピーはできません。
 
 このツールは、Google Driveの指定したフォルダを別のフォルダにコピーするためのツールです。フォルダのみのコピー、フォルダとファイル両方のコピーどちらを行うかを選べます。
