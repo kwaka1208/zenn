@@ -8,6 +8,8 @@ published: false
 ## 概要
 このページでは、限られた条件下にあるPCにPythonの動作環境を構築する手順を説明しています。対象はWindows PCのみとなります。
 
+また、この記事ではディレクトリ（フォルダ）配置なども具体的に限定的に記述していますが、まったくの初心者でもここに書いてあるとおり進めれば環境を作れるようにするためのものです。ご自身の環境に合わせて適宜読み替えてください。
+
 ## コマンドラインでの操作
 Pythonの実行環境の構築と自分で作ったPythonのプログラムの実行は、いずれも「コマンドライン」で行います。通常、Windowsではアプリの操作をマウスなどポインティングデバイスで行いますが、コマンドラインではコマンドをキーボードから入力してプログラムの実行などの操作を行います。
 
@@ -182,29 +184,32 @@ python -m pip install --no-index --find-links=dl pdfrw2
 ```
 
 ## サンプルプログラム
-### Excelファイルの中身を表示する
-Excelファイルの中身を表示するPythonプログラムの例を示します。
-
-1. Pythonをインストールしたフォルダの中に"projects"というフォルダを作ります。
-1. 以下の2つのファイルをダウンロードして"projects"フォルダに置きます。
-    - [Pythonプログラム（excel_dump.py）](excel_dump.py)
-    - [サンプルExcelファイル（sample.xlsx）](sample.xlsx)
-1. コマンドプロンプトを開きます。
-1. 以下の手順でプログラムを実行します。
-1. Excelファイルの内容がコマンドプロンプトの画面の中に表示されます。
-
-```
-D: [ENTER]
-cd \username\python\projects
-..\python.exe sample.py
-```
-
 ### PDFを結合する
 複数のPDFを結合するPythonプログラムの例を示します。
 
 1. Pythonをインストールしたフォルダの中に"projects"というフォルダを作ります。
-1. 以下のファイルをダウンロードして"projects"フォルダに置きます。
-    - [Pythonプログラム（merge_pdf.py）](/assets/python/merge_pdf.py)
+1. 以下のプログラムをテキストエディタにコピーして"projects"フォルダへ保存します（"merge_pdf.py"で保存するものとします）。
+
+```
+from pathlib import Path
+from pdfrw import PdfWriter, PdfReader
+
+# PDFファイル一覧を取得（ファイル名でソート）
+pdf_dir = Path("./pdf_files")
+pdf_files = sorted(pdf_dir.glob("*.pdf"))
+
+# 結合先を用意
+writer = PdfWriter()
+
+# １つのPDFファイルにまとめる
+for f in pdf_files:
+    writer.addpages(PdfReader(f).pages)
+
+# 保存ファイル名（先頭と末尾のファイル名で作成）
+merged_file = "all.pdf"
+
+writer.write('merged.pdf')
+```
 1. "projects"フォルダの下に"pdf_files"フォルダを作り、結合したいPDFファイルを置きます。結合順はファイル名の昇順になりますので、ファイル名の先頭に連番をつけておくとよいです。
 1. コマンドプロンプトを開きます。
 1. 以下の手順でプログラムを実行します。
