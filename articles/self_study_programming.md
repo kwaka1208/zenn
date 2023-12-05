@@ -1,5 +1,5 @@
 ---
-title: 情報セキュリティまとめ
+title: ひとりで学ぶプログラミング
 emoji: ""
 type: idea
 topics: [programmnig, learning]
