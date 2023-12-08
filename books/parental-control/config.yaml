@@ -5,8 +5,8 @@ published: false
 price: 0
 chapters:
   - about
-  - NintendoSwitch
-  - iPhone_iPad
-  - Chromebook_Android
-  - Mac
-  - Windows
+  - nintendo_switch
+  - iphone_ipad
+  - chromebook_android
+  - mac
+  - windows
