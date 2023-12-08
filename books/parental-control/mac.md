@@ -1,9 +1,5 @@
 ---
 title: Mac
-emoji: "📅"
-type: tech
-topics: [Mac, Apple]
-published: true
 ---
 ## どんなことができる？
 ざっくりですが、以下のようなことができます。

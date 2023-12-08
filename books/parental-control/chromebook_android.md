@@ -1,9 +1,5 @@
 ---
 title: Chromebook / Android
-emoji: "📅"
-type: tech
-topics: [Chromebook, Android, Google]
-published: true
 ---
 ## どんなことができる？
 ざっくりですが、以下のようなことができます。

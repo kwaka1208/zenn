@@ -1,9 +1,5 @@
 ---
 title: iPad / iPhone
-emoji: "📅"
-type: tech
-topics: [iPhone, iPad, Apple]
-published: true
 ---
 ## どんなことができる？
 ざっくりですが、以下のようなことができます。

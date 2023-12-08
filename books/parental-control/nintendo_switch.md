@@ -1,9 +1,5 @@
 ---
 title: ニンテンドースイッチ
-emoji: "📅"
-type: tech
-topics: [Google Calendar,Google Workspace]
-published: true
 ---
 ## どんなことができる？
 ざっくりですが、以下のようなことができます。

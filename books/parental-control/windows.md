@@ -1,9 +1,5 @@
 ---
 title: Windows
-emoji: "📅"
-type: idea
-topics: [Windows]
-published: true
 ---
 ## どんなことができる？
 ざっくりですが、以下のようなことができます。
