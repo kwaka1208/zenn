@@ -1,7 +1,7 @@
 title: pygameでゲームを作ろう
 summary: pygameを使ったPythonプログラミング入門です
 topics: [python, pygame]
-published: false
+published: true
 price: 0
 chapters:
   - 00_about

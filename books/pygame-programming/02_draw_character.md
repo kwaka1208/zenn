@@ -7,7 +7,7 @@ title: キャラクターを表示させてみよう
 1. 表示させるキャラクター画像は自分で描いても良いですが、今回はこちらの[青色の忍者](https://dotown.maeda-design-room.net/2681/)の画像を使います。  
 このサイトは[ドッタウン](https://dotown.maeda-design-room.net/)というドット絵の素材を配布しているサイトです。ドット絵の素材を使う場合は、このサイトの利用規約をよく読んで利用してください。
 2. ダウンロードしたファイルの名前を"ninja.png"に変更してください。
-3. okeikoフォルダの中に"imagesフォルダを作成し、"ninja.png"をそこへ移動してください。
+3. workフォルダの中に"imagesフォルダを作成し、"ninja.png"をそこへ移動してください。
 
 フリー素材を使う場合は、必ず利用規約を読んで使ってくださいね。[ドッタウンの利用規約はこちら](https://dotown.maeda-design-room.net/term-of-use/)です。
 
@@ -21,19 +21,19 @@ title: キャラクターを表示させてみよう
 
 ### Chromebookの方
 1. ターミナルを起動します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd workと入力してEnterキーを押します。
 1. python3 game.pyと入力してEnterキーを押します。
 
 ### Windowsの方
 1. コマンドプロンプトを起動します。
 1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd workと入力してEnterキーを押します。
 1. python game.pyと入力してEnterキーを押します。
 
 ### Macの方
 1. ターミナルを起動します。
 1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd workと入力してEnterキーを押します。
 1. python3 game.pyと入力してEnterキーを押します。
 
 ## プログラムを変えてみよう
