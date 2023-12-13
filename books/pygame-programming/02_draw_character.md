@@ -12,9 +12,51 @@ title: キャラクターを表示させてみよう
 フリー素材を使う場合は、必ず利用規約を読んで使ってくださいね。[ドッタウンの利用規約はこちら](https://dotown.maeda-design-room.net/term-of-use/)です。
 
 ## プログラムを入力しよう
-1. 前回作成した"game.py"を作成します。
-1. こちらをクリックしてサンプルプログラムを開き、（[こちらをクリックしてください](https://github.com/kwaka1208/resources/blob/main/pygame/game02.py)）の内容を先ほど作成した"game.py"に入力します。
+1. 前回作成した"game.py"を開きます。
+1. 以下のコードを"game.py"に入力していきましょう。[こちらをクリックすると別ウインドウで表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game02.py)）。
 1. 入力したら保存します。保存の操作は、ChromebookとWindowsの方は"Ctrl" + "S"、Macの方は"Command" + "S"です。プログラムの保存は最後にまとめてやるのではなく、ある程度入力したら保存するの方が良いです。もし入力途中でトラブルが起こったらせっかく入力したプログラムが消えてしまう可能性があります。
+
+```python
+import pygame as pg
+import sys
+
+# pygame初期化
+pg.init()
+
+# 画面設定
+screen = pg.display.set_mode((800, 600)) 
+
+# >> ここから追加
+# キャラクター追加
+player = pg.image.load("images/ninja.png")
+player = pg.transform.scale(player, (100, 100))
+player = pg.transform.flip(player, True, False)
+player_rect = pg.rect.Rect(0, 480, 100, 100)
+# <<>> ここまで追加
+
+while True:
+    # 画面を白で塗りつぶす
+    screen.fill(pg.Color("WHITE")) 
+
+    # 赤い四角形を描画
+    # pg.draw.rect(screen, pg.Color("RED"), pg.Rect(10, 20, 100, 150))
+
+# >> ここから追加
+    # キャラクターを表示
+    screen.blit(player, player_rect)
+# <<>> ここまで追加
+
+    # 画面を更新
+    pg.display.update()
+
+    # イベントをチェック
+    for event in pg.event.get():
+        # 閉じるボタンが押されたら終了
+        if event.type == pg.QUIT:
+            pg.quit()
+            sys.exit()
+```
+
 
 ## 実行してみよう
 プログラムの入力ができたら、プログラムを実行してます。以下の手順を参考にしてください。
