@@ -8,7 +8,7 @@ title: 画面に四角を描いてみよう
 1. こちらをクリックしてサンプルプログラムを開き、（[こちらをクリックしてください](https://github.com/kwaka1208/resources/blob/main/pygame/game01.py)）の内容を先ほど作成した"game.py"に入力します。
 1. 入力したら保存します。保存の操作は、ChromebookとWindowsの方は"Ctrl" + "S"、Macの方は"Command" + "S"です。プログラムの保存は最後にまとめてやるのではなく、ある程度入力したら保存するの方が良いです。もし入力途中でトラブルが起こったらせっかく入力したプログラムが消えてしまう可能性があります。
 
-｀``python
+```python
 import pygame as pg
 import sys
 
