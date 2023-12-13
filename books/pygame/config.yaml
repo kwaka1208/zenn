@@ -1,0 +1,10 @@
+title: pygameでゲームを作ろう
+summary: pygameを使ったPythonプログラミング入門です
+topics: [python, pygame]
+published: false
+price: 0
+chapters:
+  - 00_about
+  - 01_draw_rect
+  - 02_draw_character
+  
