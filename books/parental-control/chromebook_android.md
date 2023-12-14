@@ -32,3 +32,20 @@ Googleの公式に説明があります。
 [Android版Googleファミリーリンク](https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink&hl=ja&gl=JP)
 
 [iPhone版Googleファミリーリンク](https://apps.apple.com/jp/app/google-%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC-%E3%83%AA%E3%83%B3%E3%82%AF/id1150085200)
+
+## 使用例
+以下の画像は、ファミリーリンクでYouTubeを子ども向けに設定した場合の画面です。
+
+![](/images/parental-control/google/familylink/fl-1.png)
+![](/images/parental-control/google/familylink/fl-2.png)
+![](/images/parental-control/google/familylink/fl-3.png)
+![](/images/parental-control/google/familylink/fl-4.png)
+![](/images/parental-control/google/familylink/fl-5.png)
+![](/images/parental-control/google/familylink/fl-6.png)
+![](/images/parental-control/google/familylink/fl-7.png)
+![](/images/parental-control/google/familylink/fl-8.png)
+
+## 補足
+ファミリーリンクを使えば、YouTubeなどのサービスに対する制限をかけることができ、これはChromebookやAndoroidデバイスに限らず、PCやiPadなどでも有効です。
+
+ただし、YouTubeについてはログアウトした状態でも使えるため、ログアウトすれば制限を回避できることがわかれば容易にペアレンタルコントロールを外れることができます。
