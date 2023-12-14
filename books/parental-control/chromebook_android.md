@@ -35,14 +35,21 @@ Googleの公式に説明があります。
 ## 使用例
 以下の画像は、ファミリーリンクでYouTubeを子ども向けに設定した場合の画面です。
 
-![](/images/parental-control/google/familylink/p1.png)
+![](/images/parental-control/google/familylink/fl-1.png =300px)
 
-![](/images/parental-control/google/familylink/p2.png)
+![](/images/parental-control/google/familylink/fl-2.png =300px)
 
-![](/images/parental-control/google/familylink/p3.png)
+![](/images/parental-control/google/familylink/fl-3.png =300px)
 
-![](/images/parental-control/google/familylink/p4.png)
+![](/images/parental-control/google/familylink/fl-4.png =300px)
 
+![](/images/parental-control/google/familylink/fl-5.png =300px)
+
+![](/images/parental-control/google/familylink/fl-6.png =300px)
+
+![](/images/parental-control/google/familylink/fl-7.png =300px)
+
+![](/images/parental-control/google/familylink/fl-8.png =300px)
 
 ## 補足
 ファミリーリンクを使えば、YouTubeなどのサービスに対する制限をかけることができ、これはChromebookやAndoroidデバイスに限らず、PCやiPadなどでも有効です。
