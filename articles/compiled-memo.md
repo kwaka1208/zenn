@@ -50,15 +50,6 @@ IT関連の雑多な情報をまとめたページです。自分用でしたが
     - [デザイニング・ボイスユーザーインターフェース](https://www.oreilly.co.jp/books/9784873118581/)
     - [デザイニング・マルチデバイス・エクスペリエンス](https://www.oreilly.co.jp/books/9784873117089/)
 
-
-## グループウェア
-- [Google Workspace](https://workspace.google.com/intl/ja/lp/business/)
-
-- サイボウズ
-    - [サイボウズOffice](https://office.cybozu.co.jp/)
-    - [サイボウズGaroon](https://garoon.cybozu.co.jp/)
-    - [メールワイズ](https://mailwise.cybozu.co.jp/)
-
 ## オンラインスペース
 オンライン会議システムではなく、オンライン上オフィススペース。オンライン会議システムよりもコミュニケーションの取りやすいのが特徴です。
 
