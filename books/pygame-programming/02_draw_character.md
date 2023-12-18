@@ -17,7 +17,7 @@ title: キャラクターを表示させてみよう
 1. 入力したら保存します。保存の操作は、ChromebookとWindowsの方は"Ctrl" + "S"、Macの方は"Command" + "S"です。プログラムの保存は最後にまとめてやるのではなく、ある程度入力したら保存するの方が良いです。もし入力途中でトラブルが起こったらせっかく入力したプログラムが消えてしまう可能性があります。
 
 画像をクリックすると拡大表示されます（[こちらをクリックすると別ウインドウでオリジナルのソースコードが表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game02.py)）
-[![](/images/python/pygame/game02.png)](/images/python/pygame/game02.png)
+[![](https://github.com/kwaka1208/resources/raw/main/pygame/game02.png)](https://github.com/kwaka1208/resources/raw/main/pygame/game02.png)
 
 ## 実行してみよう
 プログラムの入力ができたら、プログラムを実行してます。以下の手順を参考にしてください。
