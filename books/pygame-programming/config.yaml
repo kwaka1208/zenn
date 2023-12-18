@@ -7,4 +7,5 @@ chapters:
   - 00_about
   - 01_draw_rect
   - 02_draw_character
+  - 03_move_character
   
