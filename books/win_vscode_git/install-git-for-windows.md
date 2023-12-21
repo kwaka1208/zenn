@@ -3,7 +3,7 @@ title: Git for Windowsのインストール
 ---
 WindowsでGitを使う場合は、Git for Windowsのインストールが必要です。以下の手順に従ってダウンロードとインストールをお願いします。
 
-なお、本手順はVisual Studio CodeでGitを利用することを前提としていますので、先にVisual Studio Codeをインストールしておいてください。[Visual Studio Codeのインストール手順はこちら](/install/visual-studio-code/)です。
+なお、本手順はVisual Studio CodeでGitを利用することを前提としていますので、先にVisual Studio Codeをインストールしておいてください。
 
 ## ダウンロード
 [Git for Windows](https://gitforwindows.org/)のサイトにアクセスし「Download」ボタンを押してダウンロードします。
