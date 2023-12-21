@@ -1,0 +1,9 @@
+title: WindowsでVisual Stuido Code + Gitの環境を作ろう
+summary: WindowsでVisual Stuido CodeとGitを組み合わせた開発環境の作り方を解説しています。
+topics: [windows, vscode, git]
+published: false
+price: 0
+chapters:
+  - about
+  - install-visual-studio-code
+  - install-git-for-windows
