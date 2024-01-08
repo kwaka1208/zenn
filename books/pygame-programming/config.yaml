@@ -8,4 +8,4 @@ chapters:
   - 01_draw_rect
   - 02_draw_character
   - 03_move_character
-  
+  - 04_change_direction
