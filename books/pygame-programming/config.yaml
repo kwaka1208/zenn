@@ -10,3 +10,4 @@ chapters:
   - 03_move_character
   - 04_change_direction
   - 05_shoot
+  - 06_enemy
