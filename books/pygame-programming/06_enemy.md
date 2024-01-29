@@ -31,8 +31,8 @@ title: 敵のキャラクター追加して動かそう
 1. 以下のコードの赤い枠の中を"game.py"に追加していきましょう。
 1. 入力したら保存します。保存の操作は、ChromebookとWindowsの方は"Ctrl" + "S"、Macの方は"Command" + "S"です。プログラムの保存は最後にまとめてやるのではなく、ある程度入力したら保存するの方が良いです。もし入力途中でトラブルが起こったらせっかく入力したプログラムが消えてしまう可能性があります。
 
-画像をクリックすると拡大表示されます（[こちらをクリックすると別ウインドウでオリジナルのソースコードが表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game05.py)）
-[![](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game05.png)](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game05.png)
+画像をクリックすると拡大表示されます（[こちらをクリックすると別ウインドウでオリジナルのソースコードが表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game06.py)）
+[![](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game06.png)](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game06.png)
 
 ## 実行してみよう
 プログラムの入力ができたら、プログラムを実行してます。以下の手順を参考にしてください。
