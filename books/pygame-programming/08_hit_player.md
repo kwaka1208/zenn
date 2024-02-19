@@ -4,7 +4,7 @@ title: プレイヤーの当たり判定を作ろう
 プレイヤーに敵キャラクターにが当たったかどうかを判定し、当たった時の処理を追加します。
 
 ## プログラム全体
-[こちらをクリックすると別ウインドウでオリジナルのソースコードが表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game08.py){:target="_blank"}
+[こちらをクリックすると別ウインドウでオリジナルのソースコードが表示できます](https://github.com/kwaka1208/resources/blob/main/pygame/game08.py)
 
 ## 前回からの変更箇所
 前回からの変更箇所は以下の通りです。
