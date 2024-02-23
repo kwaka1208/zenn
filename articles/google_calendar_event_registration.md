@@ -1,5 +1,5 @@
 ---
-title: Googleカレンダー一括イベント登録
+title: GoogleスプレッドシートからGoogleカレンダーへイベントを一括登録する
 emoji: "📅"
 type: tech
 topics: [Google Calendar,Google Workspace]
