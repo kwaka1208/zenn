@@ -11,7 +11,7 @@ Googleカレンダーに複数のイベントを一括登録・削除するツ�
 ## 使い方
 1. 下記リンク先のスプレッドシートのコピーを作成（コピーを作成しないと利用できません）します。
 
-[Googleカレンダー一括イベント登録（Googleスプレッドシート）](https://docs.google.com/spreadsheets/d/1yTv2SvOwMeMk0s-UqwA56ixeEHq7mBFFdzspntPzqvc/edit?usp=sharing)
+[（コピーして使ってください）Googleカレンダー一括イベント登録](https://docs.google.com/spreadsheets/d/1yTv2SvOwMeMk0s-UqwA56ixeEHq7mBFFdzspntPzqvc/edit?usp=sharing)
 
 コピーを作成する時、以下の画面が表示されますので「コピーを作成」を選択してください。
 

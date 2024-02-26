@@ -30,7 +30,7 @@ Googleスプレッドシートに情報を入力して使うようになって�
 
 ### 実行手順
 1. 以下のリンク先のシートを開いてコピーを作成してください（最初の一回だけでOKです）  
-[フォルダまるごとコピー（公開版）](https://docs.google.com/spreadsheets/d/11h72bu-4i3CbEyd10hK3-DAJK_8Qa4cH5Rp7nQN4nrk/edit?usp=sharing)
+[（コピーしてお使いください）フォルダまるごとコピー設定シート](https://docs.google.com/spreadsheets/d/11h72bu-4i3CbEyd10hK3-DAJK_8Qa4cH5Rp7nQN4nrk/edit?usp=sharing)
 2. コピー元フォルダURLの欄（青色背景）にコピー元のGoogle DriveのフォルダURLを入力してください。
 3. コピー先フォルダURLの欄（赤色背景）にコピー先のGoogle DriveのフォルダURLを入力してください。
 4. コピー対象から"フォルダのみ"か"フォルダとファイル"のいずれかを選んでください。"フォルダのみ"を選んだ場合はフォルダの階層構造のみコピーされます。
