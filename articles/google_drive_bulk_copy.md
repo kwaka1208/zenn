@@ -2,7 +2,7 @@
 title: Google Driveでフォルダ階層を一括コピーする
 emoji: 📁
 type: tech
-topics: [Google Drive,Google Workspace]
+topics: [Google Drive,Google Workspace,gc24]
 published: true
 ---
 ## 概要

@@ -2,7 +2,7 @@
 title: GoogleスプレッドシートからGoogleカレンダーへ予定を一括登録する
 emoji: "📅"
 type: tech
-topics: [Google Calendar,Google Workspace]
+topics: [Google Calendar,Google Workspace,gc24]
 published: true
 ---
 ## 概要
