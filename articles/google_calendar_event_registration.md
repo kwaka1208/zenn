@@ -15,7 +15,7 @@ Googleカレンダーに複数のイベントを一括登録・削除するツ�
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
-![](/images/googl/google_calendar_event_registration/copy.png)
+![](/images/google/google_calendar_event_registration/copy.png)
 
 2. 各列に必要事項を記入します（列の意味は下記参照）。
 3. メニューの「イベント登録・削除」から「イベント登録」を選んでください（「イベント登録・削除」が表示されるまでに時間がかかることがあります。表示されていない場合1〜2分程度待ってみてください）。
