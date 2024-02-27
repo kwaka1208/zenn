@@ -29,8 +29,9 @@ Googleスプレッドシートに情報を入力して使うようになって�
 - コピー元のフォルダをコピー先フォルダのGoogleアカウントに対して共有します（編集権限があればOKです）。
 
 ### 実行手順
-1. 以下のリンク先のシートを開いてコピーを作成してください（最初の一回だけでOKです）  
-[（コピーしてお使いください）フォルダまるごとコピー設定シート](https://docs.google.com/spreadsheets/d/1CF2qnO3gSGKltpTFYoMLiIpeUwIk1HUanAQlzdm3h7k/edit?usp=sharing)
+1. 設定シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
+
+[（コピーしてお使いください）フォルダまるごとコピー設定シート](https://docs.google.com/spreadsheets/d/1CF2qnO3gSGKltpTFYoMLiIpeUwIk1HUanAQlzdm3h7k/copy?usp=sharing)
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
