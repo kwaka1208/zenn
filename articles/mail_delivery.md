@@ -21,8 +21,14 @@ Googleスプレッドシートに情報を入力して使うようになって�
 
 ## 使い方
 
-1. 以下のリンク先のシートを開いてコピーを作成してください（最初の一回だけでOKです）  
-[（コピーして使ってください）メール一括送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/edit?usp=sharing)
+1. 設定シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
+
+[（コピーして使ってください）メール一括送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/copy?usp=sharing)
+
+コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
+
+![](/images/google/mail_delivery/copy.png)
+
 2. メール本文をGoogleドキュメントを作成します。本文には最大3つまで埋込文字列（相手先の会社名や担当者名など）を入れることができます。文字列を入れたいところに"{埋込1}"のように記述してください。{埋込1}、{埋込2}、{埋込3}の3種類が利用できます。詳しくは[こちらのサンプルをご覧ください](https://docs.google.com/document/d/1me50YQT6CbqJXay0Mw3B2bQIrJw4_PTOZf1x2vJyUpI/edit?usp=sharing)
 3. シートに、以下の内容を記入します。
     - 送信者名：From（送信元）に表示される名前です。

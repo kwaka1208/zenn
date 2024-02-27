@@ -9,13 +9,13 @@ published: true
 Googleカレンダーに複数のイベントを一括登録・削除するツールです。繰り返しイベントだとGoogleカレンダーの機能で登録できますが、こちらは不定期開催のイベントの登録やイベントタイトルに一連番号をつけられます（つけずに登録もできます）。
 
 ## 使い方
-1. 下記リンク先のスプレッドシートのコピーを作成（コピーを作成しないと利用できません）します。
+1. 設定シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
 
-[（コピーして使ってください）Googleカレンダー一括イベント登録](https://docs.google.com/spreadsheets/d/1yTv2SvOwMeMk0s-UqwA56ixeEHq7mBFFdzspntPzqvc/edit?usp=sharing)
+[（コピーして使ってください）Googleカレンダー一括イベント登録](https://docs.google.com/spreadsheets/d/1yTv2SvOwMeMk0s-UqwA56ixeEHq7mBFFdzspntPzqvc/copy?usp=sharing)
 
-コピーを作成する時、以下の画面が表示されますので「コピーを作成」を選択してください。
+コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
-![](/images/google/copy.png)
+![](/images/googl/google_calendar_event_registration/copy.png)
 
 2. 各列に必要事項を記入します（列の意味は下記参照）。
 3. メニューの「イベント登録・削除」から「イベント登録」を選んでください（「イベント登録・削除」が表示されるまでに時間がかかることがあります。表示されていない場合1〜2分程度待ってみてください）。
@@ -45,11 +45,11 @@ Googleカレンダーに複数のイベントを一括登録・削除するツ�
 カレンダーIDは、Googleカレンダーの各カレンダーの設定画面に記載されているものをコピーします。
 
 - Googleカレンダーの「マイカレンダー」から設定したいカレンダーの上にマウスを移動させ表示される点3つのボタンから「設定と共有」を選びます。
-![設定項目](/images/google/calendar-setting.png)
+![設定項目](/images/google/google_calendar_event_registration/calendar-setting.png)
 
 - 「カレンダーの設定」画面が表示されますので、画面の中ほどにある「カレンダーの統合」の下にある「カレンダーID」からカレンダーIDをコピーします。カレンダーIDはアルファベットと数字が組み合わさった長いメールアドレスのような形式になっていますので、すべてをコピーしてください。
 
-![カレンダーIDの記載箇所](/images/google/calendar-id.png)
+![カレンダーIDの記載箇所](/images/google/google_calendar_event_registration/calendar-id.png)
 
 ### 不具合の報告などはこちらへ
 こちらのシートに不具合がございましたら、[こちら](https://github.com/kwaka1208/issues/issues)から報告いただけると助かります。
