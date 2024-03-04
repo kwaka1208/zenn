@@ -35,10 +35,16 @@ title: スコアとHPを追加しよう
 
 ![](/images/python/pygame/09/04.png)
 
+### フォントの設定を追加します
+> 全体プログラムの66行目です。
+
+![](/images/python/pygame/09/06.png)
+
 ### スコアとHPの表示処理の呼び出しを追加します
 > 全体プログラムの74行目です。
 
 ![](/images/python/pygame/09/05.png)
+
 
 ## プログラムを入力しよう
 1. 前回作成した"game.py"を開きます。
