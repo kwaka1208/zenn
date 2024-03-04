@@ -14,3 +14,4 @@ chapters:
   - 07_hit
   - 08_hit_player
   - 09_score_and_hp
+  - 10_game_over
