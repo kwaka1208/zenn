@@ -1,14 +1,14 @@
 ---
-title: Googleアカウントからメール一括送信
+title: Googleアカウントからまとめてメール送信
 emoji: "✉"
 type: tech
 topics: [gmail,Google Workspace]
 published: true
 ---
 ## 概要
-Googleのメールアカウント（Gmail、Google Workspace）からメールを一括送信するツールです。
+Googleのメールアカウント（Gmail、Google Workspace）からメールをまとめて送信するツールです。
 
-たくさんの人にメールを一括送信したい時にBccを使って配信することがありますが、Bccは迷惑メール扱いになりやすいのと、BccとCcを間違って事故を起こしてしまうケースもあります。
+たくさんの人にメールをまとめて送信したい時にBccを使って配信することがありますが、Bccは迷惑メール扱いになりやすいのと、BccとCcを間違って事故を起こしてしまうケースもあります。
 また、Bccの場合メール本文が全員同じになるため、宛先の方の名前を入れられません。メール本文に自分の名前が入っていた方が「その他大勢扱い」ではなくなるので印象が良くなります。
 
 このツールを使うと、本文に相手方の名前を入れつつBccではなくToに宛先をいれて送るので迷惑メール扱いされにくくなります。
@@ -23,7 +23,7 @@ Googleスプレッドシートに情報を入力して使うようになって�
 
 1. 設定シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
 
-[（コピーして使ってください）メール一括送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/copy?usp=sharing)
+[（コピーして使ってください）まとめてメール送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/copy?usp=sharing)
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 

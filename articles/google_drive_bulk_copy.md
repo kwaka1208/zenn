@@ -1,12 +1,12 @@
 ---
-title: Google Driveでフォルダ階層を一括コピーする
+title: Google Driveでフォルダ階層をまるごとコピーする
 emoji: 📁
 type: tech
 topics: [Google Drive,Google Workspace]
 published: true
 ---
 ## 概要
-Google Driveでは、フォルダの内容（ファイル、サブフォルダ）をまとめて一括で移動はできますが、コピーはできません。
+Google Driveでは、フォルダの内容（ファイル、サブフォルダ）をまるごと移動はできますが、コピーはできません。
 
 このツールは、Google Driveの指定したフォルダを別のフォルダにコピーするためのツールです。フォルダのみのコピー、フォルダとファイル両方のコピーどちらを行うかを選べます。
 
