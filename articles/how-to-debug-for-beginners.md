@@ -28,7 +28,7 @@ PCひとつあれば自分の作りたいものを自由に作れるプログラ
 
 つまり、あなたは家族にプログラミングされたロボットのようなものだとイメージしてください。当然ですが、メッセージの内容に間違いがあればあなたは家族の期待した通りにうまく動くことができません。これがバグです。
 
-![](/images/how-to-debug-for-beginners/bread_panya.png){style="width: 500px;"}
+![](/images/how-to-debug-for-beginners/bread_panya.png){style="width: 500px; text-align: center;"}
 
 ### a. メッセージが「帰りにパン屋さんで食パンと牛乳をってきて」だった時
 このメッセージでは「買」という文字が抜けているので、何をすればよいかわかりません。あなたがコンピュータだとすると、どうしていいのかわからないのでここでエラーが発生して止まってしまいます。
@@ -144,4 +144,4 @@ PCひとつあれば自分の作りたいものを自由に作れるプログラ
 
 では、楽しいプログラミングとデバッグを！
 
-![](/images/how-to-debug-for-beginners/computer_businesswoman4_laugh.png){style="width: 500px;"}
+![](/images/how-to-debug-for-beginners/computer_businesswoman4_laugh.png){style="width: 500px; text-align: center;"}
