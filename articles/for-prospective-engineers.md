@@ -14,7 +14,7 @@ published: false
   実際に操作しながら学べる環境です。
 
 ### 設定 
- ```bash
+```bash
 git config --glbal user.name "yourname"
 git config --glbal user.email "yourmail@company.co.jp"
 git config branch.master.mergeooptions "--no-ff"
