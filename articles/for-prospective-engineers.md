@@ -31,15 +31,17 @@ Git、苦手だという方も多いのですが基本的な考え方を理解�
   - [日本語版（web）](https://training.github.com/downloads/ja/github-git-cheat-sheet/)
   - [日本語版（PDF）](https://training.github.com/downloads/ja/github-git-cheat-sheet.pdf)
 
+:::message alert
 正直なところ、ソフトウェア開発の現場のどれだけでGitが使われているのかはわかりません。というのも、古くからやってる企業の場合、それまでのやり方を踏襲していることが多いので新しい技術やツールの取り込みが遅れていることが多々あるからです。
 なので、もしかするとこの記事を読んでいるあなたが働く企業では現時点でGitを使っていないかもしれませんが、バージョン管理という概念やチーム開発で必要なことは理解しておいて損はないと思いますし、そのソリューションとしてのGitを知っておくことは有用だと思います。
+:::
 
 ### Markdown
 [Markdown](https://daringfireball.net/projects/markdown/)については、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)の説明を引用します。
 
 以下、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)より引用
 
-```markdown
+```plaintext
 Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。しかし、現在[いつ?]ではHTMLのほかPowerPoint形式やLATEX形式のファイルへ変換するソフトウェア（コンバータ）も開発されている。各コンバータの開発者によって多様な拡張が施されるため、各種の方言が存在する。
 ```
 
