@@ -23,20 +23,40 @@ published: false
 
 Git、苦手だという方も多いのですが基本的な考え方を理解すれば難しくはありませんし、理解できればGit無しには戻れないようになります。私は、個人で作ったプログラムもすべてGitで管理しています。
 
-- [Git[公式]](https://git-scm.com/)
+[Git[公式]](https://git-scm.com/)
 
 以下、参考になるサイトや資料を紹介します。
 - [サルでもわかるGit入門](http://www.backlog.jp/git-guide/)
-- [Learn Git Branching（日本語）](http://pcottle.github.io/learnGitBranching/)
-  実際に操作しながら学べる環境です。
 - [Git チートシート](https://docs.github.com/ja/get-started/getting-started-with-git/git-cheatsheet)
   - [日本語版（web）](https://training.github.com/downloads/ja/github-git-cheat-sheet/)
   - [日本語版（PDF）](https://training.github.com/downloads/ja/github-git-cheat-sheet.pdf)
 
+正直なところ、ソフトウェア開発の現場のどれだけでGitが使われているのかはわかりません。というのも、古くからやってる企業の場合、それまでのやり方を踏襲していることが多いので新しい技術やツールの取り込みが遅れていることが多々あるからです。
+なので、もしかするとこの記事を読んでいるあなたが働く企業では現時点でGitを使っていないかもしれませんが、バージョン管理という概念やチーム開発で必要なことは理解しておいて損はないと思いますし、そのソリューションとしてのGitを知っておくことは有用だと思います。
+
 ### Markdown
+[Markdown](https://daringfireball.net/projects/markdown/)については、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)の説明を引用します。
+
+以下、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)より引用
+```text
+Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。しかし、現在[いつ?]ではHTMLのほかPowerPoint形式やLATEX形式のファイルへ変換するソフトウェア（コンバータ）も開発されている。各コンバータの開発者によって多様な拡張が施されるため、各種の方言が存在する。
+```
+文書を書くためのツールという意味では、Mircosoft Wordなどのいわゆるワープロソフトウェアが思い浮かぶかもしれません（iPhoneのメモかもしれませんが）。もちろんそれらも使うのですが、ソフトウェア開発の現場で一番使われるツールはテキストエディタや統合開発ツール（の中のエディタ）なので、できればそれらのツールで文書を作成できた方が楽、というところでMarkdownが使われています。
+
+[Markdown（公式）](https://daringfireball.net/projects/markdown/)
+
+Markdownは開発資料の作成以外にも、blogやzenn、Qiitaなどのサービスでの記事作成にも使われています。[この記事もMarkdownで書かれています](https://github.com/kwaka1208/zenn/blob/main/articles/for-prospective-engineers.md?plain=1)。
 
 ## キレイなコーディングを知る
-- [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+もしかすると今はまだ動くことを優先してコーディングしているかもしれません（そんなことないぞ！という方申し訳ありません）。個人で作成したプログラムならそれでも構わないのですが、先に述べたように仕事としてのソフトウェア開発はチームで行うことがほとんどです。あたなのソースコードはあなた以外の人が読むこと（たとえそれが嫌だとしても）を前提にコーディングすることが求められます。
+
+以下、参考になる書籍やサイトを紹介します。
+
+- [リーダブルコード](https://www.oreilly.co.jp/books/9784873115658/)には、コードを読みやすく（理解しやすく）するための技術や考え方をまとめられており、定番中の定番というべき書籍です。
+- zennにも、[読みやすいコードを書くためのガイドライン](https://zenn.dev/arsaga/articles/ba9ec8c004511c)という記事があるので、こちらもどうぞ。
+- ソフトウェア開発の現場ではコーディングガイドラインが定められているところも多くあります（無いところもありますが）。あなたが働く企業のコーディングガイドラインについては、各企業に聞いてもらうしかありませんが、まずはコーディングガイドラインというルールがあることを知っておいていただければと思います（仕事では我流でコーディングしていいわけhでないということ）。
+
+[こちらの記事](https://phaier.github.io/school/engineering/software/coding/style/guideline/famous.html)で一般公開されているコーディングガイドライン（コーディング規約ともいいます）がまとめられているので、これらをチラッと読んでみて、どんなことが定義されているのかを知っておくのは有用かと思います。
 
 ## 使いやすさを知る
 
