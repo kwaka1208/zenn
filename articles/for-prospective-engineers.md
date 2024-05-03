@@ -39,7 +39,7 @@ Git、苦手だという方も多いのですが基本的な考え方を理解�
 
 以下、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)より引用
 
-```wrapping
+```
 Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。しかし、現在[いつ?]ではHTMLのほかPowerPoint形式やLATEX形式のファイルへ変換するソフトウェア（コンバータ）も開発されている。各コンバータの開発者によって多様な拡張が施されるため、各種の方言が存在する。
 ```
 
@@ -48,6 +48,30 @@ Markdown（マークダウン）は、文書を記述するための軽量マー
 [Markdown（公式）](https://daringfireball.net/projects/markdown/)
 
 Markdownは開発資料の作成以外にも、blogやzenn、Qiitaなどのサービスでの記事作成にも使われています。[この記事もMarkdownで書かれています](https://github.com/kwaka1208/zenn/blob/main/articles/for-prospective-engineers.md?plain=1)。
+
+Markdownを使うとどんなことができるかというと、たとえば
+
+```markdown
+| Head | Head | Head |
+| ---- | ---- | ---- |
+| Text | Text | Text |
+| Text | Text | Text |
+```
+
+と書くと、以下のように表示されます。
+
+| Head | Head | Head |
+| ---- | ---- | ---- |
+| Text | Text | Text |
+| Text | Text | Text |
+
+その他細かい仕様については、[公式サイトの説明（英語）](https://daringfireball.net/projects/markdown/syntax#list)や以下のサイトを参考にしてください。
+
+- [Qiita マークダウン記法 一覧表・チートシート](https://qiita.com/kamorits/items/6f342da395ad57468ae3)
+- [基本的な書き方とフォーマットの構文（GitHub）](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [ZennのMarkdown記法一覧](https://zenn.dev/zenn/articles/markdown-guide)
+
+Markdownには方言と呼ばれるサービスごとの微妙な仕様の違いがあるのがやや難ですが、基本的な記法は共通しているので、まずは基本的な記法を覚えておくとよいでしょう。
 
 ## キレイなコーディングを知る
 もしかすると今はまだ動くことを優先してコーディングしているかもしれません（そんなことないぞ！という方申し訳ありません）。個人で作成したプログラムならそれでも構わないのですが、先に述べたように仕事としてのソフトウェア開発はチームで行うことがほとんどです。あたなのソースコードはあなた以外の人が読むこと（たとえそれが嫌だとしても）を前提にコーディングすることが求められます。
