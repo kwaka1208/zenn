@@ -92,11 +92,11 @@ iPhoneの登場以降とくに使いやすさに注目が集まっていて使�
 
 Appleは古くから「使いやすさ」を大切にしている企業のひとつで、早い時点から「ヒューマンインターフェイスガイドライン」というものを公開しています。これはApple製品向けのソフトウェアを開発する上でも参考になり、これからのソフトウェアエンジニアにとって有用な教材のひとつと言えるでしょう。
 
-[ヒューマンインターフェイスガイドライン](https://developer.apple.com/jp/design/human-interface-guidelines/)
+[ヒューマンインターフェイスガイドライン / Apple](https://developer.apple.com/jp/design/human-interface-guidelines/)
 
 もちろん、Googleも「[Material Design](https://m3.material.io/)」というデザインガイドラインを公開しています。
 
-[Material Design](https://m3.material.io/)
+[Material Design / Google](https://m3.material.io/)
 
 Appleのヒューマンインターフェースガイドラインでは、今年発売開始されたApple Vision Proに関連して「空間コンピューティング」に関するものも追加されました。
 Appleのガイドラインは日本語ですし、読んでいると普段自分たちが使っているスマートフォンのユーザーインターフェイスがどのように考えて作られているのかがわかって面白いですよ。
