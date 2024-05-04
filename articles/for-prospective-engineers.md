@@ -40,8 +40,6 @@ Git、苦手だという方も多いのですが基本的な考え方を理解�
 ### Markdown
 [Markdown](https://daringfireball.net/projects/markdown/)については、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)の説明を引用します。
 
-以下、[Wikipedia](https://ja.wikipedia.org/wiki/Markdown)より引用
-
 > Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。しかし、現在ではHTMLのほかPowerPoint形式やLATEX形式のファイルへ変換するソフトウェア（コンバータ）も開発されている。各コンバータの開発者によって多様な拡張が施されるため、各種の方言が存在する。
 
 文書を書くためのツールという意味では、Mircosoft Wordなどのいわゆるワープロソフトウェアが思い浮かぶかもしれません（iPhoneのメモかもしれませんが）。もちろんそれらも使うのですが、ソフトウェア開発の現場で一番使われるツールはテキストエディタや統合開発ツール（の中のエディタ）なので、できればそれらのツールで文書を作成できた方が楽、というところでMarkdownが使われています。
