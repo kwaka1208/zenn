@@ -10,12 +10,6 @@ published: true
 
 いずれも入社一日目から必要になるものではありませんし、すでに働いている先輩社員もこれらのことを意識しているわけではないかもしれませんが、人は人自分は自分なのでどうぞ参考にしていただければと思います。
 
-他にも関連する記事を書いていますので、よろしければこちらもご覧ください。
-
-- [ソフトウェアエンジニアとして生きていくには](https://crssrds.jp/note/to-be-a-professional-software-engineer/)
-- [ソフトウェアエンジニアと英語](https://crssrds.jp/note/software-engineer-should-be-close-for-english/)
-- [ソフトウェアエンジニアとして働き始めるみなさんへ（この記事です）](https://zenn.dev/kwaka1208/articles/for-prospective-engineers)
-
 ## 周辺ツールに目を向ける
 ソフトウェアの開発においては、プログラミングスキル（言語やフレームワークの知識）だけでなく開発環境を含む周辺知識も必要です。ひとくちにソフトウェアエンジニアといっても幅は広く、たとえば組み込み開発とweb開発では求められるスキルも利用する開発環境も異なります。
 
@@ -109,3 +103,10 @@ Appleのガイドラインは日本語ですし、読んでいると普段自分
 以上の内容については、完全に私の主観であり（私が書いた文章はすべて私の主観であることは当然なのですが）他の方は違うことを言うかもしれません。いずれにせよ、最終的にどれを取り入れるかはあなた次第です、何かしらひとつでも多くの視点を得て、より良いソフトウェアエンジニアになることを期待しています。
 
 ようこそ、ブラックな世界へ。
+
+## 追記
+気がついたら関連する記事をいくつか書いていたので、こちらにリンクをつけておきます（この記事のリンクも含みます）。
+- [ソフトウェアエンジニアとして生きていくには](https://crssrds.jp/note/to-be-a-professional-software-engineer/)
+- [ソフトウェアエンジニアと英語](https://crssrds.jp/note/software-engineer-should-be-close-for-english/)
+- [ソフトウェアエンジニアとして働き始めるみなさんへ](https://zenn.dev/kwaka1208/articles/for-prospective-engineers)
+- [職業には専門性とモラルが期待されている](https://crssrds.jp/note//note/professional-and-morale/)
