@@ -10,7 +10,11 @@ published: true
 
 いずれも入社一日目から必要になるものではありませんし、すでに働いている先輩社員もこれらのことを意識しているわけではないかもしれませんが、人は人自分は自分なのでどうぞ参考にしていただければと思います。
 
-個人blogになりますが[「ソフトウェアエンジニアとして生きていくには」](https://crssrds.jp/note/to-be-a-professional-software-engineer/)という記事も書いていますので、よろしければこちらも。
+他にも関連する記事を書いていますので、よろしければこちらもご覧ください。
+
+- [ソフトウェアエンジニアとして生きていくには](https://crssrds.jp/note/to-be-a-professional-software-engineer/)
+- [ソフトウェアエンジニアと英語](https://crssrds.jp/note/software-engineer-should-be-close-for-english/)
+- [ソフトウェアエンジニアとして働き始めるみなさんへ（この記事です）](https://zenn.dev/kwaka1208/articles/for-prospective-engineers)
 
 ## 周辺ツールに目を向ける
 ソフトウェアの開発においては、プログラミングスキル（言語やフレームワークの知識）だけでなく開発環境を含む周辺知識も必要です。ひとくちにソフトウェアエンジニアといっても幅は広く、たとえば組み込み開発とweb開発では求められるスキルも利用する開発環境も異なります。
