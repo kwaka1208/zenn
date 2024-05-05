@@ -86,7 +86,7 @@ Markdownには方言と呼ばれるサービスごとの微妙な仕様の違い
 
 iPhoneの登場以降とくに使いやすさに注目が集まっていて使いやすさの重要さが広く認識されるようになりました。使いやすさに関する情報も多く公開されています。
 
-Appleは古くから「使いやすさ」を大切にしている企業のひとつで、早い時点から「[ヒューマンインターフェイスガイドライン](https://developer.apple.com/jp/design/human-interface-guidelines/)」というものを公開しています。これはApple製品向けのソフトウェアを開発する上でも参考になり、これからのソフトウェアエンジニアにとって有用な教材のひとつと言えるでしょう。
+Appleは古くから「使いやすさ」を大切にしている企業のひとつで、早い時点から「[ヒューマンインターフェイスガイドライン](https://developer.apple.com/jp/design/human-interface-guidelines/)」というものを公開しています。これはApple製品向け以外のソフトウェアを開発する上でも参考になり、これからのソフトウェアエンジニアにとって有用な教材のひとつと言えるでしょう。
 
 [ヒューマンインターフェイスガイドライン / Apple](https://developer.apple.com/jp/design/human-interface-guidelines/)
 
