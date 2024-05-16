@@ -3,7 +3,7 @@ title: 集中モードを使ってiPhone/iPadのデモ環境を作ろう
 emoji: 📵
 type: idea
 topics: [iPad, iPhone, 集中モード, Focus Mode]
-published: false
+published: true
 ---
 皆さんは、 自分のiPhoneやiPadを他の人に見せる機会ってあるでしょうか？
 
@@ -23,14 +23,26 @@ published: false
 
 ## 設定手順
 
-1. iPadの設定アプリを開きます。
-
+1. iPadの設定アプリを開いて、集中モードを選びます。
+2. 集中モードの一覧が表示されるので、右上の「＋」をタップします。
 ![](/images/focus-mode-for-demo-use/f01.png =300x)
+3. 集中モードにはテンプレートが用意されていますが、ここでは「カスタム」を選びます。
 ![](/images/focus-mode-for-demo-use/f02.png =300x)
+4. 「集中モードをカスタマイズ」を選んで編集画面に進みます。
 ![](/images/focus-mode-for-demo-use/f03.png =300x)
+5. 許可するアプリを選択で「通知を許可」を選びます。最初はすべてのアプリにチェックが入っています。
 ![](/images/focus-mode-for-demo-use/f04.png =300x)
+6. 今回は通知をまったく出したくないので、すべてのアプリをタップしてチェックをオフにします。これで設定は完了です。
 ![](/images/focus-mode-for-demo-use/f05.png =300x)
 ![](/images/focus-mode-for-demo-use/f06.png =300x)
+7. コントロールセンターの「集中モード」をタップして、先ほど作成した集中モードを選びます。
 ![](/images/focus-mode-for-demo-use/f07.png =300x)
 ![](/images/focus-mode-for-demo-use/f08.png =300x)
+8. 集中モードが有効になると、コントロールセンターに現在選択されている集中モードが表示されます。
 ![](/images/focus-mode-for-demo-use/f09.png =300x)
+
+##　注意事項
+1. 集中モードを解除した途端に、集中モードにしていた間に届いた通知が一気に出てきます。
+2. 「デバイス間で共有」が選択されていると、同じApple IDでログインしている他のデバイスにも集中モードが適用され通知が出なくなるので注意してください。
+
+これで心置きなくiPhoneやiPadの画面を他の人に見せることができますね。 ;D
