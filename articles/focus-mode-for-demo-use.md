@@ -25,12 +25,12 @@ published: false
 
 1. iPadの設定アプリを開きます。
 
-![](/images/focus-mode-for-demo-use/f01.png =300px)
-![](/images/focus-mode-for-demo-use/f02.png =300px)
-![](/images/focus-mode-for-demo-use/f03.png =300px)
-![](/images/focus-mode-for-demo-use/f04.png =300px)
-![](/images/focus-mode-for-demo-use/f05.png =300px)
-![](/images/focus-mode-for-demo-use/f06.png =300px)
-![](/images/focus-mode-for-demo-use/f07.png =300px)
-![](/images/focus-mode-for-demo-use/f08.png =300px)
-![](/images/focus-mode-for-demo-use/f09.png =300px)
+![](/images/focus-mode-for-demo-use/f01.png =300x)
+![](/images/focus-mode-for-demo-use/f02.png =300x)
+![](/images/focus-mode-for-demo-use/f03.png =300x)
+![](/images/focus-mode-for-demo-use/f04.png =300x)
+![](/images/focus-mode-for-demo-use/f05.png =300x)
+![](/images/focus-mode-for-demo-use/f06.png =300x)
+![](/images/focus-mode-for-demo-use/f07.png =300x)
+![](/images/focus-mode-for-demo-use/f08.png =300x)
+![](/images/focus-mode-for-demo-use/f09.png =300x)
