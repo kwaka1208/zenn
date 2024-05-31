@@ -15,12 +15,16 @@ published: true
 - [ちょうどいいイラスト](https://tyoudoii-illust.com/)
 - [DOTOWN](https://dotown.maeda-design-room.net/)
 - [ソコスト](https://soco-st.com/illust)
+- [oishiso](https://oishiso.jp/)
+- [Free Illustrations](https://sketchvalley.com/)
+- [vectorShelf](https://vectorshelf.com/)
 
 ## 写真
 - [unsplash](https://unsplash.com)
 - [pixabay](https://pixabay.com)
 - [Pexels](https://www.pexels.com/ja-jp/)
 - [freephotos.cc](https://freephotos.cc/)
+- [ぱくたそ](https://www.pakutaso.com)  
 
 ## フォント
 - [Google Font](https://fonts.google.com)
