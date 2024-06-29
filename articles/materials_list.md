@@ -60,3 +60,6 @@ published: true
 ## ツール
 - [Canva](https://www.canva.com)
 - [remove.org（背景除去ツール）](https://www.remove.bg) 
+
+## その他
+- [心理学の教材 | 心理学の教材が見つかるフリー素材サイト](https://itohhiroaki.com/)
