@@ -3,7 +3,7 @@ title: GoogleスプレッドシートのデータをJSON形式で取得する
 emoji: "📊"
 type: tech
 topics: [Google スプレッドシート, JSON]
-published: false
+published: true
 ---
 ## 概要
 GoogleスプレッドシートのシートのデータをJSON形式で取得できるようにするシートです。このシートに表形式でデータを入力するとJSON形式で取得できるURLが取得できます。
