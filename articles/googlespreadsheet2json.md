@@ -13,7 +13,7 @@ WEBAPIとして機能していますので、アプリケーションなどか�
 ## 使い方
 1. シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
 
-[（コピーして使ってください）gs2json](https://docs.google.com/spreadsheets/d/1w5qHIz2qMAQlbS-FV3FTB_RGcEElKjCvGzJhJqyeDD8/copy?usp=sharing)
+[gs2json](https://docs.google.com/spreadsheets/d/1w5qHIz2qMAQlbS-FV3FTB_RGcEElKjCvGzJhJqyeDD8/copy?usp=sharing)
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
