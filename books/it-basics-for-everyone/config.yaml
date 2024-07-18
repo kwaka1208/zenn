@@ -1,0 +1,9 @@
+title: ITの基礎知識
+summary: コンピュータやネットワーク、インターネットに関する基本的な知識を徒然なるままにまとめます。
+topics: [コンピュータ, ネットワーク, インターネット, セキュリティ]
+published: false
+price: 0
+chapters:
+  - about
+  - browser_cache
+  
