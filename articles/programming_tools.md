@@ -65,3 +65,5 @@ mBotという車型のロボットを改造して色々なものを作ります�
 ## 作品
 - [ネコが一生懸命描くフラクタル画像](https://scratch.mit.edu/projects/564960824/)
 - [FirstMission](https://scratch.mit.edu/projects/68155398/)
+
+- [Kyoto University Research Information Repository: プログラミング演習 Python 2023](http://hdl.handle.net/2433/285599)
