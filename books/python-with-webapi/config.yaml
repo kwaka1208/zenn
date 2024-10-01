@@ -5,6 +5,7 @@ published: false
 price: 0
 chapters:
   - 00_about
-  - 01_postal-api
-  - 02_what-is-json
-  - 03_get-from-json
+  - 01_edublocks
+  - 02_postal-api
+  - 03_what-is-json
+  - 04_get-from-json
