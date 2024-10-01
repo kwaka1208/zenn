@@ -15,6 +15,16 @@ title: JSONデータから欲しい情報を取り出そう
   ]
 }
 ```
+### JSONデータにアクセスする
+まず、JSONデータを変数に取り込みます。
+
+![](/images/python/webapi/04.png)
+
+この時点では、変数"data"の中は文字列の情報なので、json関数を使ってプログラムで使いやすい形（辞書型）に変換します。
+
+![](/images/python/webapi/05.png)
+
+
 
 このデータにアクセスするプログラムは以下のリンクから開けます。
 
@@ -22,6 +32,3 @@ title: JSONデータから欲しい情報を取り出そう
 
 ![](/images/python/webapi/03.png)
 
-フルーツのJSONデータは変数"data"の中に入っているので、次のように読むことができます。
-
-![](/images/python/webapi/04.png)
