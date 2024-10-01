@@ -1,0 +1,10 @@
+title: PythonでWebAPIを使ってみよう
+summary: WebAPIを使ったPythonプログラミング入門です
+topics: [python, webapi, edublocks]
+published: false
+price: 0
+chapters:
+  - 00_about
+  - 01_postal-api
+  - 02_what-is-json
+  - 03_get-from-json
