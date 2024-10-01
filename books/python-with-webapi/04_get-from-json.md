@@ -24,7 +24,7 @@ title: JSONデータから欲しい情報を取り出そう
 
 ![](/images/python/webapi/04.png)
 
-変数"json_data"には、変数"data"の中の"fruit"の中身が入っています。
+このプログラムでは、変数"data"の中の"fruit"の中身を取り出し、変数"json_data"に辞書型と呼ばれる形式で保存しています。辞書型にすると、データの場所を指定して取り出せるようになります。
 
 ![](/images/python/webapi/05.png)
 
