@@ -1,7 +1,7 @@
 title: PythonでWebAPIを使ってみよう
 summary: WebAPIを使ったPythonプログラミング入門です
 topics: [python, webapi, edublocks]
-published: false
+published: true
 price: 0
 chapters:
   - 00_about
