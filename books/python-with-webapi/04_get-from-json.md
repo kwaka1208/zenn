@@ -38,11 +38,11 @@ title: JSONデータから欲しい情報を取り出そう
 ```
 これを使って、りんごの情報を表示するプログラムを作成してみましょう。
 
-![](/images/python/webapi/05.png)
+![](/images/python/webapi/06.png)
 
 みかんとバナナについてもどうように表示するプログラムを作成してみましょう（全ての情報を表示するプログラムはサンプルプログラムからリンクしています）。
 
 ### サンプルプログラム
 ここで作成したプログラムは以下のリンクから開けます。
-1. [フルーツのデータにアクセスするプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
+1. [フルーツのデータをJSON形式で取り出すプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
 1. [フルーツのデータを表示するプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/Tl5WUoSbXivIY06N9I76)
