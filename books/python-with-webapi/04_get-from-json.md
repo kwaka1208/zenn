@@ -33,4 +33,4 @@ title: JSONデータから欲しい情報を取り出そう
 ここで作成したプログラムは以下のリンクから開けます。
 [フルーツのデータにアクセスするプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
 
-
+[フルーツのデータを表示するプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/Tl5WUoSbXivIY06N9I76)
