@@ -20,9 +20,8 @@ title: JSONデータから欲しい情報を取り出そう
 
 [フルーツのデータにアクセスするプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
 
-![Screenshot 2024-09-25 at 20.09.12](https://hackmd.io/_uploads/S1GFyO-RA.png)
+![](/images/python/webapi/03.png)
 
 フルーツのJSONデータは変数"data"の中に入っているので、次のように読むことができます。
 
-![Screenshot 2024-09-25 at 19.51.36](https://hackmd.io/_uploads/HyAehP-AR.png)
-
+![](/images/python/webapi/04.png)
