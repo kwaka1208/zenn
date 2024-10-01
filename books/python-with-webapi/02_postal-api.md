@@ -31,14 +31,10 @@ https://madefor.github.io/postal-code-api/api/v1/123/4567.json
 このURLにアクセスすると、[郵便番号APIのページ](https://madefor.github.io/postal-code-api/)で試したものと同じデータが表示されます（こちらは1行になります）。
 
 ### インターネットからデータを取得する
-ここまでの操作をプログラムで実行してみましょう。実際のツールを使いながら説明していきますが、完成版のプログラムも置いておきます。
-
-[プログラムデータはこちら](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/I1o7HSHZyY22T7gHuXkD
-)
+ここまでの操作をプログラムで実行してみましょう。
 
 #### ブロック版
 ![](/images/python/webapi/01.png)
-
 
 #### テキスト版
 ```python!
@@ -48,6 +44,10 @@ api = "https://madefor.github.io/postal-code-api/api/v1/100/0001.json"
 data = requests.get(api)
 print(data.text)
 ```
-
 #### 色々な郵便番号で試してみましょう
 1. プログラムを入力したら、変数apiの中の郵便番号を書き換えて、実行してみましょう。
+
+### サンプルプログラム
+ここで作成したプログラムは以下のリンクから開けます。
+[プログラムデータはこちら](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/I1o7HSHZyY22T7gHuXkD
+)
