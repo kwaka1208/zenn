@@ -16,3 +16,5 @@ Pythonのプログラミング環境EduBlocksを使って、WebAPIを利用す�
 
 ### 郵便番号API
 [郵便番号API](https://github.com/madefor/postal-code-api/)は、郵便番号を与えると該当する住所を返してくれるWebAPIです。静的なAPI（決まったデータを返すだけ）ですが、データは日々更新されており、日本全国の郵便番号に対応しています。
+
+このAPIでできることは、[こちら](https://madefor.github.io/postal-code-api/)で試せます。

@@ -37,7 +37,7 @@ https://madefor.github.io/postal-code-api/api/v1/123/4567.json
 )
 
 #### ブロック版
-[![Screenshot 2024-09-04 at 18.11.11](https://hackmd.io/_uploads/ByqyrjS3R.png)](https://hackmd.io/_uploads/ByqyrjS3R.png)
+[![](/images/python-with-webapi/01.png)](/images/python-with-webapi/01.png)
 
 
 #### テキスト版
