@@ -28,9 +28,21 @@ title: JSONデータから欲しい情報を取り出そう
 
 ![](/images/python/webapi/05.png)
 
+上記の情報はプログラムで次のようにアクセスできます。
+
+```text
+りんごの情報：json_data[0]
+りんごの名前の情報：json_data[0]["name"]
+りんごの在庫の情報：json_data[0]["stock"]
+りんごの価格の情報：json_data[0]["price"]
+```
+これを使って、りんごの情報を表示するプログラムを作成してみましょう。
+
+![](/images/python/webapi/05.png)
+
+みかんとバナナについてもどうように表示するプログラムを作成してみましょう（全ての情報を表示するプログラムはサンプルプログラムからリンクしています）。
 
 ### サンプルプログラム
 ここで作成したプログラムは以下のリンクから開けます。
-[フルーツのデータにアクセスするプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
-
-[フルーツのデータを表示するプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/Tl5WUoSbXivIY06N9I76)
+1. [フルーツのデータにアクセスするプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/nvsq5pUUDAN27r2AOklT)
+1. [フルーツのデータを表示するプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/Tl5WUoSbXivIY06N9I76)
