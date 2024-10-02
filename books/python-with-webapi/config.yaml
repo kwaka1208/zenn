@@ -9,4 +9,4 @@ chapters:
   - 02_postal-api
   - 03_what-is-json
   - 04_get-from-json
-  # - 05_postal-to-address
+  - 05_postal-to-address
