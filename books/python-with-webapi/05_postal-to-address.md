@@ -1,6 +1,12 @@
 ---
 title: JSONデータから住所を取得しよう
 ---
+では、実際に住所のデータを取得してみましょう、ここでは"100-0001"という郵便番号を指定して、その住所を取得します。
+
+[https://madefor.github.io/postal-code-api/api/v1/100/0001.json](https://madefor.github.io/postal-code-api/api/v1/100/0001.json)
+
+このURLにアクセスすると、以下のようなデータが取得できます。
+
 ```json
 {
     "code": "1000001",
