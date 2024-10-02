@@ -5,7 +5,6 @@ title: JSONデータから住所を取得しよう
 
 [https://madefor.github.io/postal-code-api/api/v1/100/0001.json](https://madefor.github.io/postal-code-api/api/v1/100/0001.json)
 
-## データの中身を見てみよう
 このURLにアクセスすると、以下のようなデータが取得できます。
 
 ```json
@@ -36,12 +35,10 @@ title: JSONデータから住所を取得しよう
 
 ![](/images/python/webapi/07.png)
 
-## JSONデータを変数に読み込む
 まず、"data"の中にある情報を変数"json_data"に読み込みます。
 
 ![](/images/python/webapi/08.png)
 
-## 住所情報の場所を確認する
 次に、"json_data"の中にある"ja"の中にある住所情報を取り出します。
 
 ```
@@ -54,18 +51,15 @@ title: JSONデータから住所を取得しよう
 ```
 ![](/images/python/webapi/09.png)
 
-## 住所情報をひとつにまとめる
 各変数の内容をつないで表示します。
 
 ![](/images/python/webapi/10.png)
 
-
-## ここまでの完成版
-これらの一連の処理をまとめると、以下のようになります。
+これれらの一連の処理をまとめると、以下のようになります。
 
 ![](/images/python/webapi/11.png)
 
 
 ### サンプルプログラム
 ここで作成したプログラムは以下のリンクから開けます。
-[郵便番号から住所を表示するプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/P5SsIXexlymfswn8zUCb)
+[郵便番号を入力できるプログラム](https://app.edublocks.org/project/C07T9nfaVWeZkZj3D6DF7vZPGlM2/MiteMLLjAa2fqPczeIi6)
