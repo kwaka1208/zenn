@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Codeのインストール
 ---
-このページでは、Microsoft社が提供するテキストエディタ、Visual Studio Code（以下、VS Code）のインストールと日本語化の手順について記載しています。
+この記事では、Microsoft社が提供するテキストエディタ、Visual Studio Code（以下、VS Code）のインストールと日本語化の手順について記載しています。
 
 ### ダウンロード
 [VS Codeのサイト](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)にアクセスし"Download now"ボタンを押すとインストーラーがダウンロードできます。
