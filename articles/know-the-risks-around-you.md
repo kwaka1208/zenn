@@ -17,6 +17,7 @@ published: true
 ## 悪意のあるサイトの擬似体験
 - [詐欺サイト体験](https://techno-kuro.com/phishingSiteDemo/)
 - [ワンクリック詐欺体験サイト](https://www2.kanazawa-it.ac.jp/kitsec/Game/one-click/alert.html)
+↑ちょっとびっくりするかもしれないので、心の準備をしてからクリックしてください。
 - [フィッシングメールからパスワードが漏洩するデモ - 人とコンピュータの研究室](https://crssrds.jp/lab/phishing/)
 
 ## ネットにアクセスするだけでわかること
