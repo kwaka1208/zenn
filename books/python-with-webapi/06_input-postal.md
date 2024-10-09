@@ -1,64 +1,47 @@
 ---
-title: JSONデータから住所を取得しよう
+title: 郵便番号を入力しよう
 ---
-では、実際に住所のデータを取得してみましょう、ここでは"100-0001"という郵便番号を指定して、その住所を取得します。
+これまでは、郵便番号を指定するたびにプログラムを修正していましたが、プログラムを修正することなく、郵便番号を入力できるようにしましょう。
+ここでは、以下の変更を行なっていきます。
 
-[https://madefor.github.io/postal-code-api/api/v1/100/0001.json](https://madefor.github.io/postal-code-api/api/v1/100/0001.json)
+1. 郵便番号を入れる変数を作ります。
+1. APIの郵便番号の部分をxxx/yyyyに変えます。
+1. 郵便番号の上3桁を入力し、変数に入れます。
+1. 郵便番号の下4桁を入力し、変数に入れます。
+1. 郵便番号の数字をそれぞれAPIの郵便番号と入れ替えるようにします。
 
-このURLにアクセスすると、以下のようなデータが取得できます。
-
-```json
-{
-    "code": "1000001",
-    "data": [
-        {
-            "prefcode": "13",
-            "ja": {
-                "prefecture": "東京都",
-                "address1": "千代田区",
-                "address2": "千代田",
-                "address3": "",
-                "address4": ""
-            },
-            "en": {
-                "prefecture": "Tokyo",
-                "address1": "Chiyoda-ku",
-                "address2": "Chiyoda",
-                "address3": "",
-                "address4": ""
-            }
-        }
-    ]
-}
-```
-このデータを見ていくと、"data"の中に日本語の住所情報"ja"が含まれていることがわかります。この部分を指定して取り出します。
-
-![](/images/python/webapi/07.png)
-
-まず、"data"の中にある情報を変数"json_data"に読み込みます。
-
-![](/images/python/webapi/08.png)
-
-次に、"json_data"の中にある"ja"の中にある住所情報を取り出します。
+## APIのURLを変更する
+APIのURLの郵便番号の部分をxxxとyyyyに変えます。これらがあとで郵便番号を入れる時の場所になります。
 
 ```
-住所の情報：json_data[0]
-日本語の住所の情報：json_data[0]["ja"]
-日本語の都道府県の情報：json_data[0]["ja"]["prefecture"]
-日本語の住所1の情報：json_data[0]["ja"]["address1"]
-日本語の住所2の情報：json_data[0]["ja"]["address2"]
-日本語の住所3の情報：json_data[0]["ja"]["address3"]
+あとで情報を差し替えるために仮の情報を入れておくことを、プレースホルダといいます。
 ```
-![](/images/python/webapi/09.png)
+![](/images/python/webapi/06-01.png)
 
-各変数の内容をつないで表示します。
+### 郵便番号を入れる変数を作る
+左側のメニューの"Variables"から郵便番号を入れるための変数を作ります。ここでは郵便番号の上3桁を入れる変数を"postal1"、下4桁を入れる変数を"postal2"として作成しています。
 
-![](/images/python/webapi/10.png)
+![](/images/python/webapi/06-02.png)
+![](/images/python/webapi/06-03.png)
 
-これれらの一連の処理をまとめると、以下のようになります。
+## 郵便番号を入力する
+次に文字列を入力するinputブ関数を使って郵便番号を入力し、変数に入れる処理を作ります。inputブ関数のカッコの中には、入力する際に表示するメッセージを入れます。
 
-![](/images/python/webapi/11.png)
+![](/images/python/webapi/06-04.png)
 
+## 郵便番号をAPIのURLに入れる
+変数に入った郵便番号をAPIのURLに入れていきます。replace関数では、置き換える対象の文字列と置き換え後の文字列を指定すると、その箇所にある文字列を置き換えます。
+
+ここでは、"xxx"を変数postal1の内容（郵便番号の上3桁）に、"yyyy"を変数postal2の内容（郵便番号の下4桁）に置き換えています。
+
+![](/images/python/webapi/06-05.png)
+
+これで、入力された郵便番号でAPIにアクセスするプログラムが完成しました。
+
+## 実行してみよう
+これれらの一連の処理をまとめると、以下のようになります。この状態で実行してみましょう。
+
+![](/images/python/webapi/06-06.png)
 
 ### サンプルプログラム
 ここで作成したプログラムは以下のリンクから開けます。
