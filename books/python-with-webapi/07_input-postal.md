@@ -16,32 +16,32 @@ APIのURLの郵便番号の部分をxxxとyyyyに変えます。これらがあ�
 ```
 あとで情報を差し替えるために仮の情報を入れておくことを、プレースホルダといいます。
 ```
-![](/images/python/webapi/06-01.png)
+![](/images/python/webapi/07-01.png)
 
 ### 郵便番号を入れる変数を作る
 左側のメニューの"Variables"から郵便番号を入れるための変数を作ります。ここでは郵便番号の上3桁を入れる変数を"postal1"、下4桁を入れる変数を"postal2"として作成しています。
 
-![](/images/python/webapi/06-02.png)
-![](/images/python/webapi/06-03.png)
+![](/images/python/webapi/07-02.png)
+![](/images/python/webapi/07-03.png)
 
 ## 郵便番号を入力する
 次に文字列を入力するinputブ関数を使って郵便番号を入力し、変数に入れる処理を作ります。inputブ関数のカッコの中には、入力する際に表示するメッセージを入れます。
 
-![](/images/python/webapi/06-04.png)
+![](/images/python/webapi/07-04.png)
 
 ## 郵便番号をAPIのURLに入れる
 変数に入った郵便番号をAPIのURLに入れていきます。replace関数では、置き換える対象の文字列と置き換え後の文字列を指定すると、その箇所にある文字列を置き換えます。
 
 ここでは、"xxx"を変数postal1の内容（郵便番号の上3桁）に、"yyyy"を変数postal2の内容（郵便番号の下4桁）に置き換えています。
 
-![](/images/python/webapi/06-05.png)
+![](/images/python/webapi/07-05.png)
 
 これで、入力された郵便番号でAPIにアクセスするプログラムが完成しました。
 
 ## 実行してみよう
 これれらの一連の処理をまとめると、以下のようになります。この状態で実行してみましょう。
 
-![](/images/python/webapi/06-06.png)
+![](/images/python/webapi/07-06.png)
 
 ### サンプルプログラム
 ここで作成したプログラムは以下のリンクから開けます。
