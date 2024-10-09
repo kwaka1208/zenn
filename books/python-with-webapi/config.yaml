@@ -4,10 +4,10 @@ topics: [python, webapi, edublocks]
 published: true
 price: 0
 chapters:
-  - 00_about
-  - 01_edublocks
-  - 02_postal-api
-  - 03_what-is-json
-  - 04_get-from-json
-  - 05_postal-to-address
-  - 06_input-postal
+  - 01_about
+  - 02_edublocks
+  - 03_postal-api
+  - 04_what-is-json
+  - 05_get-from-json
+  - 06_postal-to-address
+  - 07_input-postal
