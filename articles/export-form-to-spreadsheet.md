@@ -1,5 +1,5 @@
 ---
-title: Googleフォームの設問と選択肢の一覧を作成するスクリプト
+title: Googleフォームの設問と選択肢の一覧を作成する
 emoji: "📋"
 type: tech
 topics: [Google スプレッドシート, Google フォーム]
