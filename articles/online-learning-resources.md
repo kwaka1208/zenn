@@ -15,3 +15,11 @@ Googleが提供しているカリキュラムなどを取ることができま�
 
 - [TED Talks](https://www.ted.com/talks?language=ja)  
 TEDは知ってる方も多いと思いますが、世界中の色んな人のアイデアを広めようという取り組みで世界的なプレゼンテーションイベントです。こちらはオンラインコースではありませんが、いわゆる勉強的な知識の得方とは違う学び方ができると思います。
+
+
+
+qqewd
+
+
+online-learining-resources.md
+online_learining_resources.md
