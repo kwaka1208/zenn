@@ -54,5 +54,10 @@ Googleフォームの設問と選択肢の一覧をスプレッドシートに�
 次の画面で「許可」を押すと、このシートに入ったスクリプトが実行可能となります。もう一度、上記3の操作を行なってください。
 ![](/images/google/export-form-to-spreadsheet/c03.png =500x)
 
+### 本スクリプトのソースコード
+以下のリポジトリで公開しています。
+
+[kwaka1208/export-form-to-spreadsheet](https://github.com/kwaka1208/export-form-to-spreadsheet)
+
 ### 不具合の報告などはこちらへ
 こちらのシートに不具合がございましたら、[こちら](https://github.com/kwaka1208/issues/issues)から報告いただけると助かります。
