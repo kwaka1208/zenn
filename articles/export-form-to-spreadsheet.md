@@ -57,7 +57,7 @@ Googleフォームの設問と選択肢の一覧をスプレッドシートに�
 ### 本スクリプトのソースコード
 以下のリポジトリで公開しています。
 
-[kwaka1208/export-form-to-spreadsheet](https://github.com/kwaka1208/export-form-to-spreadsheet)
+[kwaka1208/gas-export-form-to-spreadsheet](https://github.com/kwaka1208/gas-export-form-to-spreadsheet)
 
 ### 不具合の報告などはこちらへ
 こちらのシートに不具合がございましたら、[こちら](https://github.com/kwaka1208/issues/issues)から報告いただけると助かります。
