@@ -23,7 +23,7 @@ Googleスプレッドシートに情報を入力して使うようになって�
 
 1. 設定シートのコピーを作成します。以下のリンク先をクリックするとシートのコピー画面が表示されます。コピーは最初の一回だけでOKですので、継続して利用する場合はコピーしたシートを使ってください。
 
-[（コピーして使ってください）まとめてメール送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/copy?usp=sharing)
+[まとめてメール送信](https://docs.google.com/spreadsheets/d/17IjqLLhnkbuocXuF2tykcLIn1kfBaues1aAwu-mUxns/copy?usp=sharing)
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
