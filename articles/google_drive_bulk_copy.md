@@ -35,7 +35,7 @@ Googleスプレッドシートに情報を入力して使うようになって�
 
 コピーする時に以下のメッセージが表示されていることを確認してください。Apps Scriptの添付が必要です。
 
-![](/images/google/google_drive_bulk_copy/03.png)
+![](/images/common/copy.png =500x)
 
 2. コピー元フォルダURLの欄（青色背景）にコピー元のGoogle DriveのフォルダURLを入力してください。
 3. コピー先フォルダURLの欄（赤色背景）にコピー先のGoogle DriveのフォルダURLを入力してください。
