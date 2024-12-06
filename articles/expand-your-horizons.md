@@ -52,7 +52,7 @@ published: true
 ## 効率よく情報を集めるためのツール
 これらのサイトをすべてひとつひとつアクセスしていくのは大変です。そこでRSSツールを使って効率よく情報を見られるようにしています。自分が使っているRSSツールは[Feedly](https://feedly.com/)です。
 
-[Feedly: Track the topics and trends that matter to you](https://feedly.com/)
+https://feedly.com/
 
 ここにURLを登録しておくと、記事を一覧で見られますし、既読の記事と未読の記事を分けて管理できます。
 
