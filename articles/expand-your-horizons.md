@@ -25,27 +25,27 @@ https://news.yahoo.co.jp/
 https://www3.nhk.or.jp/news/
 
 ### IT系
-- [IT総合情報ポータル「ITmedia」Home](https://www.itmedia.co.jp/)
-- [CNET Japan](https://japan.cnet.com/)
-- [IoT NEWS](https://iotnews.jp/)
-- [テクノエッジ TechnoEdge](https://www.techno-edge.net/)
+https://www.itmedia.co.jp/
+https://japan.cnet.com/
+https://iotnews.jp/
+https://www.techno-edge.net/
 
 ### web系
-- [Webクリエイターボックス](https://www.webcreatorbox.com/)
+https://www.webcreatorbox.com/
 
 ### 経済、他
-- [東洋経済オンライン | 社会をよくする経済ニュース](https://toyokeizai.net/)
+https://toyokeizai.net/
 
 ### テクノロジー系
-- [WIRED.jp](https://wired.jp/)
-- [MITテクノロジーレビュー | テクノロジーが形作る世界を理解する](https://www.technologyreview.jp/)
+https://wired.jp/
+https://www.technologyreview.jp/
 
 ### Apple・ガジェット関連
-- [アイアリ | Appleを愛するひとのための情報サイト](https://arigato-ipod.com/)
-- [気になる、記になる… | ２股だが…WindowsとMacの最新情報Blog](https://taisy0.com/)
+https://arigato-ipod.com/
+https://taisy0.com/
 
 ### セキュリティ関連
-- [piyolog](https://piyolog.hatenadiary.jp/)
+https://piyolog.hatenadiary.jp/
 
 各サイトで取り扱っている情報がダブっていることもあるかと思いますが、それぞれ細かさや視点などが違いますので、自分にあったサイトを見つけてください。
 
@@ -60,7 +60,7 @@ https://feedly.com/
 
 使い方の具体的な説明は、以下の記事を参考にしてください。
 
-[Feedlyで情報収集の効率化を図る #RSS - Qiita](https://qiita.com/MA152403/items/9cc78683930c44e80caa)
+https://qiita.com/MA152403/items/9cc78683930c44e80caa
 
 ## 最後に
 情報収集は手間と時間がかかりますが、習慣化すればそれほど大変ではありません。
