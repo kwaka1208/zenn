@@ -21,8 +21,8 @@ published: true
 > それぞれに解説をつけたいのですが、まずはリンクのみで。またあらためて解説をつけたいと思います（たぶん）
 
 ### 日常のニュース
-- [Yahoo!ニュース](https://news.yahoo.co.jp/)
-- [NHKニュース 速報・最新情報](https://www3.nhk.or.jp/news/)
+https://news.yahoo.co.jp/
+https://www3.nhk.or.jp/news/
 
 ### IT系
 - [IT総合情報ポータル「ITmedia」Home](https://www.itmedia.co.jp/)
