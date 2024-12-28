@@ -1,6 +1,6 @@
 ---
 title: 文章を決まった文字数で折り返して表示する処理の作り方
-emoji: 📰
+emoji: 🔡
 type: idea
 topics: [プログラミング,アルゴリズム,Scratch,JavaScript]
 published: true
