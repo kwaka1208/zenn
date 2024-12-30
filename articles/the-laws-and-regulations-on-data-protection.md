@@ -15,8 +15,8 @@ published: true
 この法律に則っていれば13歳未満にでも個人情報の提供を伴うサービスを提供してもいいのですが、仕組みとしてとても複雑になるし利用者としても面倒なことになる（一々保護者の確認が必要になる）ので、実質的に13歳未満への個人情報の提供を伴うサービスの提供を制限する法律になっています。2000年から効力を発揮しています。
 
 ### 参考リンク
-- [Children's Online Privacy Protection Act](https://en.wikipedia.org/wiki/Children's_Online_Privacy_Protection_Act)
-- [子ども向けアプリに関するポリシー（COPPA） | ポリシーセンター](https://developer.amazon.com/ja/docs/policy-center/privacy-children.html)
+https://en.wikipedia.org/wiki/Children's_Online_Privacy_Protection_Act
+https://developer.amazon.com/ja/docs/policy-center/privacy-children.html
 
 ## GDPR（General Data Protection Regulation）
 EU一般データ保護規則と呼ばれるEUとイギリスの規則で、年齢に関係なくEU（とイギリス）の域内の個人データの保護に関する規則です。
