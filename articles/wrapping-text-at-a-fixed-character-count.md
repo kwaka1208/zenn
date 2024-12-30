@@ -98,8 +98,8 @@ X座標 = 3 x  32 = 96
 Y座標 = 1 x -32 = -32
 ```
 
+https://scratch.mit.edu/projects/1114339418/
 
-[文字を複数行に折り返して表示](https://scratch.mit.edu/projects/1114339418/)
 ![](/images/wrapping-text-at-a-fixed-character-count/05.png)
 
 ## 最後に
