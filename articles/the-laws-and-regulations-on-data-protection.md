@@ -23,23 +23,25 @@ EU一般データ保護規則と呼ばれるEUとイギリスの規則で、年�
 このGDPRの一部で子ども向けの規則を定めたGDPR-Kでは、16歳未満（国によって独自に年齢を設定している場合もあります）については個人データの提供に関して保護者の同意が必要となることを定めています。GDPRは、2016年に制定されています。
 
 ### 参考リンク
-- [EU一般データ保護規則](https://ja.wikipedia.org/wiki/EU一般データ保護規則)
-- [EU 一般データ保護規則（GDPR）について | EU - 欧州 - 国・地域別に見る - ジェトロ](https://www.jetro.go.jp/world/europe/eu/gdpr/)
-- [GDPR（EU一般データ保護規則）とは？解説と対策](https://www.manageengine.jp/solutions/gdpr/lp/)
+https://ja.wikipedia.org/wiki/EU一般データ保護規則
+https://www.jetro.go.jp/world/europe/eu/gdpr/
+https://www.manageengine.jp/solutions/gdpr/lp/
+
 
 ## 事例
 COPPAの事例はあまり見ないのですが、GDPR関連でいくつかピックアップしておきます。
 
 ### Scratchのアカウント作成ができるのは16歳以上
 Scratchアカウントを作成できる年齢は当初13歳以上でしたが、途中から16歳以上に引き上げられれています。
-[プログラミングサポートページ | 子供の科学★ミライサイエンス](https://www.kodomonokagaku.com/miraiscience/support/index.html)
+https://www.kodomonokagaku.com/miraiscience/support/index.html
 
 ### Yahoo! JAPANはEU域内では利用不可
 2022年からEU域内とイギリスからはYahoo! JAPANが一部を除いて利用できなくなっていますが、これはGDPRへの対策にコストがかかりすぎるためです。
-[重要なお知らせ - Yahoo! JAPAN](https://privacy.yahoo.co.jp/notice/globalaccess.html)
+https://privacy.yahoo.co.jp/notice/globalaccess.html
 
 ### GDPR違反で多額の制裁金
 GDPR違反をすると多額の制裁金が課せられることがたびたびニュースになっています。
-- [GDPR違反でグーグルに62億円の制裁金、フランス当局の判断理由から日本企業が学ぶべきこと - BUSINESS LAWYERS](https://www.businesslawyers.jp/articles/530)
+https://www.businesslawyers.jp/articles/530
+
 他にもよく知られた企業が課せられています。
-- [GDPR罰金まとめ（2023年1月時点）](https://acompany.tech/privacytechlab/gdpr-fine/)
+https://acompany.tech/privacytechlab/gdpr-fine/
