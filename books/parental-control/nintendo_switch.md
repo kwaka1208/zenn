@@ -12,12 +12,14 @@ title: ニンテンドースイッチ
 
 また、スマートフォンを使った場合、使わない場合でできることが異なります。以下のリンク先に詳しくまとまっていますので、リンク先をご覧ください。
 
-[スマートフォンをお持ちでない場合のみまもり設定](https://www.nintendo.co.jp/support/switch/parentalcontrols/app/no_smartphone.html)
+https://www.nintendo.co.jp/support/switch/parentalcontrols/app/no_smartphone.html
 
 ## 必要なもの
 ### スマートフォンアプリ 
 保護者のスマートフォンにアプリ「Nintendo みまもり Switch」のインストールが必要です。
-スマートフォンがない場合は機能の一部になりますがNitendo Switch本体だけでもみまもりができます。詳しくは [スマートフォンをお持ちでない場合のみまもり設定](https://www.nintendo.co.jp/support/switch/parentalcontrols/app/no_smartphone.html)をご覧ください。
+スマートフォンがない場合は機能の一部になりますがNitendo Switch本体だけでもみまもりができます。
+
+ https://www.nintendo.co.jp/support/switch/parentalcontrols/app/no_smartphone.html
 
 ### ニンテンドーアカウント
 保護者用のニンテンドーアカウント（無料）が必要です。
@@ -25,4 +27,4 @@ title: ニンテンドースイッチ
 ## 設定方法
 Nitendo Switchの設定については公式のサイトが素晴らしくわかりやすい（さすがゲームメーカー）ので、以下の公式の記事をご覧ください。
 
-[みまもり設定（保護者による使用制限）](https://www.nintendo.co.jp/support/switch/parentalcontrols/index.html)
+https://www.nintendo.co.jp/support/switch/parentalcontrols/index.html
