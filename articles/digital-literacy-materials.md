@@ -63,6 +63,12 @@ https://zenn.dev/kwaka1208/books/parental-control
 https://www.mext.go.jp/a_menu/other/mext_02412.html
 
 ## 上手にネットと付き合おう！安心・安全なインターネット利用ガイド（総務省）
-こちらは、総務省が公開しているインターネットの利用に関する学びです。
+総務省が公開しているインターネットの利用に関する学びです。
 
 https://www.soumu.go.jp/use_the_internet_wisely/
+
+
+## 保護者向け普及啓発リーフレット「ネット・スマホ活用世代の保護者が知っておきたいポイント」（こども家庭庁）
+保護者向けに、こどものインターネット利用について保護者が持つ疑問や不安等に対し、上手な使わせ方、安全設定、ルールづくり等についてのヒントや困った時の相談窓口などを紹介しています（リンク先冒頭の説明を引用）。
+
+https://www.cfa.go.jp/policies/youth-kankyou/leaflet/
