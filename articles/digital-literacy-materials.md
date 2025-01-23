@@ -61,3 +61,8 @@ https://zenn.dev/kwaka1208/books/parental-control
 小学校や中学校での生成AIの利用についてのガイドラインが文部科学省から公開されています。ご家庭においても参考になる部分が有ると思いますので紹介しておきます。
 
 https://www.mext.go.jp/a_menu/other/mext_02412.html
+
+## 上手にネットと付き合おう！安心・安全なインターネット利用ガイド（総務省）
+こちらは、総務省が公開しているインターネットの利用に関する学びです。
+
+https://www.soumu.go.jp/use_the_internet_wisely/
