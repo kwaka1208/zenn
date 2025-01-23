@@ -18,7 +18,14 @@ title: Chromebook / Android
 13歳以上であれば Google アカウントの作成 を参考にGoogleアカウントを作成してください。
 13歳未満の場合は自分でGoogleアカウントを作ることができませんのでスマートフォンアプリの「ファミリーリンク」から保護者が作成します。
 ### スマートフォンアプリ
-スマートフォンアプリ「ファミリーリンク」が必要です。
+スマートフォンアプリ「ファミリーリンク」が必要です。以下のリンクからダウンロードしてください。
+
+#### Android版
+https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink&hl=ja&gl=JP
+
+#### iPhone版
+https://apps.apple.com/jp/app/google-%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC-%E3%83%AA%E3%83%B3%E3%82%AF/id1150085200
+
 
 ## 設定方法
 Googleの公式に説明があります。
@@ -26,14 +33,9 @@ Googleの公式に説明があります。
 https://support.google.com/chromebook/answer/7680868?hl=ja
 
 しかし、とてもわかりにくいです...。
-基本的には保護者のスマートフォン（Android / iPhone）のアプリから設定するだけですので、アプリをインストールしてその手順に従えば問題ありません。まずは、アプリから設定してみてよくわからないところだけGoogleの公式ページを見れば良いでしょう。
+基本的には保護者のスマートフォン（Android / iPhone）のアプリから設定するだけですので、アプリをインストールしてその手順に従えば問題ありません。まずは、アプリから設定してみてよくわからないところだけGoogleの公式ページを見れば良いでしょう。参考までにファミリーリンクでYouTubeを子ども向けに設定した場合の画面を掲載しておきます。
 
-https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink&hl=ja&gl=JP
-
-https://apps.apple.com/jp/app/google-%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%83%BC-%E3%83%AA%E3%83%B3%E3%82%AF/id1150085200
-
-## 使用例
-以下の画像は、ファミリーリンクでYouTubeを子ども向けに設定した場合の画面です。
+### 使用例
 
 ![](/images/parental-control/google/familylink/fl-1.png =300x)
 
