@@ -18,4 +18,4 @@ Apple IDやユーザーアカウントを作る必要もありません。
 ## 設定方法
 設定項目や手順については、Appleの公式サイトにわかりやすくまとまっています。以下のリンク先をご覧ください。
 
-[お子様の iPhone、iPad、iPod touch でペアレンタルコントロールを使う](https://support.apple.com/ja-jp/HT201304)
+https://support.apple.com/ja-jp/HT201304

@@ -19,4 +19,4 @@ Windowsの中に子ども用のユーザーアカウントが必要です。PC�
 ## 設定方法
 Windowsのペアレンタルコントロールの設定手順については、Microsoftの公式サイトで、手順ごとに詳しく説明されていますので、そちらをご覧ください。
 
-[Windows 10 でペアレンタル コントロールを設定する方法](https://www.microsoft.com/ja-jp/atlife/article-kids-windows-parental-controls.aspx)
+https://www.microsoft.com/ja-jp/atlife/article-kids-windows-parental-controls.aspx

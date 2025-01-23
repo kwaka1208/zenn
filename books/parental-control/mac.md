@@ -12,17 +12,28 @@ title: Mac
 
 ## 必要なもの
 ### Apple ID
-子ども用にApple IDが必要です。13歳以上であれば「[新しい Apple ID の作成方法](https://support.apple.com/ja-jp/HT204316)」を参考にApple IDを作成してください。
-13歳未満の場合は自分でApple IDを作ることができませんので「ファミリー共有」から保護者が作成します。「[お子様用の Apple ID を作成する](https://support.apple.com/ja-jp/HT201084)」を参考にApple IDを作成してください。  
+子ども用にApple IDが必要です。13歳以上であれば以下を参考にApple IDを作成してください。
+
+https://support.apple.com/ja-jp/HT204316
+
+13歳未満の場合は自分でApple IDを作ることができませんので「ファミリー共有」から保護者が作成します。
+
+https://support.apple.com/ja-jp/HT201084
+
 ### ユーザーアカウント
-Macの中に子ども用のユーザーアカウントも必要です。PCを家族で共用する場合、共用するのはハードウェアであって同じアカウントを共用しないでください。Macのユーザーアカウント作成については「[Macのユーザ、ゲスト、およびグループを設定する](https://support.apple.com/ja-jp/guide/mac-help/mtusr001/mac)」を参考にしてください。
+Macの中に子ども用のユーザーアカウントも必要です。PCを家族で共用する場合、共用するのはハードウェアであって同じアカウントを共用しないでください。
+
+https://support.apple.com/ja-jp/guide/mac-help/mtusr001/mac
 
 ## 設定方法
-利用時間や利用できるアプリについては「スクリーンタイム」で設定します。設定項目が多いので大変ですが、「[Macで子供のスクリーンタイムを設定する](https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac)」を参考に設定を行ってください。
+利用時間や利用できるアプリについては「スクリーンタイム」で設定します。設定項目が多いので大変ですが、以下の公式ドキュメントを参考にしてください。
+
+https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac
+
 Macの方は設定項目がたくさんありますので、公式ドキュメントのリンクをまとめておきます。
 
-- [新しい Apple ID の作成方法](https://support.apple.com/ja-jp/HT204316)
-- [お子様用の Apple ID を作成する](https://support.apple.com/ja-jp/HT201084)
-- [ファミリー共有とは](https://support.apple.com/ja-jp/guide/mac-help/mchl556f55f3/11.0/mac/11.0)
-- [Macのユーザ、ゲスト、およびグループを設定する](https://support.apple.com/ja-jp/guide/mac-help/mtusr001/mac)
-- [Macで子供のスクリーンタイムを設定する](https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac)
+https://support.apple.com/ja-jp/HT204316
+https://support.apple.com/ja-jp/HT201084
+https://support.apple.com/ja-jp/guide/mac-help/mchl556f55f3/11.0/mac/11.0
+https://support.apple.com/ja-jp/guide/mac-help/mtusr001/mac
+https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac
