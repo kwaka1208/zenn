@@ -36,7 +36,8 @@ Yahoo! JAPANを登録した場合、ブックマークの内容は以下の通�
 ## わたしがよく使うブックマークレット
 以下に私がよく使うブックマークレットを紹介します。
 
-### 今見ているwebページをGoogle翻訳で日本語にする
+### 私が作ったブックマークレット
+#### 今見ているwebページをGoogle翻訳で日本語にする
 英語など外国語のページを日本語に翻訳して読みたい時に使います。Google Chromeなどブラウザ標準で翻訳機能がついているものもありますが、このブックマークレットを使うと翻訳後のURLを取得できるので、他の方にシェアできます。
 
 ```javascript
@@ -48,7 +49,7 @@ javascript:location.href='https://translate.google.com/translate?sl=auto&tl=ja&u
 2. ブックマークレットをクリックする
 3. Google翻訳のページが表示される
 
-### Internet Archive でウェブページの履歴を見る
+#### Internet Archive でウェブページの履歴を見る
 Internet Archiveは、ウェブページの履歴を保存しているサービスです。このブックマークレットは、Internet Archiveでウェブページの履歴を見るためのURLを生成します。
 
 ```javascript
@@ -59,10 +60,10 @@ javascript:location.href='https://web.archive.org/web/20240000000000*/'+location
 2. ブックマークレットをクリックする
 3. Internet Archiveのページが表示される
 
----
+### 誰かが作ったブックマークレット
 以下は、自作ではなく他のページで見つけたブックマークレットです。どこで見つけたのかを忘れてしまったので、出展を思い出したら追記します。
 
-### Amazonの商品ページのシンプルなURLを取得する
+#### Amazonの商品ページのシンプルなURLを取得する
 Amazonの商品ページのURLは、商品の名前が入るととても長くなります。このブックマークレットは不要な情報を削除して商品コードだけのシンプルな（短い）URLを作成します。
 
 ```javascript
@@ -74,7 +75,7 @@ javascript:(function()%7Bs=location.href;s='https://amazon.jp/dp/'+s.substr(s.se
 2. ブックマークレットをクリックする
 3. ダイアログでにURLが表示されるので、コピーする
 
-### Amazonのページからカーリルで検索する
+#### Amazonのページからカーリルで検索する
 ```javascript
 javascript:if(location.href.search(/%5B%5E0-9A-Z%5D(%5BB0-9%5D%5B0-9A-Z%5D%7B9%7D)(%5B%5E0-9A-Z%5D%7C$)/)!=-1)%7Bvoid(location.href='http://calil.jp/book/'+RegExp.$1);%7D
 ```
