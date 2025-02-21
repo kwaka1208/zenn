@@ -8,6 +8,8 @@ published: false
 ## 概要
 ブックマークレット（Bookmarklet）は、ブラウザのブックマーク機能を使って、JavaScriptを実行するための方法です。JavaScriptをブラウザのアドレスバーに登録しておくことで、そのページでJavaScriptを実行することができます。
 
+ブックマークからJavaScriptが実行できると何がいいかというと、現在見ているページと関連する処理を実行したり、ページの情報を取得したりすることができるようになります。例えば、Amazonの商品ページのURLを短くするブックマークレットや、Google翻訳でページを日本語にするブックマークレットなどがあります。
+
 この記事では、私がよく使っているブックマークレットとその登録方法を案内します。
 
 ## ブックマークレットの登録方法
@@ -25,7 +27,8 @@ Amazonの商品ページのURLは、商品の名前が入るととても長く�
 ```javascript
 javascript:(function()%7Bs=location.href;s='https://amazon.jp/dp/'+s.substr(s.search(/(%5C/product%5C/%7C%5C/dp%5C/)/)).split('/')%5B2%5D.substr(0,10);prompt(unescape('%25u77ED%25u3044URL%25u306F%25u4E0B%25u8A18%25u306E%25u901A%25u308A%25u3067%25u3059%25u3002'),s);%7D)();
 ```
-[このブックマークレットを登録する](javascript:(function()%7Bs=location.href;s='https://amazon.jp/dp/'+s.substr(s.search(/(%5C/product%5C/%7C%5C/dp%5C/)/)).split('/')%5B2%5D.substr(0,10);prompt(unescape('%25u77ED%25u3044URL%25u306F%25u4E0B%25u8A18%25u306E%25u901A%25u308A%25u3067%25u3059%25u3002'),s);%7D)();)
+
+<a href="javascript:(function()%7Bs=location.href;s='https://amazon.jp/dp/'+s.substr(s.search(/(%5C/product%5C/%7C%5C/dp%5C/)/)).split('/')%5B2%5D.substr(0,10);prompt(unescape('%25u77ED%25u3044URL%25u306F%25u4E0B%25u8A18%25u306E%25u901A%25u308A%25u3067%25u3059%25u3002'),s);%7D)();">このブックマークレットを登録する</a>
 
 **使い方**
 1. Amazonの商品ページを開く
