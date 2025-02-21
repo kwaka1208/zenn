@@ -1,5 +1,5 @@
 ---
-title: Bookmaklet（ブックマークレット）を使おう
+title: Bookmarklet（ブックマークレット）を使おう
 emoji: "🔖"
 type: idea
 topics: [ブックマークレット,bokkmarklet, ブラウザ]
