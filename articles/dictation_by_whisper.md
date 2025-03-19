@@ -1,7 +1,7 @@
 ---
 title: WhisperとGoogle Colaboratoryを使って文字起こし
 emoji: 👂
-type: idea
+type: tech
 topics: [whisper, dictation, Google colabo]
 published: true
 ---
