@@ -29,7 +29,7 @@ https://beinternetawesome.withgoogle.com/ja_jp/
 情報を入力するところが出てきますが、実際に使っているIDやパスワードを入力しないでください。
 :::
 
-###　フィッシング クイズ（Jigsaw）
+###　フィッシング クイズ（Jigsaw/Google）
 メールの情報から、本物かニセモノ（フィッシング）メールかを見分けるクイズです。実践的な内容でなかなか難しいです。
 
 https://phishingquiz.withgoogle.com/
