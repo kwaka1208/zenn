@@ -8,6 +8,10 @@ published: true
 ## はじめに
 この記事では、WhisperをGoogle Colaboratoryで動かして、音声データから文字起こしをするプログラムとその使い方を説明しています。このプログラムを利用するには、Googleアカウントが必要です。
 
+Whisperは、OpenAIが開発・提供する音声認識技術で、ここではそのPython モジュールを利用しています。
+
+https://openai.com/index/whisper/
+
 ## 使い方
 1. Google Driveのマイドライブの下に"whisper"というフォルダを作成します。
 2. このフォルダに文字起こししたい音声データを置きます。複数まとめて処理ができますが、Google Colaboratoryの実行時間に制限があるはずなので、ひとつずつやった方が良いかもしれません。
