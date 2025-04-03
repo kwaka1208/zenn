@@ -1,7 +1,7 @@
 ---
 title: 開発現場で役立つドキュメント作り3つのポイント
 emoji: "📃"
-type: tech
+type: idea
 topics: [開発, ドキュメンテーション]
 published: true
 ---
