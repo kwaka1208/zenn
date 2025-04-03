@@ -3,7 +3,7 @@ title: オンラインでGoogleスライドを画面共有する時のTIPS
 emoji: "⎚"
 type: idea
 topics: [開発, ドキュメンテーション]
-published: true
+published: false
 ---
 ## 概要
 オンラインでプレゼンテーションをする機会が増えてきましたが、Googleスライドをオンラインで画面共有してプレゼンテーションする際の便利な使い方を紹介します。
