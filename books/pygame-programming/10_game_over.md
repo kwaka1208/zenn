@@ -39,19 +39,19 @@ HPがゼロになった時にゲームオーバーの表示処理を行う関数
 
 ### Chromebookの方
 1. ターミナルを起動します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd pygameと入力してEnterキーを押します。
 1. python3 game.pyと入力してEnterキーを押します。
 
 ### Windowsの方
 1. コマンドプロンプトを起動します。
 1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd pygameと入力してEnterキーを押します。
 1. python game.pyと入力してEnterキーを押します。
 
 ### Macの方
 1. ターミナルを起動します。
 1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
+1. cd pygameと入力してEnterキーを押します。
 1. python3 game.pyと入力してEnterキーを押します。
 
 
