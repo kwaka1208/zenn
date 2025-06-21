@@ -36,24 +36,7 @@ title: 敵のキャラクター追加して動かそう
 [![](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game06.png)](https://raw.githubusercontent.com/kwaka1208/resources/main/pygame/game06.png)
 
 ## 実行してみよう
-プログラムの入力ができたら、プログラムを実行してます。以下の手順を参考にしてください。
-
-### Chromebookの方
-1. ターミナルを起動します。
-1. cd okeikoと入力してEnterキーを押します。
-1. python3 game.pyと入力してEnterキーを押します。
-
-### Windowsの方
-1. コマンドプロンプトを起動します。
-1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
-1. python game.pyと入力してEnterキーを押します。
-
-### Macの方
-1. ターミナルを起動します。
-1. cd Documentsと入力してEnterキーを押します。
-1. cd okeikoと入力してEnterキーを押します。
-1. python3 game.pyと入力してEnterキーを押します。
+プログラムの入力ができたら、プログラムを実行してみましょう。
 
 ## 考えてみよう
 - 敵キャラクターのY座標もランダムに変えるようにしてみよう。

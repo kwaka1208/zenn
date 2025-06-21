@@ -5,6 +5,15 @@ title: このBookについて
 
 作りながら反映していくので、未完成な部分があったり、途中で変わることもあるかもしれません。この点、ご承知おきください。
 
+## 開発環境について
+このBookでは、エディタとしてVisual Studio Codeを利用していることを前提として初学者向けに記述しています。Visual Studio Codeは無料で使えるエディタで、Pythonの開発環境を整えるための拡張機能も充実しています。Visual Studio Codeは以下のリンク先からダウンロードしてください。
+
+[Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
+
+Windowsをお使いの方は、こちらの記事も参考にしてください。
+
+[WindowsでVisual Stuido Code + Gitの環境を作ろう](https://zenn.dev/kwaka1208/books/win_vscode_git)
+
 ## pygameのドキュメントについて
 プログラムを作るときにプログラミング言語の機能だけを使って全部作ることはほとんどなく、ライブラリやモッジュールと呼ばれる特定の用途向けのプログラムの塊を利用することがほとんどです。
 
