@@ -48,3 +48,10 @@ https://www.soumu.go.jp/use_the_internet_wisely/
 保護者向けに、こどものインターネット利用について保護者が持つ疑問や不安等に対し、上手な使わせ方、安全設定、ルールづくり等についてのヒントや困った時の相談窓口などを紹介しています（リンク先冒頭の説明を引用）。
 
 https://www.cfa.go.jp/policies/youth-kankyou/leaflet/
+
+
+## 参考記事
+
+以下の記事も参考にしてみてください
+
+https://zenn.dev/kwaka1208/articles/know-the-risks-around-you

@@ -54,5 +54,8 @@ https://crssrds.jp/lab/location/
 
 https://www.cman.jp/network/support/go_access.cgi
 
-## 最後に
-こちらの記事では、実際に操作しながらリスクを体験することができるサイトを紹介しました。これらのサイトを利用して、セキュリティや詐欺のリスクについての理解を深めていただければと思います。
+## 参考記事
+
+以下の記事も参考にしてみてください
+
+https://zenn.dev/kwaka1208/articles/digital-literacy-materials
