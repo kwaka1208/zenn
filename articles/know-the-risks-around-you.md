@@ -13,8 +13,12 @@ published: true
 :::
 
 ## パスワードの強度の確認
+
+一般的に、みなさんのパスワードは暗号化してクラウド側に保管されています（稀に暗号化せずに保管しているとんでもないサービスがありますが）。このサイトでは、万が一暗号化されたパスワードが盗まれた場合に、どれぐらいの時間で解読されるかがわかります。
+
 繰り返しますが、実際に使っているパスワードは入力しないでください。
-- [パスワードの強さをテストしましょう | Bitwarden](https://bitwarden.com/ja-jp/password-strength/#Password-Strength-Testing-Tool)
+
+https://bitwarden.com/ja-jp/password-strength/#Password-Strength-Testing-Tool
 
 ## 悪意のあるサイトの擬似体験
 ###　フィッシング クイズ（Jigsaw/Google）
