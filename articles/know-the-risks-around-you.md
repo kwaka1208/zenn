@@ -21,8 +21,10 @@ published: true
 https://bitwarden.com/ja-jp/password-strength/#Password-Strength-Testing-Tool
 
 ## 悪意のあるサイトの擬似体験
-###　フィッシング クイズ（Jigsaw/Google）
+### フィッシング クイズ（Jigsaw/Google）
 メールの情報から、本物かニセモノ（フィッシング）メールかを見分けるクイズです。実践的な内容でなかなか難しいです。
+
+↓リンクの文字列が日本語になっていませんが、リンク先は日本語です。
 
 https://phishingquiz.withgoogle.com/
 
