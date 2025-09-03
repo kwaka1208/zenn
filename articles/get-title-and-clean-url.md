@@ -16,15 +16,12 @@ SNSでシェアされたリンクを開いてURLをコピーすると、`utm`や
 
 ## ブックマークレットの登録の仕方
 
-1. 適当なページをブックマークする  
-今開いているページをブックマークしておきます。Chromeなら右上の「☆」をクリックして保存します。この時、保存先は「ブックマークバー」にしておいてください。
+ブックマークレットの登録手順については、以下の記事に画像入りでまとめています。こちらをご覧ください。
 
-1. ブックマークを編集する
-先ほど登録した、ブックマークバー上のブックマークを右クリックして「編集」を選びます。
-1. 「名前」の欄にわかりやすい名前を入力します。  
-例：タイトルとクリーンURLをコピー
-1. 「URL」の欄に、以下のブックマークレットのコードをすべてコピーして貼り付けます。
-1. 保存ボタンを押して完了です。
+https://zenn.dev/kwaka1208/articles/bookmarklet-is-useful
+
+## ブックマークレットのコード
+ブックマークのURL欄に以下のコードをコピー＆ペーストしてください。
 
 ```javascript
 javascript:(async()=>{const CLEAN=u=>{const b=new Set(['fbclid','gclid','gclsrc','dclid','msclkid','mibextid','mc_cid','mc_eid','mkt_tok','yclid','_hsenc','_hsmi','igshid','si','ref','ref_src','ref_url','sr_share','share','share_id','utm_id','ved']);const kk=s=>s.toLowerCase();const zap=sp=>{for(const k of Array.from(sp.keys())){const k2=kk(k);if(k2.startsWith('utm_')||b.has(k2)||k2==='wt.mc_id'||k2==='wt.mc_ev')sp.delete(k)}};const p=u.searchParams;zap(p);if(u.hash&&u.hash.includes('?')){const hq=u.hash.split('?');const h=hq[0],q=hq[1];const sp=new URLSearchParams(q);zap(sp);u.hash=sp.toString()?h+'?'+sp:h}return u.toString()};const text=(()=>{try{const u=new URL(location.href);return document.title+'\n'+CLEAN(u)}catch(e){return document.title+'\n'+location.href}})();const copy=async txt=>{try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(txt);return true}}catch(e){}try{let ok=false;const onCopy=e=>{e.preventDefault();e.clipboardData.setData('text/plain',txt);ok=true};document.addEventListener('copy',onCopy,{once:true});ok=document.execCommand('copy');return ok}catch(e){}try{let ok=false;const ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.left='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ok=document.execCommand('copy');ta.remove();if(ok)return true}catch(e){}prompt('Copy:\n',txt);return false};await copy(text)})();
