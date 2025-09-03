@@ -3,7 +3,7 @@ title: URLを綺麗にして取得するブックマークレット
 emoji: 🧹
 type: tech
 topics: [JavaScript, ブックマークレット, URL, コピー]
-published: false
+published: true
 ---
 SNSでシェアされたリンクを開いてURLをコピーすると、`utm`や`fbclid`などのパラメータが付与されていることがあります。これらのパラメータはアクセス解析のために使われるもので、取り除きたい方も多いと思います（私もそのひとり）。
 
