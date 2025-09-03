@@ -8,11 +8,10 @@ published: true
 SNSでシェアされたリンクを開いてURLをコピーすると、`utm`や`fbclid`などのパラメータが付与されていることがあります。これらのパラメータはアクセス解析のために使われるもので、取り除きたい方も多いと思います（私もそのひとり）。
 
 たとえば、FacebookでシェアされたYahoo! Japanのトップページを開くとアドレスバーの中のURLは以下のようになります。
-（パラメータ部分は改変しているので、実際のURLとは異なります）
 
-> https://www.yahoo.co.jp/?fbclid=IwY2xjawMk4LhleHRuA2FlbQIxPASicmlkETFXWkdTNGxQb3J5dXJVWmZBAR4YtGf_TA-ZTqX2hDt-FTlM7F4zgm3g-cjlFQQMN1jPDcG1NYDCastoDUEks1_aem_RBUW0tN38mwjeolTd8_ooA
+![](/images/get-title-and-clean-url/01.png)
 
-これをそのままコピーして共有すると、URLが長くなってしまい、見た目も良くありません。また、アクセス解析のためのパラメータが付与されていることで、プライバシーの観点からも気になる方もいるでしょう。
+これをそのままコピーして共有すると、URLが長くなってしまい、見た目も良くありません。また、アクセス解析のためのパラメータが付与されていることで、プライバシーの観点からも気になる方もいるでしょう（上記URLのパラメータ部分は改変しています）。
 
 ちなみに、本来はこちら
 
