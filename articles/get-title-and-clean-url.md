@@ -10,17 +10,13 @@ SNSでシェアされたリンクを開いてURLをコピーすると、`utm`や
 たとえば、FacebookでシェアされたYahoo! Japanのトップページを開くとアドレスバーの中のURLは以下のようになります。
 （パラメータ部分は改変しているので、実際のURLとは異なります）
 
-```plain
-https://www.yahoo.co.jp/?fbclid=IwY2xjawMk4LhleHRuA2FlbQIxPASicmlkETFXWkdTNGxQb3J5dXJVWmZBAR4YtGf_TA-ZTqX2hDt-FTlM7F4zgm3g-cjlFQQMN1jPDcG1NYDCastoDUEks1_aem_RBUW0tN38mwjeolTd8_ooA
-```
+> https://www.yahoo.co.jp/?fbclid=IwY2xjawMk4LhleHRuA2FlbQIxPASicmlkETFXWkdTNGxQb3J5dXJVWmZBAR4YtGf_TA-ZTqX2hDt-FTlM7F4zgm3g-cjlFQQMN1jPDcG1NYDCastoDUEks1_aem_RBUW0tN38mwjeolTd8_ooA
 
 これをそのままコピーして共有すると、URLが長くなってしまい、見た目も良くありません。また、アクセス解析のためのパラメータが付与されていることで、プライバシーの観点からも気になる方もいるでしょう。
 
 ちなみに、本来はこちら
 
-```plain
-https://www.yahoo.co.jp/
-```
+> https://www.yahoo.co.jp/
 
 そこで、この余計なパラメータを取り除いてタイトルと一緒にクリップボードにコピーするブックマークレットを紹介します。
 
