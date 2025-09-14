@@ -2,7 +2,7 @@
 title: パソコン・スマートフォンの安全な捨て方ガイド
 emoji: "♻️"
 type: idea
-topics: [デバイス, , ドキュメンテーション]
+topics: [パソコン, スマートフォン, リサイクル, 廃棄]
 published: false
 ---
 ## 概要
