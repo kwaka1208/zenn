@@ -3,7 +3,7 @@ title: 3Dプリンターを欲しくなったあなたへ
 emoji: 🗿
 type: idea
 topics: [3Dプリンター, CAD, TinkerCad, フィラメント]
-published: false
+published: true
 ---
 
 ## 概要
@@ -60,6 +60,6 @@ https://jp.store.bambulab.com/products/a1
 
 https://apple-tree.co.jp/column/3d-printer-filament-guide/
 
----
+## 最後に
 
 この記事が3Dプリンター購入のきっかけになれば幸いです（幸いなのだろうか）。
