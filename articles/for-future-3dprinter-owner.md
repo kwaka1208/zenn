@@ -38,6 +38,8 @@ https://www.youtube.com/playlist?list=PLibWj5MhBkuNh3cH_zjTxdJwImTnwSNmn
 
 もし予算が許すのであれば、マルチカラーに対応したものを買うのが良いと思います。マルチカラーが使えると作品にも幅が出ます。
 
+**セールで大幅に安くなっていることが多いので、セール中かどうかを確認して購入しましょう。数万円単位で値段が違うことがあります。**
+
 https://bambulab.com/ja-jp/a1
 
 https://jp.store.bambulab.com/products/a1-mini
