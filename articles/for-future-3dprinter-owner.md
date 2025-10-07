@@ -29,7 +29,7 @@ https://www.tinkercad.com/
 
 TinkerCadの使い方については、オンラインで多数の記事や動画が公開されています。「TinkerCad 使い方」などで検索するとたくさんでてきますが、その中からいくつかピックアップしてみました。
 
-## 記事
+### 記事
 https://zenn.dev/protoout/books/06_mvp02-3d-tinkercad/viewer/02-make-model
 
 ### YouTube
