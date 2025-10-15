@@ -11,12 +11,7 @@ published: false
 
 ## 全般
 
-【OpenAI論文を読む】なぜAIは“もっともらしい嘘“をつくのか？ ハルシネーションの正体をゆる解説 - YouTube
-https://www.youtube.com/watch?v=j3ZOOl4y6GQ
-
-Googleが出しているGeminiユーザー向けのの資料ですが、
-https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf
-
+[【OpenAI論文を読む】なぜAIは“もっともらしい嘘“をつくのか？ ハルシネーションの正体をゆる解説 - YouTube](https://www.youtube.com/watch?v=j3ZOOl4y6GQ)
 
 ## ChatGPT
 
@@ -24,6 +19,8 @@ https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf
 
 ## Gemini
 
+- 小中学生向けとありますが、大人やGemini以外にも参考になると思います。G
+[小中学生のためのGeminiパスポート 子どもたちが学びに使うプロンプトライブラリ](https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf)
 
 
 ## NoteboolLM
