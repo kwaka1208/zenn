@@ -14,6 +14,8 @@ published: true
 
 ## 基本
 
+https://www.tohoho-web.com/ai/ai.html
+
 「小中学生のためのGeminiパスポート 子どもたちが学びに使うプロンプトライブラリ」
 小中学生向けとありますが、大人やGemini以外にも参考になると思います。
 https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf
