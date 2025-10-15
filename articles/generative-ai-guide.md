@@ -7,23 +7,24 @@ published: false
 ---
 
 ## 概要
-この記事は、生成AIを活用したい人のための情報まとめページです。内容は、筆者の主観で選んだものですので、ほぼ筆者のブックマーク的な内容であることご了承ください。
-
-## 全般
-
-[【OpenAI論文を読む】なぜAIは“もっともらしい嘘“をつくのか？ ハルシネーションの正体をゆる解説 - YouTube](https://www.youtube.com/watch?v=j3ZOOl4y6GQ)
-
-## ChatGPT
+この記事は、生成AIを活用したい人のための情報まとめページです。
+内容は、筆者の主観で選んだものですので、ほぼ筆者のブックマーク的な内容であることご了承ください。
 
 
+## 基本
 
-## Gemini
-
-- 小中学生向けとありますが、大人やGemini以外にも参考になると思います。G
+小中学生向けとありますが、大人やGemini以外にも参考になると思います。
 [小中学生のためのGeminiパスポート 子どもたちが学びに使うプロンプトライブラリ](https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf)
 
+## 応用
 
-## NoteboolLM
+"まじん式プロンプト"応用テクニック集｜まじん
+https://note.com/majin_108/n/n5586e08b7c5c
 
 
 
+## 動画
+動画はサムネイルが大きいので、こちらにまとめます。
+
+【OpenAI論文を読む】なぜAIは“もっともらしい嘘“をつくのか？ ハルシネーションの正体をゆる解説 - YouTube
+https://www.youtube.com/watch?v=j3ZOOl4y6GQ
