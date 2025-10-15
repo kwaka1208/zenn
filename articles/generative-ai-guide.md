@@ -13,12 +13,12 @@ published: false
 
 ## 基本
 
+「小中学生のためのGeminiパスポート 子どもたちが学びに使うプロンプトライブラリ」
 小中学生向けとありますが、大人やGemini以外にも参考になると思います。
-[小中学生のためのGeminiパスポート 子どもたちが学びに使うプロンプトライブラリ](https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf)
+https://services.google.com/fh/files/misc/gemini_passport_for_students.pdf
 
 ## 応用
 
-"まじん式プロンプト"応用テクニック集｜まじん
 https://note.com/majin_108/n/n5586e08b7c5c
 
 
