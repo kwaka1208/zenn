@@ -2,8 +2,8 @@
 title: エンジニアじゃなくてもできる「バイブコーディング」の始め方と活用術
 emoji: 🎉
 type: idea
-topics: [Gemnin,Vibe Coding,初心者]
-published: false
+topics: [Gemini,Vibe Coding,初心者]
+published: true
 ---
 
 ## はじめに
