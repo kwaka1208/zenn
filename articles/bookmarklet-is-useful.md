@@ -60,6 +60,20 @@ javascript:location.href='https://web.archive.org/web/20240000000000*/'+location
 2. ブックマークレットをクリックする
 3. Internet Archiveのページが表示される
 
+#### タイトルとURLをスプレッドシートに貼り付けられる形式でコピーする
+
+開いているページのタイトルとURLをまとめてコピーします。コピーしたタイトルとURLはスプレッドシートの並んだ二つ載せるに貼り付けられます。
+
+``javascript
+javascript:(async()=>{const CLEAN=u=>{const b=new Set(['fbclid','gclid','gclsrc','dclid','msclkid','mibextid','mc_cid','mc_eid','mkt_tok','yclid','_hsenc','_hsmi','igshid','si','ref','ref_src','ref_url','sr_share','share','share_id','utm_id','ved']);const kk=s=>s.toLowerCase();const zap=sp=>{for(const k of Array.from(sp.keys())){const k2=kk(k);if(k2.startsWith('utm_')||b.has(k2)||k2==='wt.mc_id'||k2==='wt.mc_ev')sp.delete(k)}};const p=u.searchParams;zap(p);if(u.hash&&u.hash.includes('?%27)){const hq=u.hash.split(%27?%27);const h=hq[0],q=hq[1];const sp=new URLSearchParams(q);zap(sp);u.hash=sp.toString()?h+%27?%27+sp:h}return u.toString()};const text=(()=>{try{const u=new URL(location.href);return document.title+%27\t%27+CLEAN(u)}catch(e){return document.title+%27\t%27+location.href}})();const copy=async txt=>{try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(txt);return true}}catch(e){}try{let ok=false;const onCopy=e=>{e.preventDefault();e.clipboardData.setData(%27text/plain%27,txt);ok=true};document.addEventListener(%27copy%27,onCopy,{once:true});ok=document.execCommand(%27copy%27);return ok}catch(e){}try{let ok=false;const ta=document.createElement(%27textarea%27);ta.value=txt;ta.setAttribute(%27readonly%27,%27%27);ta.style.position=%27fixed%27;ta.style.top=%270%27;ta.style.left=%270%27;ta.style.opacity=%270%27;document.body.appendChild(ta);ta.focus();ta.select();ok=document.execCommand(%27copy%27);ta.remove();if(ok)return true}catch(e){}prompt(%27Copy:\n%27,txt);return false};await copy(text)})();
+```
+
+**使い方**
+1. タイトルとURLをコピーしたいいページを開く
+2. ブックマークレットをクリックする
+3. スプレッドシートなどにペースト（貼り付け）する
+
+
 ### 誰かが作ったブックマークレット
 以下は、自作ではなく他のページで見つけたブックマークレットです。どこで見つけたのかを忘れてしまったので、出展を思い出したら追記します。
 
