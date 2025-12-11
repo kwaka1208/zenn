@@ -1,5 +1,5 @@
 ---
-title: （2026年1月以降受信機能はありません）GmailでGmail以外のアドレスのメールを送受信する
+title: （2026年1月以降受信できません）GmailでGmail以外のアドレスのメールを送受信する
 emoji: "✉️"
 type: idea
 topics: [gmail]
