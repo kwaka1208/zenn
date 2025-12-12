@@ -60,6 +60,106 @@ javascript:location.href='https://web.archive.org/web/20240000000000*/'+location
 2. ブックマークレットをクリックする
 3. Internet Archiveのページが表示される
 
+#### Googleドキュメント/スプレッドシート/スライドのURLを変換する
+
+GoogleドキュメントやスプレッドシートのURLは最後が"/edit"で終わっていますが、ここを変えるとコピー専用やExcel形式、PDF形式でのダウンロード専用URLにできます。URLを手で編集するのは面倒なのでワンクリックで編集できるブックマークレットです。
+
+以下の3つの形式のURLに変換できます（Excel形式でのダウンロードを選べるのはスプレッドシートのみです）。
+
+- 指定したドキュメントなどのコピーを作る画面を開くURL
+- 指定したスプレッドシートをExcel形式でダウンロードさせるURL
+- 指定したドキュメントなどをPDF形式でダウンロードさせるURL
+
+
+**使い方**
+1. Googleドキュメントやスプレッドシートを開く
+2. ブックマークレットをクリックする
+3. 変換後のURLがコピーされるのでメールなどに貼り付ける
+
+
+```javascript
+javascript:(function(){
+  /* 編集画面とGoogleドメインをチェック */
+  var url = window.location.href;
+  var hostname = window.location.hostname;
+  
+  /* Googleファイル判定: ホスト名がgoogle.comで終わること AND URLにファイルパスパターンが含まれること */
+  var isGoogleFile = hostname.endsWith('google.com') && url.includes('/d/');
+  var isSheet = url.includes('/spreadsheets/d/'); /* スプレッドシート判定をURLのパスで確認 */
+  var isSlides = url.includes('/presentation/d/'); /* スライド判定を追加 */
+
+  if (!isGoogleFile || url.indexOf('/edit') === -1) {
+    alert('⚠️ Googleドキュメント、スプレッドシート、スライドなどの編集画面で実行してください。'); 
+    return;
+  }
+
+  /* 既存メニュー削除 */
+  var id = 'bm-url-converter-v2';
+  var old = document.getElementById(id);
+  if (old) { old.remove(); return; }
+
+  /* UI作成用関数（セキュリティ対策済み） */
+  function setStyle(el, css) {
+    el.style.cssText = css;
+  }
+
+  /* コンテナ */
+  var div = document.createElement('div');
+  div.id = id;
+  setStyle(div, 'position:fixed; top:20px; right:20px; z-index:999999; background:#222; color:#fff; padding:12px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.5); font-family:sans-serif; width:220px; text-align:left;');
+
+  /* ヘッダー */
+  var header = document.createElement('div');
+  setStyle(header, 'display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom:1px solid #555; padding-bottom:5px; font-weight:bold;');
+  
+  var title = document.createElement('span');
+  title.textContent = '共有URLをコピー';
+  
+  var closeBtn = document.createElement('span');
+  closeBtn.textContent = '×';
+  setStyle(closeBtn, 'cursor:pointer; padding:0 5px; font-size:18px;');
+  closeBtn.onclick = function(){ div.remove(); };
+
+  header.appendChild(title);
+  header.appendChild(closeBtn);
+  div.appendChild(header);
+
+  /* ボタン生成関数 */
+  function createBtn(label, suffix) {
+    var btn = document.createElement('button');
+    btn.textContent = label;
+    setStyle(btn, 'display:block; width:100%; padding:10px; margin:5px 0; background:#444; color:#fff; border:1px solid #666; border-radius:4px; cursor:pointer; text-align:left; font-size:13px;');
+    
+    btn.onmouseover = function(){ this.style.background = '#666'; };
+    btn.onmouseout = function(){ this.style.background = '#444'; };
+    
+    btn.onclick = function() {
+      var newUrl = url.replace(/\/edit.*$/, suffix);
+      navigator.clipboard.writeText(newUrl).then(function() {
+        btn.textContent = '✅ コピー完了！';
+        btn.style.background = '#28a745';
+        setTimeout(function(){ div.remove(); }, 1200);
+      }, function() {
+        prompt('コピー失敗。手動コピー:', newUrl);
+      });
+    };
+    div.appendChild(btn);
+  }
+
+  createBtn('1. 強制コピーモード', '/copy');
+  createBtn('2. PDFでダウンロード', '/export?format=pdf');
+  
+  /* スプレッドシートのみExcelオプションを表示 */
+  if (isSheet) {
+    createBtn('3. Excelでダウンロード', '/export?format=xlsx');
+  }
+
+  document.body.appendChild(div);
+})();
+```
+
+
+
 ### 誰かが作ったブックマークレット
 以下は、自作ではなく他のページで見つけたブックマークレットです。どこで見つけたのかを忘れてしまったので、出展を思い出したら追記します。
 
