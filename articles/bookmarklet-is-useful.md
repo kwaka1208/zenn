@@ -5,6 +5,7 @@ type: idea
 topics: [ブックマークレット,bokkmarklet, ブラウザ]
 published: true
 ---
+
 ## 概要
 ブックマークレット（Bookmarklet）は、ブラウザのブックマーク機能を使って、JavaScriptを実行するための方法です。JavaScriptをブラウザのアドレスバーに登録しておくことで、そのページでJavaScriptを実行することができます。
 
@@ -33,11 +34,10 @@ Yahoo! JAPANを登録した場合、ブックマークの内容は以下の通�
 4. ブックマークレットを実行する
 ブックマークレットを実行するには、ブックマークをクリックするだけです。ブックマークレットが実行されると、そのページでJavaScriptが実行されます。
 
-## 私がよく使うブックマークレット
-以下に私がよく使うブックマークレットを紹介します。
+## 私が作ったブックマークレット
+私が作ったブックマークレットを紹介します。
 
-### 私が作ったブックマークレット
-#### 今見ているwebページをGoogle翻訳で日本語にする
+### 今見ているwebページをGoogle翻訳で日本語にする
 英語など外国語のページを日本語に翻訳して読みたい時に使います。Google Chromeなどブラウザ標準で翻訳機能がついているものもありますが、このブックマークレットを使うと翻訳後のURLを取得できるので、他の方にシェアできます。
 
 ```javascript
@@ -49,7 +49,7 @@ javascript:location.href='https://translate.google.com/translate?sl=auto&tl=ja&u
 2. ブックマークレットをクリックする
 3. Google翻訳のページが表示される
 
-#### Internet Archive でウェブページの履歴を見る
+### Internet Archive でウェブページの履歴を見る
 Internet Archiveは、ウェブページの履歴を保存しているサービスです。このブックマークレットは、Internet Archiveでウェブページの履歴を見るためのURLを生成します。
 
 ```javascript
@@ -60,7 +60,7 @@ javascript:location.href='https://web.archive.org/web/20240000000000*/'+location
 2. ブックマークレットをクリックする
 3. Internet Archiveのページが表示される
 
-#### Googleドキュメント/スプレッドシート/スライドのURLを変換する
+### Googleドキュメント/スプレッドシート/スライドのURLを変換する
 
 GoogleドキュメントやスプレッドシートのURLは最後が"/edit"で終わっていますが、ここを変えるとコピー専用やExcel形式、PDF形式でのダウンロード専用URLにできます。URLを手で編集するのは面倒なのでワンクリックで編集できるブックマークレットです。
 
@@ -79,7 +79,52 @@ javascript:(function(){ /* 編集画面とGoogleドメインをチェック */ v
 2. ブックマークレットをクリックする
 3. 変換後のURLがコピーされるのでメールなどに貼り付ける
 
-#### 今見ているwebページのOGP画像を別タブで開く
+### URLから余計なパラメータを取り除く
+
+SNSでシェアされたリンクを開いてURLをコピーすると、`utm`や`fbclid`などのパラメータが付与されていることがあります。これらのパラメータはアクセス解析のために使われるもので、取り除きたい方も多いと思います（私もそのひとり）。
+
+たとえば、FacebookでシェアされたYahoo! Japanのトップページを開くとアドレスバーの中のURLは以下のようになります。
+
+![](/images/get-title-and-clean-url/01.png)
+
+これをそのままコピーして共有すると、URLが長くなってしまい、見た目も良くありません。また、アクセス解析のためのパラメータが付与されていることで、プライバシーの観点からも気になる方もいるでしょう（上記URLのパラメータ部分は改変しています）。
+
+ちなみに、本来はこちら
+
+> https://www.yahoo.co.jp/
+
+そこで、この余計なパラメータを取り除いてタイトルと一緒にクリップボードにコピーするブックマークレットを作りました。
+
+```javascript
+javascript:(async()=>{const CLEAN=u=>{const b=new Set(['fbclid','gclid','gclsrc','dclid','msclkid','mibextid','mc_cid','mc_eid','mkt_tok','yclid','_hsenc','_hsmi','igshid','si','ref','ref_src','ref_url','sr_share','share','share_id','utm_id','ved']);const kk=s=>s.toLowerCase();const zap=sp=>{for(const k of Array.from(sp.keys())){const k2=kk(k);if(k2.startsWith('utm_')||b.has(k2)||k2==='wt.mc_id'||k2==='wt.mc_ev')sp.delete(k)}};const p=u.searchParams;zap(p);if(u.hash&&u.hash.includes('?')){const hq=u.hash.split('?');const h=hq[0],q=hq[1];const sp=new URLSearchParams(q);zap(sp);u.hash=sp.toString()?h+'?'+sp:h}return u.toString()};const text=(()=>{try{const u=new URL(location.href);return document.title+'\n'+CLEAN(u)}catch(e){return document.title+'\n'+location.href}})();const copy=async txt=>{try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(txt);return true}}catch(e){}try{let ok=false;const onCopy=e=>{e.preventDefault();e.clipboardData.setData('text/plain',txt);ok=true};document.addEventListener('copy',onCopy,{once:true});ok=document.execCommand('copy');return ok}catch(e){}try{let ok=false;const ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.left='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ok=document.execCommand('copy');ta.remove();if(ok)return true}catch(e){}prompt('Copy:\n',txt);return false};await copy(text)})();
+```
+
+**使い方**
+1. URLを取得したいページを開きます。
+2. ブックマークの「タイトルとクリーンURLをコピー」をクリックします。
+3. クリップボードにタイトルとクリーンURLがコピーされます。
+4. コピーに失敗した場合は、プロンプトが表示されるので、手動でコピーしてください。
+5. 必要なところにペーストしてください。
+
+- URLのパラメータのうち、`utm`や`fbclid`などのよく使われるものを取り除くようにしていますが、すべてのパラメータを取り除くわけではありません。必要に応じてコードを修正してください。
+- ブックマークレットはブラウザのセキュリティ設定やブラウザの種類によっては動作しないことがあります。
+- クリップボードへのコピーがブラウザのセキュリティ設定で制限されている場合、コピーに失敗することがあります。その場合は、プロンプトが表示されるので、手動でコピーしてください。
+
+これらの派生バージョンも2つありますので、こちらも合わせて紹介します。使い方は同じです。
+
+**Markdownのリンク形式でコピーする**
+
+```javascript
+javascript:(async()=>{const CLEAN=u=>{const b=new Set(['fbclid','gclid','gclsrc','dclid','msclkid','mibextid','mc_cid','mc_eid','mkt_tok','yclid','_hsenc','_hsmi','igshid','si','ref','ref_src','ref_url','sr_share','share','share_id','utm_id','ved']);const kk=s=>s.toLowerCase();const zap=sp=>{for(const k of Array.from(sp.keys())){const k2=kk(k);if(k2.startsWith('utm_')||b.has(k2)||k2==='wt.mc_id'||k2==='wt.mc_ev')sp.delete(k)}};const p=u.searchParams;zap(p);if(u.hash&&u.hash.includes('?')){const hq=u.hash.split('?');const h=hq[0],q=hq[1];const sp=new URLSearchParams(q);zap(sp);u.hash=sp.toString()?h+'?'+sp:h}return u.toString()};const text=(()=>{try{const u=new URL(location.href);return '[' +document.title+']('+CLEAN(u)+')'}catch(e){return '[' +document.title+']('+location.href+')'}})();const copy=async txt=>{try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(txt);return true}}catch(e){}try{let ok=false;const onCopy=e=>{e.preventDefault();e.clipboardData.setData('text/plain',txt);ok=true};document.addEventListener('copy',onCopy,{once:true});ok=document.execCommand('copy');return ok}catch(e){}try{let ok=false;const ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.top='0';ta.style.left='0';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ok=document.execCommand('copy');ta.remove();if(ok)return true}catch(e){}prompt('Copy:\n',txt);return false};await copy(text)})();
+```
+
+**スプレッドシートの並んだ二つ載せるに貼り付けられる形式でコピーする**
+
+```javascript
+javascript:(async()=>{const CLEAN=u=>{const b=new Set(['fbclid','gclid','gclsrc','dclid','msclkid','mibextid','mc_cid','mc_eid','mkt_tok','yclid','_hsenc','_hsmi','igshid','si','ref','ref_src','ref_url','sr_share','share','share_id','utm_id','ved']);const kk=s=>s.toLowerCase();const zap=sp=>{for(const k of Array.from(sp.keys())){const k2=kk(k);if(k2.startsWith('utm_')||b.has(k2)||k2==='wt.mc_id'||k2==='wt.mc_ev')sp.delete(k)}};const p=u.searchParams;zap(p);if(u.hash&&u.hash.includes('?%27)){const hq=u.hash.split(%27?%27);const h=hq[0],q=hq[1];const sp=new URLSearchParams(q);zap(sp);u.hash=sp.toString()?h+%27?%27+sp:h}return u.toString()};const text=(()=>{try{const u=new URL(location.href);return document.title+%27\t%27+CLEAN(u)}catch(e){return document.title+%27\t%27+location.href}})();const copy=async txt=>{try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(txt);return true}}catch(e){}try{let ok=false;const onCopy=e=>{e.preventDefault();e.clipboardData.setData(%27text/plain%27,txt);ok=true};document.addEventListener(%27copy%27,onCopy,{once:true});ok=document.execCommand(%27copy%27);return ok}catch(e){}try{let ok=false;const ta=document.createElement(%27textarea%27);ta.value=txt;ta.setAttribute(%27readonly%27,%27%27);ta.style.position=%27fixed%27;ta.style.top=%270%27;ta.style.left=%270%27;ta.style.opacity=%270%27;document.body.appendChild(ta);ta.focus();ta.select();ok=document.execCommand(%27copy%27);ta.remove();if(ok)return true}catch(e){}prompt(%27Copy:\n%27,txt);return false};await copy(text)})();
+```
+
+### 今見ているwebページのOGP画像を別タブで開く
 
 上に書いた通りです。OGP画像の設定を確認したい場合などに使えます。
 
@@ -92,10 +137,10 @@ javascript:(function(){const e=document.querySelector('meta[property="og:image"]
 2. ブックマークレットをクリックする
 3. OGP画像が別タブで表示される。OGP画像が設定されていない、取得できない場合は「このページにはOGP画像が設定されていません。」というメッセージが表示されます。
 
-### 誰かが作ったブックマークレット
+## 誰かが作ったブックマークレット
 以下は、自作ではなく他のページで見つけたブックマークレットです。どこで見つけたのかを忘れてしまったので、出展を思い出したら追記します。
 
-#### Amazonの商品ページのシンプルなURLを取得する
+### Amazonの商品ページのシンプルなURLを取得する
 Amazonの商品ページのURLは、商品の名前が入るととても長くなります。このブックマークレットは不要な情報を削除して商品コードだけのシンプルな（短い）URLを作成します。
 
 ```javascript
@@ -107,7 +152,7 @@ javascript:(function()%7Bs=location.href;s='https://amazon.jp/dp/'+s.substr(s.se
 2. ブックマークレットをクリックする
 3. ダイアログでにURLが表示されるので、コピーする
 
-#### Amazonのページからカーリルで検索する
+### Amazonのページからカーリルで検索する
 ```javascript
 javascript:if(location.href.search(/%5B%5E0-9A-Z%5D(%5BB0-9%5D%5B0-9A-Z%5D%7B9%7D)(%5B%5E0-9A-Z%5D%7C$)/)!=-1)%7Bvoid(location.href='http://calil.jp/book/'+RegExp.$1);%7D
 ```
