@@ -49,15 +49,15 @@ PagePickは、この「URLを書き換える」という手間を省力化しま
 
 1. [Chrome ウェブストア](https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp)からインストールします。    
 インストール時に以下の2つのメッセージが表示されます。これは「クリックしたときだけタブの情報を取得する」という最小限の権限（`activeTab`）を要求するためのもので、PagePickはこれ以外の情報を収集したり外部に送信したりすることはありませんので、ご安心ください。  
-![](/images/chrome-extention-pagepick/install01.png)
-![](/images/chrome-extention-pagepick/install02.png)
+![](/images/chrome-extention-pagepick/install01.png =400px)
+![](/images/chrome-extention-pagepick/install02.png =400px)
 
 
 1. 拡張機能ボタン（パズルピースのアイコン）から PagePick を開き、ピン留めしておくと便利です。
 2. 機能を使いたいページでアイコンをクリックし、メニューから実行したいアクションを選ぶだけです。  
 "Google Docs変換"は、Googleドキュメント/スプレッドシート/スライドの編集画面でのみ表示されます。
 
-![PagePickのメニュー](/images/chrome-extention-pagepick/PagePick.png){:w300}
+![PagePickのメニュー](/images/chrome-extention-pagepick/PagePick.png =400px)
 
 ## 最後に
 
