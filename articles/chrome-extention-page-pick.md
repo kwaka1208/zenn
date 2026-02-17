@@ -1,5 +1,5 @@
 ---
-title: Chrome拡張機能「PagePick」でURL共有を爆速・綺麗にする
+title: URL共有を爆速・綺麗にするChrome拡張「PagePick」
 emoji: 📝
 type: tech
 topics: ["Chrome拡張機能", "生産性向上", "URL共有"]
