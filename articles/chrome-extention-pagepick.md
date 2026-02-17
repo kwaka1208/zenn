@@ -1,5 +1,5 @@
 ---
-title: URL共有を爆速・綺麗にするChrome拡張「PagePick」
+title: URL共有を爆速&綺麗にするChrome拡張機能"PagePick"
 emoji: "📎"
 type: tech
 topics: ["Chrome拡張機能", "生産性向上", "URL共有"]
@@ -56,7 +56,7 @@ PagePickは、この「URLを書き換える」という手間を省力化しま
 
 ## 最後に
 
-この拡張機能は、もともと個人的に使用していたブックマークレットを Chrome拡張として作り直したものです。
+この拡張機能は、もともと個人的に使用していたブックマークレットを Chrome拡張機能として作り直したものです。
 
 [Bookmarklet（ブックマークレット）を使おう](https://zenn.dev/kwaka1208/articles/bookmarklet-is-useful)
 
