@@ -48,7 +48,7 @@ PagePickは、この「URLを書き換える」という手間を省力化しま
 ## 使い方
 
 1. [Chrome ウェブストア](https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp)からインストールします。    
-インストール時に以下の2つのメッセージが表示されます。これは「クリックしたときだけタブの情報を取得する」という最小限の権限（`activeTab`）を要求するためのもので、PagePickはこれ以外の情報を収集したり外部に送信したりすることはありませんので、ご安心ください。  
+インストール時に以下の2つのメッセージが表示されます。これは「クリックしたときだけタブの情報を取得する」という最小限の権限を要求するためのもので、PagePickはこれ以外の情報を収集したり、収集した情報を外部に送信したりすることはありませんので、ご安心ください。  
 ![](/images/chrome-extention-pagepick/install01.png =400x)
 ![](/images/chrome-extention-pagepick/install02.png =400x)
 
