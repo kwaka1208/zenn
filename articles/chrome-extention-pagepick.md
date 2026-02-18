@@ -39,25 +39,33 @@ PagePickは、この「URLを書き換える」という手間を省力化しま
 - **強制コピーモード**: `/copy` （アクセスした人に「コピーを作成」画面を表示させます）
 - **PDF でダウンロード**: `/export?format=pdf` （直接PDFファイルをダウンロードさせます）
 - **Excel でダウンロード**: スプレッドシートのみ、`/export?format=xlsx` （直接Excelファイルをダウンロードさせます）
+- **CSV でダウンロード**: スプレッドシートのみ、`/export?format=csv` （直接CSVファイルをダウンロードさせます）
 
 共有相手に「コピーして使ってね」と伝えたいときや、メールにPDFやExcelファイルを添付する代わりにダウンロードURLを送りたいときに、ルールを覚える必要なくワンクリックで作成できます。
 
-### 3. OGP 画像の抽出
-現在開いているページのOGP画像（SNSに投稿した時に表示される画像、いわゆるサムネイル）（`og:image`）を新しいタブに開きます。SNS投稿時の確認などに役立ちます。
+### 3. OGP画像URLの取得
+現在開いているページのOGP画像（SNSに投稿した時に表示される画像、いわゆるサムネイル）（`og:image`）をURLを取得します。SNS投稿時の確認などに役立ちます。
 
 ## 使い方
 
-1. [Chrome ウェブストア](https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp)からインストールします。    
-インストール時に以下の2つのメッセージが表示されます。これは「クリックしたときだけタブの情報を取得する」という最小限の権限を要求するためのもので、PagePickはこれ以外の情報を収集したり、収集した情報を外部に送信したりすることはありませんので、ご安心ください。  
-![](/images/chrome-extention-pagepick/install01.png =400x)
-![](/images/chrome-extention-pagepick/install02.png =400x)
+1. [Chrome ウェブストア](https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp)からインストールします。  
+インストール時に以下の2つのメッセージが表示されます。
 
+こちらは、開発者としての実績がまだ浅いため表示されるメッセージです。みなさんが使ってくださって評価が上がると出なくなります（がんばります）。
+![](/images/chrome-extention-pagepick/install01.png =400x)
+
+こちらは、タイトルやURLなど開いているタブの情報を取得するための最小限の権限を要求するためのもので、PagePickはタイトルとURL以外の情報を収集したり、収集した情報を外部に送信したりすることはありませんので、ご安心ください。  
+![](/images/chrome-extention-pagepick/install02.png =400x)
 
 1. 拡張機能ボタン（パズルピースのアイコン）から PagePick を開き、ピン留めしておくと便利です。
 2. 機能を使いたいページでアイコンをクリックし、メニューから実行したいアクションを選ぶだけです。  
 "Google Docs変換"は、Googleドキュメント/スプレッドシート/スライドの編集画面でのみ表示されます。
 
-![PagePickのメニュー](/images/chrome-extention-pagepick/PagePick.png =400x)
+![PagePickのメニュー](/images/chrome-extention-pagepick/pagepick01.png =400x)
+
+"Google Docs変換"を選択した後のメニュー（ExcelダウンロードとCSVダウンロードはスプレッドシートでのみ表示されます）。
+
+![Google Docs変換のメニュー](/images/chrome-extention-pagepick/pagepick02.png =400x)
 
 ## 最後に
 
