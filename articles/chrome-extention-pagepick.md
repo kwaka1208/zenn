@@ -16,7 +16,7 @@ SNSで見つけたネットの記事をを誰かに紹介したいときやGoogl
 
 これらをまとめて解決するために開発したのが、Chrome拡張機能 **「PagePick」** です。
 
-[PagePick - Chrome ウェブストア](https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp)
+https://chromewebstore.google.com/detail/pagepick/ffomibplfijjbilnblogaankmhnebbmp
 
 ## できること
 
@@ -71,7 +71,7 @@ PagePickは、この「URLを書き換える」という手間を省力化しま
 
 この拡張機能は、もともと個人的に使用していたブックマークレットを Chrome拡張機能として作り直したものです。
 
-[Bookmarklet（ブックマークレット）を使おう](https://zenn.dev/kwaka1208/articles/bookmarklet-is-useful)
+https://zenn.dev/kwaka1208/articles/bookmarklet-is-useful
 
 「クリックした時だけ」原罪のタブのタイトルとURL情報だけを取得する最小限の権限で設計されています。コピーした情報の収集や外部への送信も行なっていませんので、ご安心ください。
 
