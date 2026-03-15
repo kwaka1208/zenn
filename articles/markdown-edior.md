@@ -3,7 +3,7 @@ title: 私があえてMarkdownエディタを作った理由
 emoji: "📝"
 type: idea
 topics: [Markdown,生成AI,Agentic Coding]
-published: false
+published: true
 ---
 先日、ブラウザベースで動作するMarkdownエディタ「Markdown Editor」を公開しました。
 
