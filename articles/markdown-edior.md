@@ -5,7 +5,7 @@ type: idea
 topics: [Markdown,生成AI,Agentic Coding]
 published: false
 ---
-先日、ブラウザベースで動作するMarkdown Editorを公開しました。
+先日、ブラウザベースで動作するMarkdownエディタ「Markdown Editor」を公開しました。
 
 https://md.crssrds.jp/
 
@@ -118,5 +118,7 @@ https://www.google.com/search?q=%E7%94%9F%E6%88%90ai+markdown
 この記事を書いている時点で認識している既知の不具合はiPadで画面の上部が見切れてしまうことです。ブラウザ内で管理している文書の一括ダウンロードや外部のMarkdownファイルの一括取り込みも追加したいなと考えています。
 
 ぜひ、お使いいただければ嬉しいです。
+
+https://md.crssrds.jp/
 
 こんな感じで自分に必要なものを自由に作れる時代になりました。生成AIが作ってくれるので、人間は何を作りたいか、どんな機能が欲しいかを自由に考えることができ新たなステージが来た、そしてこれからどうなっていくのだろう？というのが楽しみです。
