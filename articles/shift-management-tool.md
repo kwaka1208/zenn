@@ -3,7 +3,7 @@ title: シフト管理システム（オープン版）
 emoji: "🗓️"
 type: idea
 topics: [シフト管理,Googleスプレッドシート]
-published: true
+published: false
 ---
 この記事は、GAS+Googleスプレッドシートで作成した「シフト管理システム」のマニュアルです。
 
