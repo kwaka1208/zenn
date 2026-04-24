@@ -1,0 +1,11 @@
+title: 開発環境構築ガイド (Node.js, Python, Git)
+summary: Windows, macOS, Linux 対応。Node.js, Python, Git のインストールと Python 仮想環境の構築方法を解説します。
+topics: [nodejs, python, git, 環境構築]
+published: true
+price: 0
+chapters:
+  - 01_intro
+  - 02_git
+  - 03_nodejs
+  - 04_python
+  - 05_python_venv
