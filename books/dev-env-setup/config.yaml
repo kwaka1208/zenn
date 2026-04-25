@@ -12,3 +12,5 @@ chapters:
   - 06_nodejs
   - 07_python
   - 08_python_venv
+  - 09_ssh_keygen
+  - 10_ssh_multiple
