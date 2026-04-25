@@ -24,6 +24,16 @@ winget install Git.Git
 git --version
 ```
 
+### Windows 標準の SSH を使う設定（推奨）
+
+Git for Windows には独自の SSH クライアントが含まれていますが、Windows に組み込まれている OpenSSH を使うように設定しておくと、SSH キーの管理が一元化されて便利です。
+
+```powershell
+git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
+```
+
+設定後は `ssh-keygen` などの Windows 標準の SSH ツールで生成したキーがそのまま Git でも利用できます。
+
 ## Windows (WSL) / Linux (Ubuntu)
 WSL または Linux のターミナルで以下のコマンドを実行します。
 

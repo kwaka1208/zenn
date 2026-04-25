@@ -47,3 +47,13 @@ pwsh --version
 :::message alert
 「Windows PowerShell」（青いアイコン）と「PowerShell」（黒いアイコン）は別物です。PowerShell 7 は黒いアイコンの「PowerShell」です。
 :::
+
+## 管理者権限での実行
+
+WSL のインストールなど、一部の操作では PowerShell を **管理者として実行** する必要があります。
+
+管理者として起動するには、スタートメニューで「PowerShell」または「ターミナル」を右クリックし、「管理者として実行」を選択してください。
+
+:::message alert
+管理者権限での操作は、システム全体に影響を与える可能性があります。必要な場合のみ使用してください。
+:::

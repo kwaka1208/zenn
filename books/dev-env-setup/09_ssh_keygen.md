@@ -61,11 +61,19 @@ Enter passphrase (empty for no passphrase):
 
 ssh-agent サービスを有効化してから登録します。
 
+:::message alert
+サービスの有効化には**管理者権限**が必要です。PowerShell を「管理者として実行」してから以下のコマンドを実行してください。
+:::
+
 ```powershell
 Get-Service ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
 ssh-add $env:USERPROFILE\.ssh\id_ed25519
 ```
+
+:::message
+`ssh-add` コマンドは管理者権限不要です。サービスの起動後は通常の PowerShell から実行できます。
+:::
 
 ### macOS
 
