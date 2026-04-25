@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp 03_git.md 04_git.md)",
+      "Bash(cp 04_nodejs.md 05_nodejs.md)",
+      "Bash(cp 05_python.md 06_python.md)",
+      "Bash(cp 06_python_venv.md 07_python_venv.md)"
+    ]
+  }
+}

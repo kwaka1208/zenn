@@ -12,8 +12,8 @@ Windows、macOS、Linux (Ubuntu想定) の3つの OS に対応しており、そ
 - **Windows**:
   Windows の手順については、以下の2つの環境を呼び分けて解説します。
   - **WSL (Windows Subsystem for Linux)**: Windows 上で Linux (Ubuntu) を動作させる環境です。
-  - **Windows ネイティブ**: Windows 上で直接（PowerShell やコマンドプロンプトを使用して）ツールを動作させる環境です。
-- **macOS**: Apple Silicon (M1/M2/M3) または Intel Mac
+  - **Windows ネイティブ**: Windows 上で直接 PowerShell を使用してツールを動作させる環境です。
+- **macOS**: Apple Silicon Mac
 - **Linux**: Ubuntu などの Debian 系ディストリビューション
 
 Windows ユーザーの方は、ご自身が選択した環境に合わせて各章の該当箇所を参照してください。
@@ -42,7 +42,9 @@ Windows ユーザーにとって、WSL を使うか、Windows ネイティブ環
 **迷った場合は、まずは WSL をインストールしてみることをおすすめします。** 後の章では両方の手順を解説していますので、途中で切り替えることも可能です。
 
 ## 構築するツール
+0. **PowerShell 7 (Windowsのみ)**: モダンなシェル環境
 0. **WSL (Windowsのみ)**: Linux サブシステム（Ubuntu）
+0. **Homebrew (macOSのみ)**: パッケージ管理ツール
 1. **Git**: バージョン管理システム
 2. **Node.js**: JavaScript 実行環境
 3. **Python**: プログラミング言語と仮想環境

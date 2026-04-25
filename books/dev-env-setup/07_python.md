@@ -2,7 +2,7 @@
 title: "Python のインストール"
 ---
 
-## Windows (PowerShell / コマンドプロンプト)
+## Windows (PowerShell)
 1. [Python 公式サイト](https://www.python.org/downloads/windows/)からインストーラーをダウンロードします。
 2. インストール時に **"Add Python to PATH"** に必ずチェックを入れてください。
 3. インストール後、PowerShell で `python --version` を実行して確認します。

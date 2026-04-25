@@ -5,8 +5,10 @@ published: true
 price: 0
 chapters:
   - 01_intro
-  - 02_wsl
-  - 03_git
-  - 04_nodejs
-  - 05_python
-  - 06_python_venv
+  - 02_pwsh
+  - 03_wsl
+  - 04_homebrew
+  - 05_git
+  - 06_nodejs
+  - 07_python
+  - 08_python_venv
