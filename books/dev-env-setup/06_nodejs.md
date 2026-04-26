@@ -51,7 +51,7 @@ eval "$(fnm env --use-on-cd)"
 
 ```bash
 fnm install --lts
-fnm use --lts
+fnm use lts-latest
 ```
 
 ## 3. バージョンの確認
