@@ -5,14 +5,14 @@ published: true
 price: 0
 chapters:
   - 00_about
-  - 11_start_and_eixt
-  - 01_draw_rect
-  - 02_draw_character
-  - 03_move_character
-  - 04_change_direction
-  - 05_shoot
-  - 06_enemy
-  - 07_hit
-  - 08_hit_player
-  - 09_score_and_hp
-  - 10_game_over
+  - 01_execution
+  - 02_draw_rect
+  - 03_draw_character
+  - 04_move_character
+  - 05_change_direction
+  - 06_shoot
+  - 07_enemy
+  - 08_hit
+  - 09_hit_player
+  - 10_score_and_hp
+  - 11_game_over
