@@ -16,3 +16,7 @@ chapters:
   - 09_hit_player
   - 10_score_and_hp
   - 11_game_over
+  - 12_constants_and_boundary
+  - 13_multiple_enemies
+  - 14_bgm_and_sound
+  - 15_class_refactoring
