@@ -3,7 +3,7 @@ title: "プログラミング初学者のための記号・用語リファレン
 emoji: "📖"
 type: idea
 topics: [プログラミング, 初心者, Web開発]
-published: false
+published: true
 ---
 
 プログラミングやweb開発で使われる用語って基本英語でしかも耳馴染みのないもの多い。
