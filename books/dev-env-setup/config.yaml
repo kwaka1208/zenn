@@ -1,5 +1,5 @@
 title: 開発環境構築ガイド
-summary: Windows, macOS, Linux 対応。WSL, Node.js, Python, Git のインストールと Python 仮想環境の構築方法を解説します。
+summary: Windows, macOS, Linux 対応。WSL, Node.js, Python, Git のインストールと Python 仮想環境の構築方法を解説します。.editorconfig による統一、PATH の設定、make コマンドの使い方も収録。
 topics: [nodejs, python, git, 環境構築]
 published: true
 price: 0
@@ -14,3 +14,6 @@ chapters:
   - 08_python_venv
   - 09_ssh_keygen
   - 10_ssh_multiple
+  - 11_editorconfig
+  - 12_path
+  - 13_make
