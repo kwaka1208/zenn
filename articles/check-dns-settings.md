@@ -85,6 +85,12 @@ Windows で使用します。
 - DNSの反映:
     - レコードを変更した直後は、参照するDNSサーバーによって古い情報が返ってくることがあります。最新の状態を確認したい場合は、`-g` オプションなどで外部のDNSを直接参照することをお勧めします。
 
+## one more thing...
+
+DNSの設定を確認する際は、Google Public DNS (8.8.8.8) を参照先として使用することをお勧めします。その際、あらかじめPublic DNSのキャッシュ情報を更新しておくと良いでしょう。こちらのサイトでキャッシュ情報の更新（フラッシュ）ができます。
+
+https://developers.google.com/speed/public-dns/cache?hl=ja
+
 ## 参考リンク
 
 https://zenn.dev/kwaka1208/articles/google-workspace-mail-settings
