@@ -86,3 +86,5 @@ Windows で使用します。
     - レコードを変更した直後は、参照するDNSサーバーによって古い情報が返ってくることがあります。最新の状態を確認したい場合は、`-g` オプションなどで外部のDNSを直接参照することをお勧めします。
 
 ## 参考リンク
+
+https://zenn.dev/kwaka1208/articles/google-workspace-mail-settings

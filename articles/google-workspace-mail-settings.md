@@ -1,6 +1,6 @@
 ---
 title: Google Workspaceのメール設定
-emoji: "🔖"
+emoji: "✉️"
 type: idea
 topics: [Google　Workspace,Gmail, SPF, DKIM, DMARC]
 published: true
