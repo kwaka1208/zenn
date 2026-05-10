@@ -1,5 +1,5 @@
 ---
-title: Google Workspaceのメール設定
+title: Google Workspaceのメール関係DNS設定まとめ
 emoji: "✉️"
 type: idea
 topics: [Google　Workspace,Gmail, SPF, DKIM, DMARC]
