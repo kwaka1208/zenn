@@ -93,4 +93,6 @@ https://developers.google.com/speed/public-dns/cache?hl=ja
 
 ## 参考リンク
 
+Google Workspaceのメール設定をする場合についてまとめています。Google Workspaceをご利用であればこちらもご覧ください。
+
 https://zenn.dev/kwaka1208/articles/google-workspace-mail-settings
