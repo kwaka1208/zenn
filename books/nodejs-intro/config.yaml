@@ -1,0 +1,15 @@
+title: "ゼロから始めるNode.js入門"
+summary: "JavaScriptを使ってサーバーサイド開発を始めてみよう！Node.jsの基本から、簡単なWebサーバーの作成までを丁寧に解説します。"
+topics: ["nodejs", "javascript", "backend", "入門"]
+published: false
+price: 1000
+chapters:
+  - 01_intro
+  - 02_install
+  - 03_hello_world
+  - 04_npm_basics
+  - 05_simple_server
+  - 06_express
+  - 07_typescript
+  - 08_database
+  - 09_summary
