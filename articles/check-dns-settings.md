@@ -9,7 +9,11 @@ published: true
 
 この記事では、メール関係のDNS設定をチェックするためのスクリプトを紹介しています。新しいメールサーバーを設定した場合の確認時などにご利用ください。
 
-https://github.com/kwaka1208/library/tree/main/checkdns
+:::message
+2026/05/19：リポジトリのURLが変更になりました
+:::
+
+https://github.com/kwaka1208/checkdns
 
 ## スクリプトの概要
 
