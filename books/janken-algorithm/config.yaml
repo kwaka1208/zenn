@@ -1,0 +1,15 @@
+title: じゃんけんアルゴリズムで学ぶプログラミング
+summary: じゃんけんの勝ち負け判定を題材に、プログラムを整理・短縮していく過程でアルゴリズムの考え方を学ぶPython入門です。Google Colabで動かしながら学べます。
+topics: [python, algorithm, 初心者向け]
+published: true
+price: 0
+chapters:
+  - 00_about
+  - 01_scratch
+  - 02_two_table
+  - 03_two_program
+  - 04_two_short
+  - 05_three_table
+  - 06_three_program
+  - 07_three_short
+  - 08_multi
