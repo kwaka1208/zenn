@@ -87,9 +87,9 @@ if player == 0:        ← 外側：プレイヤーがぐーかどうか
 
 ## 実行してみよう
 
-このプログラムをGoogle Colabで実行してみましょう。何度か実行して、表の全9パターンが正しく表示されることを確認してください。
+何度か実行して、表の全9パターンが正しく表示されることを確認してください。
 
-https://colab.research.google.com/drive/1epzpyuNCK6tr_IRP0UuagqbO4sEutzSE?usp=sharing
+[じゃんけん（勝ち負け判定二人版）.ipynb](https://colab.research.google.com/drive/1epzpyuNCK6tr_IRP0UuagqbO4sEutzSE?usp=sharing)
 
 ## このプログラムの課題
 

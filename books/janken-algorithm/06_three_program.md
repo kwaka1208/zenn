@@ -134,6 +134,7 @@ if player == 0:         ← 第1段：プレイヤーの手
 
 次のチャプターで答え合わせをしながら、プログラムを短くしていきます。
 
-## サンプルプログラム
+## 実行してみよう
+このプログラムをGoogle Colabで実行してみましょう。
 
-https://colab.research.google.com/drive/1xfFoWrrUCAMnidH9hfxMO5eXu25HRbg7?usp=sharing
+[じゃんけん（勝ち負け判定三人版）.ipynb](https://colab.research.google.com/drive/1xfFoWrrUCAMnidH9hfxMO5eXu25HRbg7?usp=sharing)

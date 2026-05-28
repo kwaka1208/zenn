@@ -139,9 +139,10 @@ else:
 
 27パターンのif文が、たった数行のシンプルな構造に変わりました。
 
-## サンプルプログラム
+## 実行してみよう
+このプログラムをGoogle Colabで実行してみましょう。
 
-https://colab.research.google.com/drive/1Ct1JMaaHixDsDNyRnW5DLxhsnwSAxvnk?usp=sharing
+[じゃんけん（勝ち負け判定三人版）（改）.ipynb](https://colab.research.google.com/drive/1Ct1JMaaHixDsDNyRnW5DLxhsnwSAxvnk?usp=sharing)
 
 ## 次のステップへ
 

@@ -106,9 +106,11 @@ else:
 
 もとの9パターンの `if` が、たった3つの分岐で表現できました。
 
-## サンプルプログラム
+## 実行してみよう
 
-https://colab.research.google.com/drive/1OyutOxBoqQzcmLMk7k_VU5UNqideLdKg?usp=sharing
+このプログラムをGoogle Colabで実行してみましょう。
+
+[じゃんけん（勝ち負け判定二人版）（改）.ipynb](https://colab.research.google.com/drive/1OyutOxBoqQzcmLMk7k_VU5UNqideLdKg?usp=sharing)
 
 ## まとめ
 
