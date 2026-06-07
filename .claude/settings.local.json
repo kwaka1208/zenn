@@ -8,7 +8,9 @@
       "WebFetch(domain:knowledge.workspace.google.com)",
       "Bash(dig google._domainkey.crssrds.jp TXT +short)",
       "Bash(dig _dmarc.crssrds.jp TXT +short)",
-      "Bash(dig *)"
+      "Bash(dig *)",
+      "WebFetch(domain:colab.research.google.com)",
+      "WebFetch(domain:docs.google.com)"
     ]
   }
 }
