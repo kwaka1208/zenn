@@ -20,16 +20,14 @@ https://github.com/kwaka1208/library
 
 `#`、`@`、`{}`、`//` など、プログラミングでよく登場する記号の「読み方」「用途」「キーボードでの入力方法」をまとめています。「この記号、何て読むの？」というときに役立ちます。
 
-https://kwaka1208.github.io/library/characters/
+https://works.crssrds.jp/refs/characters/
 
 ## 2. プログラミング英単語・略語 読み方＆意味リファレンス
 
 `variable`、`boolean`、`deprecated`、`API` など、ドキュメントやコードコメントでよく見かける単語・略語の読み方と意味を掲載しています。英語に自信がなくても調べながら進められます。
 
-https://kwaka1208.github.io/library/words/
+https://works.crssrds.jp/refs/words/
 
 ---
 
-どちらも随時更新中です。「この記号・単語も載せてほしい」という場合は、GitHubからお気軽に提案してください。
-
-https://github.com/kwaka1208/library
+どちらも随時更新中です。「この記号・単語も載せてほしい」という場合は、こちらの記事にコメントください。
