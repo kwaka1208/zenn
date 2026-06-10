@@ -2,7 +2,7 @@
 title: Google Colabでプログラミング学習者向けの教材を作る
 emoji: "🐍"
 type: idea
-topics: [GoogleColab, AI, 初学者向け]
+topics: [GoogleColab, 学習者向け, 教材]
 published: true
 ---
 
