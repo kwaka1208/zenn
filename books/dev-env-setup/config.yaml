@@ -14,7 +14,8 @@ chapters:
   - 08_python_venv
   - 09_ssh_keygen
   - 10_ssh_multiple
-  - 11_editorconfig
-  - 12_path
-  - 13_make
-  - 14_install-visual-studio-code
+  - 11_explorer
+  - 12_editorconfig
+  - 13_path
+  - 14_make
+  - 15_install-visual-studio-code
