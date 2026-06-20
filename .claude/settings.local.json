@@ -10,7 +10,8 @@
       "Bash(dig _dmarc.crssrds.jp TXT +short)",
       "Bash(dig *)",
       "WebFetch(domain:colab.research.google.com)",
-      "WebFetch(domain:docs.google.com)"
+      "WebFetch(domain:docs.google.com)",
+      "Bash(xargs -I{} ls /Users/kwaka1208/git/03_Articls/zenn/books/{})"
     ]
   }
 }

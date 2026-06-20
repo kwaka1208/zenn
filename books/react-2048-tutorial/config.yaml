@@ -1,0 +1,20 @@
+title: React.jsで作る2048ゲーム入門
+summary: 人気パズルゲーム「2048」の開発を通じて、React.jsの基本を学ぶ初心者向けチュートリアルです。プロジェクト作成から状態管理・ゲームロジック・スタイリングまでを段階的に解説します。
+topics: [react, javascript, 初心者向け, ゲーム開発]
+published: false
+price: 0
+chapters:
+  - 00_about
+  - 01_setup
+  - 02_react-basics
+  - 03_state
+  - 04_design
+  - 05_board
+  - 06_tile
+  - 07_init
+  - 08_input
+  - 09_move
+  - 10_move-vertical
+  - 11_score-gameover
+  - 12_styling
+  - 13_finish
