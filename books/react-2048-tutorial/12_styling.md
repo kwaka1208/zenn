@@ -76,6 +76,7 @@ button:hover {
   background-color: #bbada0;
   padding: 12px;
   border-radius: 8px;
+  width: fit-content;
 }
 
 /* 各マス（空きマス） */

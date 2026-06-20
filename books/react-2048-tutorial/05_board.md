@@ -99,6 +99,7 @@ export default App;
   background-color: #bbada0;
   padding: 8px;
   border-radius: 6px;
+  width: fit-content;
 }
 
 .cell {
