@@ -56,7 +56,7 @@ Reactはリストを描画するとき、各要素に `key` という一意のID
 
 ## App.tsxでBoardを使う
 
-`src/App.tsx` を書き換えて、`Board` コンポーネントを使ってみましょう。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import Board from './components/Board';
@@ -88,7 +88,7 @@ export default App;
 
 ## スタイルを当てる
 
-現時点ではグリッドのレイアウトが崩れているので、`src/App.css` に最低限のスタイルを追加します。
+現時点ではグリッドのレイアウトが崩れているので、`src/App.css` に次のスタイルを追加してください（現在は空のファイルです）。
 
 ```css
 .board {
@@ -112,7 +112,7 @@ export default App;
 }
 ```
 
-`src/App.tsx` に `App.css` のインポートを追加します。
+`src/App.tsx` の先頭2行を次のように変更してください（`import Board` の行はすでにあるので、`import './App.css'` を1行目に追加します）。
 
 ```tsx
 import './App.css';

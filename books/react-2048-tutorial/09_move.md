@@ -137,7 +137,7 @@ export function moveRight(board: Board): MoveResult {
 
 ## App.tsxに移動処理をつなぐ
 
-`src/App.tsx` の `useEffect` を更新して、左右キーで実際に移動するようにします。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import { useState, useEffect } from 'react';

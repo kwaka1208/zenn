@@ -79,7 +79,7 @@ export function moveDown(board: Board): MoveResult {
 
 ## App.tsxに上下移動をつなぐ
 
-`src/App.tsx` を更新して、4方向の移動をすべて対応させます。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import { useState, useEffect } from 'react';

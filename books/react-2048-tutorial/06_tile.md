@@ -67,7 +67,7 @@ export default Tile;
 
 ## BoardにTileを組み込む
 
-`src/components/Board.tsx` を修正して、`Tile` コンポーネントを使うようにします。
+`src/components/Board.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import Tile from './Tile';
@@ -114,7 +114,7 @@ export default Board;
 
 ## 動作を確認する
 
-`src/App.tsx` の `initialBoard` を変えてみて、さまざまな数字のタイルが色付きで表示されるか確認しましょう。
+`src/App.tsx` の `initialBoard` の値だけを次のように書き換えて、さまざまな数字のタイルが色付きで表示されるか確認しましょう。
 
 ```tsx
 const initialBoard: Board = [

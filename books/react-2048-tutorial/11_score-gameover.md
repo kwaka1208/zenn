@@ -79,7 +79,7 @@ export function boardsEqual(a: Board, b: Board): boolean {
 
 ## App.tsxにゲームオーバーを組み込む
 
-`src/App.tsx` を更新します。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import { useState, useEffect } from 'react';
@@ -177,6 +177,6 @@ export default App;
 - `isGameOver(board): boolean` でゲームオーバーを判定する
 - `boardsEqual(a, b): boolean` でボードの変化を確認する
 - 関数の戻り値に `: boolean` をつけると意図が明確になる
-- `{条件 && <JSX>}` で条件付きレンダリングができる
+- `{条件 && <TSX>}` で条件付きレンダリングができる
 
 次の章では、CSSでゲームの見た目をきれいに整えます。

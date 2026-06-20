@@ -18,6 +18,8 @@ title: キーボード入力の処理（useEffect）
 
 ## useEffectの基本的な書き方
 
+次のコードは `useEffect` の構造を示した説明用です。このままファイルに書く必要はありません。
+
 ```tsx
 import { useEffect } from 'react';
 
@@ -42,7 +44,7 @@ useEffect(() => {
 
 ## キーボードイベントを登録する
 
-`src/App.tsx` を次のように更新します。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import { useState, useEffect } from 'react';

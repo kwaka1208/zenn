@@ -126,7 +126,7 @@ button:hover {
 
 ## スコア表示をきれいにする
 
-`src/App.tsx` のスコア表示部分を書き換えます。
+`src/App.tsx` の `return` 文の中にある `<p>スコア：{score}</p>` の行を、次のように書き換えてください。
 
 ```tsx
 <div className="score-box">
@@ -139,7 +139,7 @@ button:hover {
 
 ## ゲームオーバーのオーバーレイを修正する
 
-ゲームオーバー表示をボードの上に重ねるため、`src/App.tsx` のボード周辺を `board-wrapper` で囲みます。
+ゲームオーバー表示をボードの上に重ねるため、`src/App.tsx` の `return` 文全体を次のように書き換えてください。
 
 ```tsx
 return (
@@ -168,7 +168,7 @@ return (
 
 数字が4桁（1024・2048）になるとタイルからはみ出すことがあります。`Tile.tsx` でフォントサイズを動的に変えましょう。
 
-`src/components/Tile.tsx` の `Tile` 関数を更新します。
+`src/components/Tile.tsx` の `Tile` 関数だけを次のように書き換えてください（`TILE_COLORS` や `DEFAULT_TILE_STYLE` などは変更不要です）。
 
 ```tsx
 function Tile({ value }: TileProps) {

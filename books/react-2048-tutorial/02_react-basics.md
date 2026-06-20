@@ -1,5 +1,5 @@
 ---
-title: Reactの基本（コンポーネント・JSX・Props）
+title: Reactの基本（コンポーネント・TSX・Props）
 ---
 
 ## Reactとは何か
@@ -22,13 +22,13 @@ function Greeting() {
 }
 ```
 
-関数が返しているのは `<p>こんにちは！</p>` というHTMLのようなコードです。これを**JSX**といいます。
+関数が返しているのは `<p>こんにちは！</p>` というHTMLのようなコードです。これを**TSX**といいます。
 
 ---
 
-## JSXとは
+## TSXとは
 
-JSXは**TypeScript（JavaScript）の中にHTMLのような記述を書ける構文**です。
+TSXは**TypeScriptの中にHTMLのような記述を書ける構文**です。ファイルの拡張子 `.tsx` はこのことを表しています。
 
 ```tsx
 function App() {
@@ -41,19 +41,23 @@ function App() {
 }
 ```
 
-JSXはHTMLによく似ていますが、いくつか違いがあります。
+:::message
+TSXはJavaScript版の**JSX**（JavaScript XML）をTypeScriptに対応させたものです。書き方はほぼ同じで、TypeScriptの型が使えるようになっています。Reactの公式ドキュメントや他の資料では「JSX」と書かれていることも多いですが、このチュートリアルのようにTypeScriptを使う場合は「TSX」と呼びます。
+:::
 
-| HTML | JSX |
+TSXはHTMLによく似ていますが、いくつか違いがあります。
+
+| HTML | TSX |
 |---|---|
 | `class="box"` | `className="box"` |
 | `<br>` | `<br />` |
 | `<img src="...">` | `<img src="..." />` |
 
-HTMLの `class` はプログラム上の予約語と重なるため、JSXでは `className` と書きます。また、閉じタグがないタグは `/` で閉じる必要があります。
+HTMLの `class` はプログラム上の予約語と重なるため、TSXでは `className` と書きます。また、閉じタグがないタグは `/` で閉じる必要があります。
 
-### TypeScriptの値をJSXに埋め込む
+### TypeScriptの値をTSXに埋め込む
 
-JSXの中で `{}` を使うと、TypeScriptの値を表示できます。
+TSXの中で `{}` を使うと、TypeScriptの値を表示できます。
 
 ```tsx
 function Score() {
@@ -150,7 +154,7 @@ export default App;
 ## まとめ
 
 - **コンポーネント**：画面の部品となる関数
-- **JSX**：TypeScriptの中にHTMLのような記述を書ける構文
+- **TSX**：TypeScriptの中にHTMLのような記述を書ける構文（`.tsx` ファイルで使う）
 - **Props**：コンポーネントに外からデータを渡す仕組み
 - **interface**：Propsの形を型で定義するTypeScriptの構文
 

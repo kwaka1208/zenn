@@ -91,7 +91,7 @@ const emptyCells: { r: number; c: number }[] = [];
 
 ## App.tsxで初期化を使う
 
-`src/App.tsx` を書き換えて、状態とゲームの初期化を組み合わせます。
+`src/App.tsx` の内容をすべて次のように書き換えてください。
 
 ```tsx
 import { useState } from 'react';

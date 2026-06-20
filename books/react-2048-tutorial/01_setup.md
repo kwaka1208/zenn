@@ -65,22 +65,33 @@ npm run dev
 
 ## フォルダ構成を確認する
 
-作成されたフォルダの中身を確認してみましょう。
+作成されたフォルダの中身を確認してみましょう。実際には次のようなファイルが生成されています。
 
 ```
 react-2048/
-├── public/          # 静的ファイル（画像など）
-├── src/             # ソースコード（ここを編集していく）
-│   ├── assets/      # 画像などのアセット
-│   ├── App.css      # App コンポーネントのスタイル
-│   ├── App.tsx      # メインのコンポーネント（TypeScript + JSX）
-│   ├── index.css    # 全体のスタイル
-│   ├── main.tsx     # エントリーポイント（起点）
-│   └── vite-env.d.ts # Viteの型定義ファイル
-├── index.html       # HTMLのベースファイル
-├── tsconfig.json    # TypeScriptの設定ファイル
-└── package.json     # プロジェクトの設定ファイル
+├── node_modules/        # インストールされたパッケージ（触らない）
+├── public/              # 静的ファイル（画像など）
+├── src/                 # ソースコード（ここを編集していく）
+│   ├── assets/          # 画像などのアセット
+│   ├── App.css          # App コンポーネントのスタイル
+│   ├── App.tsx          # メインのコンポーネント（TypeScript + JSX）
+│   ├── index.css        # 全体のスタイル
+│   └── main.tsx         # エントリーポイント（起点）
+├── .gitignore           # Gitの管理対象外ファイルの設定
+├── eslint.config.js     # コード品質チェックツールの設定
+├── index.html           # HTMLのベースファイル
+├── package.json         # プロジェクトの設定・依存パッケージ一覧
+├── package-lock.json    # パッケージのバージョンを固定するファイル
+├── README.md            # プロジェクトの説明ファイル
+├── tsconfig.json        # TypeScriptの設定ファイル
+├── tsconfig.app.json    # アプリ用TypeScript設定
+├── tsconfig.node.json   # Node.js用TypeScript設定
+└── vite.config.ts       # Viteの設定ファイル
 ```
+
+:::message
+ファイルが多く見えますが、**このチュートリアルで直接編集するのは `src/` フォルダの中だけ**です。それ以外のファイルはViteが自動的に用意した設定ファイルなので、特に触る必要はありません。
+:::
 
 JavaScriptのプロジェクトとの違いは、ファイルの拡張子が `.jsx` / `.js` ではなく **`.tsx` / `.ts`** になっている点です。
 
