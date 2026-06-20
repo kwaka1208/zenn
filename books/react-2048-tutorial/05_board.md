@@ -6,10 +6,16 @@ title: ボードコンポーネントの作成
 
 まず、4×4のグリッドを表示する `Board` コンポーネントを作ります。
 
-`src/components/Board.jsx` を新規作成して、次の内容を書いてください。
+`src/components/Board.tsx` を新規作成して、次の内容を書いてください。
 
-```jsx
-function Board({ board }) {
+```tsx
+type Board = number[][];
+
+interface BoardProps {
+  board: Board;
+}
+
+function Board({ board }: BoardProps) {
   return (
     <div className="board">
       {board.map((row, rowIndex) =>
@@ -28,6 +34,12 @@ export default Board;
 
 ### コードの解説
 
+**`type Board = number[][]`**
+4章で設計した型エイリアスをここでも定義します。後の章でこの型定義を共通ファイルに移動しますが、今は各ファイルに書いておきます。
+
+**`interface BoardProps`**
+`Board` コンポーネントが受け取るPropsの型定義です。`board` という `Board` 型のプロパティを1つ持ちます。
+
 **`board.map((row, rowIndex) => ...)`**
 外側の `map` で行（横1列）を順番に取り出します。
 
@@ -42,14 +54,16 @@ Reactはリストを描画するとき、各要素に `key` という一意のID
 
 ---
 
-## App.jsxでBoardを使う
+## App.tsxでBoardを使う
 
-`src/App.jsx` を書き換えて、`Board` コンポーネントを使ってみましょう。
+`src/App.tsx` を書き換えて、`Board` コンポーネントを使ってみましょう。
 
-```jsx
+```tsx
 import Board from './components/Board';
 
-const initialBoard = [
+type Board = number[][];
+
+const initialBoard: Board = [
   [0, 0, 2, 0],
   [0, 4, 0, 0],
   [0, 0, 0, 8],
@@ -67,6 +81,8 @@ function App() {
 
 export default App;
 ```
+
+`const initialBoard: Board` のように変数にも型を指定できます。配列の中身が `Board` 型（= `number[][]`）と合っていないとTypeScriptがエラーを出してくれます。
 
 ---
 
@@ -96,9 +112,9 @@ export default App;
 }
 ```
 
-`src/App.jsx` に `App.css` のインポートを追加します。
+`src/App.tsx` に `App.css` のインポートを追加します。
 
-```jsx
+```tsx
 import './App.css';
 import Board from './components/Board';
 ```
@@ -123,6 +139,7 @@ grid-template-columns: repeat(4, 80px);
 ## まとめ
 
 - `Board` コンポーネントは `board`（二次元配列）をPropsで受け取る
+- `interface BoardProps` でPropsの型を定義する
 - `map` を2重にネストして各マスを描画する
 - CSSグリッドで4×4のレイアウトを実現する
 

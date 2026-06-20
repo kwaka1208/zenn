@@ -12,13 +12,13 @@ title: 開発環境とプロジェクトの作成
 node -v
 ```
 
-`v20.0.0` のようなバージョン番号が表示されれば準備OKです。
+`v20.12.0` 以上のバージョン番号が表示されれば準備OKです。
 
 ```
-v20.11.0   ← このように表示されればOK
+v22.0.0   ← このように表示されればOK
 ```
 
-表示されない場合は [Node.js公式サイト](https://nodejs.org/ja) からLTS版をインストールしてください。
+表示されない場合や古いバージョンの場合は [Node.js公式サイト](https://nodejs.org/ja) からLTS版をインストールしてください。
 
 ---
 
@@ -26,13 +26,13 @@ v20.11.0   ← このように表示されればOK
 
 Reactプロジェクトの作成には**Vite（ヴィート）**というツールを使います。Viteは開発サーバーの起動が速く、最近のReact開発でよく使われています。
 
-次のコマンドを実行してください。
+TypeScript対応のテンプレートを指定して、次のコマンドを実行してください。
 
 ```bash
-npm create vite@latest react-2048 -- --template react
+npm create vite@latest react-2048 -- --template react-ts
 ```
 
-コマンドを実行すると、いくつか質問される場合があります。すべてEnterキーを押して進めてください。
+`--template react-ts` の `ts` がTypeScript対応を意味します。
 
 完了したら、作成されたフォルダに移動して、必要なパッケージをインストールします。
 
@@ -73,12 +73,21 @@ react-2048/
 ├── src/             # ソースコード（ここを編集していく）
 │   ├── assets/      # 画像などのアセット
 │   ├── App.css      # App コンポーネントのスタイル
-│   ├── App.jsx      # メインのコンポーネント
+│   ├── App.tsx      # メインのコンポーネント（TypeScript + JSX）
 │   ├── index.css    # 全体のスタイル
-│   └── main.jsx     # エントリーポイント（起点）
+│   ├── main.tsx     # エントリーポイント（起点）
+│   └── vite-env.d.ts # Viteの型定義ファイル
 ├── index.html       # HTMLのベースファイル
+├── tsconfig.json    # TypeScriptの設定ファイル
 └── package.json     # プロジェクトの設定ファイル
 ```
+
+JavaScriptのプロジェクトとの違いは、ファイルの拡張子が `.jsx` / `.js` ではなく **`.tsx` / `.ts`** になっている点です。
+
+| 拡張子 | 内容 |
+|---|---|
+| `.tsx` | TypeScript + JSX（コンポーネントファイル） |
+| `.ts` | TypeScript（コンポーネント以外のファイル） |
 
 これから主に `src/` フォルダの中を編集していきます。
 
@@ -86,11 +95,11 @@ react-2048/
 
 ## 不要なファイルをきれいにする
 
-Viteが生成したデフォルトのファイルには不要なコードが含まれています。以降の作業をスムーズにするため、`src/App.jsx` と `src/App.css` の中身を書き換えます。
+Viteが生成したデフォルトのファイルには不要なコードが含まれています。以降の作業をスムーズにするため、`src/App.tsx` と `src/App.css` の中身を書き換えます。
 
-**`src/App.jsx`** を次の内容に書き換えてください。
+**`src/App.tsx`** を次の内容に書き換えてください。
 
-```jsx
+```tsx
 function App() {
   return (
     <div>
@@ -110,8 +119,8 @@ export default App;
 
 ## まとめ
 
-- `npm create vite@latest` でReactプロジェクトを作成しました
+- `npm create vite@latest -- --template react-ts` でTypeScript対応のReactプロジェクトを作成しました
+- TypeScriptのファイルは `.tsx` / `.ts` という拡張子を使います
 - `npm run dev` で開発サーバーを起動しました
-- `src/App.jsx` がメインの編集ファイルです
 
-次の章では、Reactの基本的な概念（コンポーネント・JSX・Props）を学びます。
+次の章では、Reactの基本的な概念（コンポーネント・JSX・Props）をTypeScriptと合わせて学びます。

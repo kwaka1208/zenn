@@ -18,7 +18,7 @@ title: キーボード入力の処理（useEffect）
 
 ## useEffectの基本的な書き方
 
-```jsx
+```tsx
 import { useEffect } from 'react';
 
 useEffect(() => {
@@ -42,9 +42,9 @@ useEffect(() => {
 
 ## キーボードイベントを登録する
 
-`src/App.jsx` を次のように更新します。
+`src/App.tsx` を次のように更新します。
 
-```jsx
+```tsx
 import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
@@ -52,10 +52,10 @@ import { createInitialBoard } from './utils/gameLogic';
 
 function App() {
   const [board, setBoard] = useState(() => createInitialBoard());
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
         case 'ArrowLeft':
           console.log('左');
@@ -97,6 +97,13 @@ function App() {
 export default App;
 ```
 
+### TypeScriptのポイント
+
+**`(e: KeyboardEvent)`**
+イベントハンドラの引数 `e` に `: KeyboardEvent` という型を指定しています。`KeyboardEvent` はブラウザが提供するキーボードイベントの型で、`e.key`（押されたキーの名前）などのプロパティが使えます。
+
+TypeScriptは型定義があることで、`e.key` が存在することを事前に確認できます。誤ったプロパティ名を書いた場合はすぐにエラーで気づけます。
+
 ### コードの解説
 
 **`window.addEventListener('keydown', handleKeyDown)`**
@@ -106,7 +113,7 @@ export default App;
 押されたキーの名前が入っています。矢印キーは `'ArrowLeft'`・`'ArrowRight'`・`'ArrowUp'`・`'ArrowDown'` です。
 
 **クリーンアップ**
-```jsx
+```tsx
 return () => {
   window.removeEventListener('keydown', handleKeyDown);
 };
@@ -122,8 +129,8 @@ return () => {
 :::message
 矢印キーを押したときにページがスクロールしてしまう場合は、`handleKeyDown` の中に `e.preventDefault()` を追加してください。
 
-```jsx
-const handleKeyDown = (e) => {
+```tsx
+const handleKeyDown = (e: KeyboardEvent) => {
   if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
     e.preventDefault();
   }
@@ -137,6 +144,7 @@ const handleKeyDown = (e) => {
 ## まとめ
 
 - `useEffect` はコンポーネントの描画後に副作用を実行する
+- イベントハンドラの引数には `KeyboardEvent` などのブラウザ型を指定する
 - キーボードイベントは `window.addEventListener` で登録する
 - `useEffect` のクリーンアップでイベントを解除することを忘れずに
 

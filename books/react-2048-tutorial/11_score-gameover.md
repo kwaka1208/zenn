@@ -10,7 +10,7 @@ title: スコアとゲームオーバー判定
 - 4 + 4 → 8（8点加算）
 - 128 + 128 → 256（256点加算）
 
-スコアの加算は、前の章で実装した `slideRowLeft` 関数がすでに `gained` として返しているので、`App.jsx` で `setScore(prev => prev + result.gained)` と書くだけで動いています。
+スコアの加算は、前の章で実装した `slideRowLeft` 関数がすでに `gained` として返しているので、`App.tsx` で `setScore(prev => prev + result.gained)` と書くだけで動いています。
 
 ---
 
@@ -25,10 +25,10 @@ title: スコアとゲームオーバー判定
 
 ## isGameOver 関数を実装する
 
-`src/utils/gameLogic.js` に次の関数を追加します。
+`src/utils/gameLogic.ts` に次の関数を追加します。
 
-```js
-export function isGameOver(board) {
+```ts
+export function isGameOver(board: Board): boolean {
   // 空きマスがあればまだ続けられる
   for (let r = 0; r < 4; r++) {
     for (let c = 0; c < 4; c++) {
@@ -54,19 +54,40 @@ export function isGameOver(board) {
 }
 ```
 
-3つの条件をチェックして、どれか1つでも「続けられる理由」があれば `false`（ゲームオーバーでない）を返します。すべての条件をクリアしてはじめて `true`（ゲームオーバー）を返します。
+戻り値の型は `: boolean` です。3つの条件をチェックして、どれか1つでも「続けられる理由」があれば `false` を返し、すべての条件をクリアしてはじめて `true` を返します。
 
 ---
 
-## App.jsxにゲームオーバーを組み込む
+## boardsEqual 関数を追加する
 
-`src/App.jsx` を更新します。
+キーを押してもタイルが1つも動かなかった場合、新しいタイルを追加しないようにします。ボードが変わったか比較する関数を追加します。
 
-```jsx
+```ts
+export function boardsEqual(a: Board, b: Board): boolean {
+  for (let r = 0; r < 4; r++) {
+    for (let c = 0; c < 4; c++) {
+      if (a[r][c] !== b[r][c]) return false;
+    }
+  }
+  return true;
+}
+```
+
+引数 `a` と `b` はどちらも `Board` 型で、戻り値は `boolean` です。
+
+---
+
+## App.tsxにゲームオーバーを組み込む
+
+`src/App.tsx` を更新します。
+
+```tsx
 import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
 import {
+  Board as BoardType,
+  MoveResult,
   createInitialBoard,
   addRandomTile,
   moveLeft,
@@ -74,29 +95,33 @@ import {
   moveUp,
   moveDown,
   isGameOver,
+  boardsEqual,
 } from './utils/gameLogic';
 
 function App() {
   const [board, setBoard] = useState(() => createInitialBoard());
-  const [score, setScore] = useState(0);
-  const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState<number>(0);
+  const [gameOver, setGameOver] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (gameOver) return;
+    const moves: Record<string, (board: BoardType) => MoveResult> = {
+      ArrowLeft:  moveLeft,
+      ArrowRight: moveRight,
+      ArrowUp:    moveUp,
+      ArrowDown:  moveDown,
+    };
 
-      const moves = {
-        ArrowLeft:  moveLeft,
-        ArrowRight: moveRight,
-        ArrowUp:    moveUp,
-        ArrowDown:  moveDown,
-      };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (gameOver) return;
 
       const moveFn = moves[e.key];
       if (!moveFn) return;
 
       e.preventDefault();
       const result = moveFn(board);
+
+      if (boardsEqual(board, result.board)) return;
+
       const newBoard = addRandomTile(result.board);
       setBoard(newBoard);
       setScore(prev => prev + result.gained);
@@ -137,57 +162,21 @@ export default App;
 ### コードの解説
 
 **`if (gameOver) return;`**
-ゲームオーバー中はキー入力を無視します。
+ゲームオーバー中はキー入力を無視します。`gameOver` は `boolean` 型なので、`if (gameOver)` がそのまま使えます。
 
 **`{gameOver && <div>...</div>}`**
 `&&` を使うと、条件が `true` のときだけJSXを表示できます。これは「条件付きレンダリング」と呼ばれるReactのよく使うパターンです。
 
----
-
-## ボードが変わっていない場合は新しいタイルを追加しない
-
-現状のコードには小さな問題があります。キーを押してもタイルが1つも動かなかった場合でも、新しいタイルが追加されてしまいます。
-
-`addRandomTile` を呼ぶ前に、ボードが変わったか確認しましょう。
-
-`src/utils/gameLogic.js` に比較関数を追加します。
-
-```js
-export function boardsEqual(a, b) {
-  for (let r = 0; r < 4; r++) {
-    for (let c = 0; c < 4; c++) {
-      if (a[r][c] !== b[r][c]) return false;
-    }
-  }
-  return true;
-}
-```
-
-`src/App.jsx` の移動処理を次のように変更します。
-
-```jsx
-import { ..., boardsEqual } from './utils/gameLogic';
-
-// useEffect内の処理
-const result = moveFn(board);
-
-if (boardsEqual(board, result.board)) return; // 変化なし
-
-const newBoard = addRandomTile(result.board);
-setBoard(newBoard);
-setScore(prev => prev + result.gained);
-
-if (isGameOver(newBoard)) {
-  setGameOver(true);
-}
-```
+**依存配列 `[board, gameOver]`**
+`gameOver` を依存配列に追加しています。`handleKeyDown` の中で `gameOver` を参照しているため、最新の値を参照するために必要です。
 
 ---
 
 ## まとめ
 
-- スコアは合体時に加算済みなので `App.jsx` では受け取るだけでよい
-- ゲームオーバーは「空きマスなし」かつ「合体できる隣接タイルなし」で判定する
+- `isGameOver(board): boolean` でゲームオーバーを判定する
+- `boardsEqual(a, b): boolean` でボードの変化を確認する
+- 関数の戻り値に `: boolean` をつけると意図が明確になる
 - `{条件 && <JSX>}` で条件付きレンダリングができる
 
 次の章では、CSSでゲームの見た目をきれいに整えます。

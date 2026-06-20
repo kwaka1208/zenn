@@ -37,10 +37,10 @@ title: タイルの移動ロジック（上下）
 
 ## transpose 関数を実装する
 
-`src/utils/gameLogic.js` に転置関数を追加します。
+`src/utils/gameLogic.ts` に転置関数を追加します。
 
-```js
-function transpose(board) {
+```ts
+function transpose(board: Board): Board {
   return board[0].map((_, colIndex) => board.map(row => row[colIndex]));
 }
 ```
@@ -48,7 +48,7 @@ function transpose(board) {
 ### コードの解説
 
 `board[0].map((_, colIndex) => ...)`
-まず「列番号の一覧（0, 1, 2, 3）」を作ります。`_` は使わない引数を表す慣習的な書き方です。
+まず「列番号の一覧（0, 1, 2, 3）」を作ります。`_` は「この引数は使わない」という意味の慣習的な書き方です。TypeScriptでも同様に使えます。
 
 `board.map(row => row[colIndex])`
 各行から `colIndex` 番目の値を取り出して、新しい行（= 元の列）を作ります。
@@ -59,33 +59,35 @@ function transpose(board) {
 
 同じファイルに上下移動の関数を追加します。
 
-```js
-export function moveUp(board) {
+```ts
+export function moveUp(board: Board): MoveResult {
   const transposed = transpose(board);
   const { board: moved, gained } = moveLeft(transposed);
   return { board: transpose(moved), gained };
 }
 
-export function moveDown(board) {
+export function moveDown(board: Board): MoveResult {
   const transposed = transpose(board);
   const { board: moved, gained } = moveRight(transposed);
   return { board: transpose(moved), gained };
 }
 ```
 
-`moveUp` と `moveDown` はそれぞれ転置 → 左右移動 → 再転置の3行で書けます。
+`moveUp` と `moveDown` はそれぞれ転置 → 左右移動 → 再転置の3行で書けます。戻り値の型も `MoveResult` と指定しているため、型の一貫性が保たれます。
 
 ---
 
-## App.jsxに上下移動をつなぐ
+## App.tsxに上下移動をつなぐ
 
-`src/App.jsx` を更新して、4方向の移動をすべて対応させます。
+`src/App.tsx` を更新して、4方向の移動をすべて対応させます。
 
-```jsx
+```tsx
 import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
 import {
+  Board as BoardType,
+  MoveResult,
   createInitialBoard,
   addRandomTile,
   moveLeft,
@@ -96,17 +98,17 @@ import {
 
 function App() {
   const [board, setBoard] = useState(() => createInitialBoard());
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      const moves = {
-        ArrowLeft:  moveLeft,
-        ArrowRight: moveRight,
-        ArrowUp:    moveUp,
-        ArrowDown:  moveDown,
-      };
+    const moves: Record<string, (board: BoardType) => MoveResult> = {
+      ArrowLeft:  moveLeft,
+      ArrowRight: moveRight,
+      ArrowUp:    moveUp,
+      ArrowDown:  moveDown,
+    };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
       const moveFn = moves[e.key];
       if (!moveFn) return;
 
@@ -139,7 +141,13 @@ function App() {
 export default App;
 ```
 
-`moves` オブジェクトにキー名と関数を対応させることで、`if` 文を並べずにすっきり書けます。
+### TypeScriptのポイント
+
+**`Board as BoardType`**
+`gameLogic.ts` からエクスポートされた `Board` 型を `BoardType` という名前でインポートしています。`App.tsx` 内で型として使うために別名をつけています。
+
+**`Record<string, (board: BoardType) => MoveResult>`**
+`moves` オブジェクトの型です。「キーが文字列、値が `Board` を受け取って `MoveResult` を返す関数」を意味します。これにより、`moves` に誤った型の値を入れようとするとエラーになります。
 
 ---
 
@@ -156,7 +164,7 @@ export default App;
 ## まとめ
 
 - 上下移動は「転置して左右移動して再転置」で実装できる
-- `transpose` 関数で行と列を入れ替える
-- キーと関数をオブジェクトで対応させると `if` 文が不要になる
+- `Record<string, 関数型>` でキーと関数のマッピングに型をつける
+- 型をつけることで間違った関数を `moves` に入れるとすぐエラーになる
 
 次の章では、スコアとゲームオーバー判定を実装します。

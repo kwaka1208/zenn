@@ -126,9 +126,9 @@ button:hover {
 
 ## スコア表示をきれいにする
 
-`src/App.jsx` のスコア表示部分を書き換えます。
+`src/App.tsx` のスコア表示部分を書き換えます。
 
-```jsx
+```tsx
 <div className="score-box">
   <div className="score-label">スコア</div>
   <div>{score}</div>
@@ -139,9 +139,9 @@ button:hover {
 
 ## ゲームオーバーのオーバーレイを修正する
 
-ゲームオーバー表示をボードの上に重ねるため、`src/App.jsx` のボード周辺を `board-wrapper` で囲みます。
+ゲームオーバー表示をボードの上に重ねるため、`src/App.tsx` のボード周辺を `board-wrapper` で囲みます。
 
-```jsx
+```tsx
 return (
   <div className="game-container">
     <h1>2048</h1>
@@ -166,16 +166,16 @@ return (
 
 ## タイルのフォントサイズを調整する
 
-数字が4桁（1024・2048）になるとタイルからはみ出すことがあります。`Tile.jsx` でフォントサイズを動的に変えましょう。
+数字が4桁（1024・2048）になるとタイルからはみ出すことがあります。`Tile.tsx` でフォントサイズを動的に変えましょう。
 
-`src/components/Tile.jsx` の `Tile` 関数を更新します。
+`src/components/Tile.tsx` の `Tile` 関数を更新します。
 
-```jsx
-function Tile({ value }) {
+```tsx
+function Tile({ value }: TileProps) {
   if (value === 0) return <div className="cell" />;
 
   const style = TILE_COLORS[value] ?? DEFAULT_TILE_STYLE;
-  const fontSize = value >= 1024 ? '20px' : value >= 128 ? '24px' : '28px';
+  const fontSize: string = value >= 1024 ? '20px' : value >= 128 ? '24px' : '28px';
 
   return (
     <div
@@ -191,6 +191,8 @@ function Tile({ value }) {
   );
 }
 ```
+
+`fontSize` に `: string` の型アノテーションをつけています。三項演算子（`? :`）が連なっていますが、結果は必ず文字列なので `string` 型と明示するとコードの意図が伝わりやすくなります。
 
 ---
 

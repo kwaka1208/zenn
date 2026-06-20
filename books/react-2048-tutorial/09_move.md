@@ -34,13 +34,28 @@ title: タイルの移動ロジック（左右）
 
 ---
 
+## 戻り値の型を定義する
+
+移動関数は「新しいボード」と「獲得したスコア」の2つを返します。TypeScriptでは、複数の値をまとめて返すときにインターフェースで型を定義します。
+
+`src/utils/gameLogic.ts` の先頭に次を追加してください。
+
+```ts
+export interface MoveResult {
+  board: Board;
+  gained: number;
+}
+```
+
+---
+
 ## slideRowLeft 関数を実装する
 
-`src/utils/gameLogic.js` に次の関数を追加します。
+`src/utils/gameLogic.ts` に次の関数を追加します。
 
-```js
-// 1行を左にスライドして合体させる（スコア加算分を返す）
-function slideRowLeft(row) {
+```ts
+// 1行を左にスライドして合体させる
+function slideRowLeft(row: number[]): { row: number[]; gained: number } {
   // Step 1: 0を取り除く
   const tiles = row.filter(v => v !== 0);
 
@@ -64,29 +79,30 @@ function slideRowLeft(row) {
 }
 ```
 
+戻り値の型 `{ row: number[]; gained: number }` はインライン（その場）で書いています。シンプルな型の場合はこのように直接書くこともできます。
+
 ### コードの解説
 
 **`row.filter(v => v !== 0)`**
 `filter` は条件を満たす要素だけを残した新しい配列を返します。ここでは0以外（= 数字があるタイル）を残します。
 
 **合体ループ**
-```js
+```ts
 if (tiles[i] === tiles[i + 1]) {
-  tiles[i] *= 2;      // 合体して2倍にする
-  gained += tiles[i]; // スコアに加算
-  tiles.splice(i + 1, 1); // 右のタイルを削除
+  tiles[i] *= 2;           // 合体して2倍にする
+  gained += tiles[i];      // スコアに加算
+  tiles.splice(i + 1, 1);  // 右のタイルを削除
 }
 ```
-`splice(index, 削除数)` は指定した位置から要素を取り除くメソッドです。
 
 ---
 
 ## moveLeft / moveRight を実装する
 
-`src/utils/gameLogic.js` に左右移動の関数を追加します。
+`src/utils/gameLogic.ts` に左右移動の関数を追加します。
 
-```js
-export function moveLeft(board) {
+```ts
+export function moveLeft(board: Board): MoveResult {
   let totalGained = 0;
   const newBoard = board.map(row => {
     const { row: newRow, gained } = slideRowLeft(row);
@@ -96,7 +112,7 @@ export function moveLeft(board) {
   return { board: newBoard, gained: totalGained };
 }
 
-export function moveRight(board) {
+export function moveRight(board: Board): MoveResult {
   let totalGained = 0;
   const newBoard = board.map(row => {
     const reversed = [...row].reverse();
@@ -119,11 +135,11 @@ export function moveRight(board) {
 
 ---
 
-## App.jsxに移動処理をつなぐ
+## App.tsxに移動処理をつなぐ
 
-`src/App.jsx` の `useEffect` を更新して、左右キーで実際に移動するようにします。
+`src/App.tsx` の `useEffect` を更新して、左右キーで実際に移動するようにします。
 
-```jsx
+```tsx
 import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
@@ -131,10 +147,10 @@ import { createInitialBoard, addRandomTile, moveLeft, moveRight } from './utils/
 
 function App() {
   const [board, setBoard] = useState(() => createInitialBoard());
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       let result = null;
 
       if (e.key === 'ArrowLeft')  result = moveLeft(board);
@@ -184,8 +200,9 @@ export default App;
 
 ## まとめ
 
+- `interface MoveResult` で移動関数の戻り値の型を定義する
 - 1行の移動は「0除去 → 合体 → 0埋め」の3ステップ
 - 右移動は「逆順にして左移動して再び逆順」で実装できる
-- `useEffect` の依存配列に `board` を入れて最新の状態を参照する
+- 関数の引数・戻り値に型をつけることで意図が明確になる
 
 次の章では、同じ考え方を使って上下の移動を実装します。

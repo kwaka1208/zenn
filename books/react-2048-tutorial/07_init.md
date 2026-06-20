@@ -9,17 +9,19 @@ title: ゲームの初期化
 - 空のボードを作る関数
 - 空きマスにランダムでタイルを追加する関数
 
-`src/utils/gameLogic.js` を新規作成して、次の内容を書いてください。
+`src/utils/gameLogic.ts` を新規作成して、次の内容を書いてください。
 
-```js
+```ts
+export type Board = number[][];
+
 // 空のボード（4×4、すべて0）を作る
-export function createEmptyBoard() {
+export function createEmptyBoard(): Board {
   return Array.from({ length: 4 }, () => Array(4).fill(0));
 }
 
 // 空きマスにランダムで2か4を追加する
-export function addRandomTile(board) {
-  const emptyCells = [];
+export function addRandomTile(board: Board): Board {
+  const emptyCells: { r: number; c: number }[] = [];
 
   for (let r = 0; r < 4; r++) {
     for (let c = 0; c < 4; c++) {
@@ -41,7 +43,7 @@ export function addRandomTile(board) {
 }
 
 // ゲーム開始時のボードを作る（タイルを2つ追加）
-export function createInitialBoard() {
+export function createInitialBoard(): Board {
   let board = createEmptyBoard();
   board = addRandomTile(board);
   board = addRandomTile(board);
@@ -49,13 +51,32 @@ export function createInitialBoard() {
 }
 ```
 
+### TypeScriptのポイント
+
+**関数の戻り値の型**
+```ts
+function createEmptyBoard(): Board { ... }
+```
+関数名の後ろの `: Board` が**戻り値の型**です。「この関数は `Board` 型の値を返す」という意味です。
+
+**引数の型**
+```ts
+function addRandomTile(board: Board): Board { ... }
+```
+引数 `board` に `: Board` をつけることで、「この引数は `Board` 型でなければならない」と指定しています。
+
+**オブジェクトの配列の型**
+```ts
+const emptyCells: { r: number; c: number }[] = [];
+```
+`{ r: number; c: number }` は「`r` と `c` という数値を持つオブジェクト」の型です。`[]` をつけると「その配列」になります。
+
+---
+
 ### コードの解説
 
 **`Array.from({ length: 4 }, () => Array(4).fill(0))`**
 4行を作り、各行に `[0, 0, 0, 0]` という配列を入れます。`fill(0)` はすべての要素を0で埋めるメソッドです。
-
-**空きマスを収集**
-二重ループで全マスをチェックし、値が `0` のマスの座標（行番号・列番号）を `emptyCells` 配列に追加します。
 
 **ランダムな場所に追加**
 `Math.floor(Math.random() * emptyCells.length)` でランダムなインデックスを選び、そのマスに値を追加します。
@@ -68,11 +89,11 @@ export function createInitialBoard() {
 
 ---
 
-## App.jsxで初期化を使う
+## App.tsxで初期化を使う
 
-`src/App.jsx` を書き換えて、状態とゲームの初期化を組み合わせます。
+`src/App.tsx` を書き換えて、状態とゲームの初期化を組み合わせます。
 
-```jsx
+```tsx
 import { useState } from 'react';
 import './App.css';
 import Board from './components/Board';
@@ -80,7 +101,7 @@ import { createInitialBoard } from './utils/gameLogic';
 
 function App() {
   const [board, setBoard] = useState(() => createInitialBoard());
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   const handleRestart = () => {
     setBoard(createInitialBoard());
@@ -100,9 +121,11 @@ function App() {
 export default App;
 ```
 
+`board` の型は `createInitialBoard()` の戻り値から TypeScript が自動的に `Board` と推測してくれるため、`useState<Board>(...)` と明示しなくても問題ありません。
+
 ### useState の初期値に関数を渡す
 
-```jsx
+```tsx
 const [board, setBoard] = useState(() => createInitialBoard());
 ```
 
@@ -118,8 +141,9 @@ const [board, setBoard] = useState(() => createInitialBoard());
 
 ## まとめ
 
+- `gameLogic.ts` にゲームロジックをまとめる
+- 関数の引数と戻り値に型を指定する（例: `function foo(board: Board): Board`）
 - `createEmptyBoard()` で4×4の空ボードを作る
 - `addRandomTile()` で空きマスにランダムでタイルを追加する
-- 状態の初期値に関数を渡せる（遅延初期化）
 
 次の章では、キーボードの入力を受け取って方向を判定する処理を実装します。

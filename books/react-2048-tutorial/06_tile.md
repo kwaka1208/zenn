@@ -6,10 +6,15 @@ title: タイルコンポーネントの作成
 
 2048では、数字が大きくなるほどタイルの色が変わります。この章では、数字に応じて色が変わる `Tile` コンポーネントを作ります。
 
-`src/components/Tile.jsx` を新規作成して、次の内容を書いてください。
+`src/components/Tile.tsx` を新規作成して、次の内容を書いてください。
 
-```jsx
-const TILE_COLORS = {
+```tsx
+interface TileStyle {
+  background: string;
+  color: string;
+}
+
+const TILE_COLORS: Record<number, TileStyle> = {
   2:    { background: '#eee4da', color: '#776e65' },
   4:    { background: '#ede0c8', color: '#776e65' },
   8:    { background: '#f2b179', color: '#f9f6f2' },
@@ -23,9 +28,13 @@ const TILE_COLORS = {
   2048: { background: '#edc22e', color: '#f9f6f2' },
 };
 
-const DEFAULT_TILE_STYLE = { background: '#3c3a32', color: '#f9f6f2' };
+const DEFAULT_TILE_STYLE: TileStyle = { background: '#3c3a32', color: '#f9f6f2' };
 
-function Tile({ value }) {
+interface TileProps {
+  value: number;
+}
+
+function Tile({ value }: TileProps) {
   if (value === 0) return <div className="cell" />;
 
   const style = TILE_COLORS[value] ?? DEFAULT_TILE_STYLE;
@@ -45,25 +54,31 @@ export default Tile;
 
 ### コードの解説
 
-**`TILE_COLORS`**
-数字をキー、背景色と文字色をオブジェクトとして持つ定数です。
+**`interface TileStyle`**
+背景色と文字色を持つオブジェクトの型定義です。`string` は文字列の型です。
+
+**`Record<number, TileStyle>`**
+`Record<キーの型, 値の型>` はオブジェクトの型を表すTypeScriptの書き方です。ここでは「キーが数値、値が `TileStyle`」のオブジェクトを意味します。
 
 **`TILE_COLORS[value] ?? DEFAULT_TILE_STYLE`**
 `??` は**Nullish合体演算子**といい、左辺が `null` または `undefined` のときだけ右辺を返します。2048を超えた数字には `DEFAULT_TILE_STYLE` が適用されます。
-
-**`if (value === 0) return <div className="cell" />`**
-値が0のマスは空の `div` を返します。
 
 ---
 
 ## BoardにTileを組み込む
 
-`src/components/Board.jsx` を修正して、`Tile` コンポーネントを使うようにします。
+`src/components/Board.tsx` を修正して、`Tile` コンポーネントを使うようにします。
 
-```jsx
+```tsx
 import Tile from './Tile';
 
-function Board({ board }) {
+type Board = number[][];
+
+interface BoardProps {
+  board: Board;
+}
+
+function Board({ board }: BoardProps) {
   return (
     <div className="board">
       {board.map((row, rowIndex) =>
@@ -99,10 +114,10 @@ export default Board;
 
 ## 動作を確認する
 
-`src/App.jsx` の `initialBoard` を変えてみて、さまざまな数字のタイルが色付きで表示されるか確認しましょう。
+`src/App.tsx` の `initialBoard` を変えてみて、さまざまな数字のタイルが色付きで表示されるか確認しましょう。
 
-```jsx
-const initialBoard = [
+```tsx
+const initialBoard: Board = [
   [2,   4,   8,   16],
   [32,  64,  128, 256],
   [512, 1024, 2048, 0],
@@ -116,8 +131,8 @@ const initialBoard = [
 
 ## まとめ
 
-- `Tile` コンポーネントは数字に応じた色を持つ
-- `TILE_COLORS` オブジェクトで数字→色のマッピングを管理する
+- `interface TileStyle` で色情報の型を定義する
+- `Record<number, TileStyle>` でキーが数値のオブジェクトの型を書く
 - `??` 演算子でマッピングにない数字のデフォルト色を設定する
 
 次の章では、ゲームの初期化ロジックを実装します。空のボードを作り、ランダムな位置にタイルを配置する関数を書きます。
