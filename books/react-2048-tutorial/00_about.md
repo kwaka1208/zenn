@@ -62,4 +62,10 @@ JavaScriptをほとんど書いたことがない場合は、先にJavaScriptの
 | CSS | ゲームの見た目 |
 | Vite | 開発環境のツール |
 
+:::message
+このチュートリアルでは **TypeScriptは使いません**。JavaScriptで記述します。
+
+TypeScriptはReact開発の現場で広く使われていますが、初めてReactを学ぶ段階ではJavaScriptに集中することをおすすめします。Reactの基本を理解してからTypeScriptに移行すると、両方の理解が深まります。TypeScriptへの移行は最終章で紹介します。
+:::
+
 次の章では、開発環境を整えてReactプロジェクトを作成します。
