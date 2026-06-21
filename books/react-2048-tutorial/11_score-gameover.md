@@ -86,8 +86,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
 import {
-  Board as BoardType,
-  MoveResult,
+  type Board as BoardType,
+  type MoveResult,
   createInitialBoard,
   addRandomTile,
   moveLeft,
@@ -165,7 +165,7 @@ export default App;
 ゲームオーバー中はキー入力を無視します。`gameOver` は `boolean` 型なので、`if (gameOver)` がそのまま使えます。
 
 **`{gameOver && <div>...</div>}`**
-`&&` を使うと、条件が `true` のときだけJSXを表示できます。これは「条件付きレンダリング」と呼ばれるReactのよく使うパターンです。
+`&&` を使うと、条件が `true` のときだけTSXを表示できます。これは「条件付きレンダリング」と呼ばれるReactでよく使うパターンです。
 
 **依存配列 `[board, gameOver]`**
 `gameOver` を依存配列に追加しています。`handleKeyDown` の中で `gameOver` を参照しているため、最新の値を参照するために必要です。

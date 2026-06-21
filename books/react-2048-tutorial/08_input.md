@@ -18,7 +18,7 @@ title: キーボード入力の処理（useEffect）
 
 ## useEffectの基本的な書き方
 
-次のコードは `useEffect` の構造を示した説明用です。このままファイルに書く必要はありません。
+次のコードは `useEffect` の構造を表しています。
 
 ```tsx
 import { useEffect } from 'react';

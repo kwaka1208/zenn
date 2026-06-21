@@ -86,8 +86,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Board from './components/Board';
 import {
-  Board as BoardType,
-  MoveResult,
+  type Board as BoardType,
+  type MoveResult,
   createInitialBoard,
   addRandomTile,
   moveLeft,
@@ -143,8 +143,10 @@ export default App;
 
 ### TypeScriptのポイント
 
-**`Board as BoardType`**
+**`type Board as BoardType`**
 `gameLogic.ts` からエクスポートされた `Board` 型を `BoardType` という名前でインポートしています。`App.tsx` 内で型として使うために別名をつけています。
+
+先頭の `type` は「これは型のインポートである」とTypeScriptに明示するキーワードです。ViteのTypeScript設定（`verbatimModuleSyntax`）では、型のインポートに `type` を付けることが必須になっています。`MoveResult` も型なので同様に `type` を付けています。関数（`createInitialBoard` など）は値のインポートなので `type` は不要です。
 
 **`Record<string, (board: BoardType) => MoveResult>`**
 `moves` オブジェクトの型です。「キーが文字列、値が `Board` を受け取って `MoveResult` を返す関数」を意味します。これにより、`moves` に誤った型の値を入れようとするとエラーになります。
