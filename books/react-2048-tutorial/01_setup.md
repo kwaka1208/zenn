@@ -45,6 +45,7 @@ npm create vite@latest react-2048 -- --template react-ts
 表示されていない場合は、次のコマンドで起動してください。
 
 ```bash
+npm install
 npm run dev
 ```
 
