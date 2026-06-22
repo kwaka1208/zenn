@@ -34,17 +34,10 @@ npm create vite@latest react-2048 -- --template react-ts
 
 `--template react-ts` の `ts` がTypeScript対応を意味します。
 
-完了したら、作成されたフォルダに移動して、必要なパッケージをインストールします。
-
-```bash
-cd react-2048
-npm install
-```
-
-インストールが完了すると、そのまま開発サーバーが起動する場合があります。ターミナルに次のような表示が出ていれば、すでに起動しています。
+インストールが完了すると、そのまま開発サーバーが起動します。ターミナルに次のような表示が出ていれば、すでに起動しています。
 
 ```
-  VITE v5.x.x  ready in xxx ms
+  VITE v8.x.x  ready in xxx ms
 
   ➜  Local:   http://localhost:5173/
 ```
