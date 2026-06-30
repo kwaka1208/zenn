@@ -92,6 +92,16 @@ src/
 
 フォルダを作成しておきましょう。ターミナルで `react-2048` フォルダに移動した状態で、次のコマンドを実行してください。
 
+**Windowsをお使いの場合**は、PowerShellで次のコマンドを実行してください。
+
+```powershell
+md src\components, src\utils
+```
+
+`md` コマンドはオプションなしで、途中のフォルダがない場合もまとめて作成でき、すでにフォルダが存在してもエラーにはなりません。
+
+**Mac/Linuxをお使いの場合**は、次のコマンドを実行してください。
+
 ```bash
 mkdir -p src/components src/utils
 ```
