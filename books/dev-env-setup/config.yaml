@@ -5,6 +5,7 @@ published: true
 price: 0
 chapters:
   - 01_intro
+  - changelog
   - 02_pwsh
   - 03_wsl
   - 04_homebrew
