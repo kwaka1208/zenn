@@ -43,10 +43,16 @@ https://techno-kuro.com/phishingSiteDemo/
 
 リンク先の情報は、あなたのアクセスから知ることができるを表示していますが、この情報はサーバーには送信されません。位置情報についても同様です。
 
-https://crssrds.jp/lab/location/
+https://works.crssrds.jp/learn/location/
+
+### フィッシングメールからパスワードが漏洩するデモ
+
+以下のリンクでは、フィッシングメールからパスワードが漏洩する様子を体験できます。
+
+https://works.crssrds.jp/learn/phishing/
 
 
-- [フィッシングメールからパスワードが漏洩するデモ - 人とコンピュータの研究室](https://crssrds.jp/lab/phishing/)
+
 
 ## ネットにアクセスするだけでわかること
 ワンクリック詐欺サイトなどで、あなたの情報としてもっともらしいものを表示して個人情報を取得したように思い込ませることがあります。
