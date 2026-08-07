@@ -52,6 +52,17 @@ chapters:
 - 記事スラッグはケバブケース（例: `how-to-do-something`）で英語表記。
 - 画像は `images/` に配置し、記事から相対パスで参照する。
 - `published: false` で下書き保存してから公開する運用。
+- リンクを単体で示す場合（文中に織り込まず、独立した行として置く場合）は、Markdown形式ではなくURLだけを書く。ZennではURLだけの行がバナー（リンクカード）として表示されるため。
+
+  ```markdown
+  <!-- OK: バナーとして表示される -->
+  https://example.com/article
+
+  <!-- NG: ただのリンクになる -->
+  [記事タイトル](https://example.com/article)
+  ```
+
+  文中に織り込むリンクは、これまでどおりMarkdown形式で書く。
 
 ## 注意事項
 
