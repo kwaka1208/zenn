@@ -39,7 +39,19 @@
       "Bash(curl -s --max-time 25 -L -A 'Mozilla/5.0' \"https://support.google.com/chromeosflex/answer/11513094?hl=ja\" -o /tmp/cf.html)",
       "Bash(curl -s --max-time 25 -L -A 'Mozilla/5.0' \"https://wiki.t2linux.org/guides/audio-config/\" -o /tmp/au.html)",
       "Bash(curl -s --max-time 25 -L -A 'Mozilla/5.0' \"https://dortania.github.io/OpenCore-Legacy-Patcher/\" -o /tmp/o.html)",
-      "WebFetch(domain:dortania.github.io)"
+      "WebFetch(domain:dortania.github.io)",
+      "WebFetch(domain:www.microsoft.com)",
+      "Bash(curl -sL \"https://support.apple.com/ja-jp/105121\" -o apple105121.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 x.py \"https://support.apple.com/ja-jp/102617\")",
+      "Bash(python3 x.py \"https://support.apple.com/ja-jp/108806\")",
+      "Bash(python3 x.py \"https://www.nintendo.co.jp/support/switch/parentalcontrols/index.html\")",
+      "Bash(curl -sL \"https://www.nintendo.co.jp/support/switch/parentalcontrols/index.html\")",
+      "Bash(python3 x.py \"https://www.nintendo.co.jp/support/switch2/parentalcontrols/index.html\")",
+      "Bash(python3 x.py \"https://support.nintendo.com/jp/switch/parentalcontrols/app/index.html\")",
+      "Bash(python3 x.py \"https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac\")",
+      "WebFetch(domain:zenn.dev)",
+      "Bash(python3 x.py \"https://support.microsoft.com/ja-jp/family-safety/set-up-microsoft-family-safety\")"
     ]
   }
 }
