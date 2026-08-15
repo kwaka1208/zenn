@@ -1,0 +1,21 @@
+title: プロフィールサイト制作ではじめる Astro + GitHub Pages
+summary: ブログ付きのプロフィールサイトを作りながら、Webフレームワーク「Astro」の基本を学ぶ初心者向けチュートリアルです。プロジェクト作成からコンポーネント・Markdownでのブログ管理・GitHub Pagesでの公開までを段階的に解説します。
+topics: [astro, markdown, githubpages, 初心者向け, web制作]
+published: false
+price: 0
+chapters:
+  - 00_about
+  - 01_setup
+  - 02_astro-basics
+  - 03_layout
+  - 04_pages
+  - 05_styling
+  - 06_content
+  - 07_blog-list
+  - 08_blog-post
+  - 09_images
+  - 10_tags
+  - 11_interactive
+  - 12_polish
+  - 13_deploy
+  - 14_finish
