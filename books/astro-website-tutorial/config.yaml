@@ -18,4 +18,5 @@ chapters:
   - 11_interactive
   - 12_polish
   - 13_deploy
+  - 13b_deploy-server
   - 14_finish
