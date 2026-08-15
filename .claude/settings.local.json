@@ -54,7 +54,14 @@
       "Bash(python3 x.py \"https://support.microsoft.com/ja-jp/family-safety/set-up-microsoft-family-safety\")",
       "Read(//Users/kwaka1208/.claude/skills/**)",
       "Read(//Users/kwaka1208/.claude/**)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(curl -sI https://kwaka1208.github.io/_astro/profile.XvvutFyz_ieuYc.webp)",
+      "Bash(curl -s https://kwaka1208.github.io/)",
+      "Bash(gh api *)",
+      "Bash(curl -s \"https://api.github.com/users/kwaka1208/repos?sort=updated&per_page=100\")",
+      "Bash(curl -s https://kwaka1208.github.io/my-astro-siite/)",
+      "Bash(curl -so /dev/null -w \"%{http_code}\\\\n\" https://kwaka1208.github.io/my-astro-siite/)",
+      "Read(//Users/kwaka1208/git/**)"
     ]
   }
 }
