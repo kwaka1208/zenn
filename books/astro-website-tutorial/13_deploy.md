@@ -180,7 +180,7 @@ https://kwaka1208.github.io/my-astro-site/
 https://github.com/kwaka1208/my-astro-site
 
 :::message
-この見本のリポジトリ名は `my-astro-site` で、`ユーザー名.github.io` ではありません。そのため、URLが `https://kwaka1208.github.io/my-astro-site/` のようにリポジトリ名を含む形になっており、次の「補足」で説明する `base` の設定を入れてあります。設定の実物を見たい方は、リポジトリの `astro.config.mjs` と `src/consts.ts` を確認してみてください。
+この見本のリポジトリ名は `my-astro-site` で、`ユーザー名.github.io` ではありません。そのため、URLが `https://kwaka1208.github.io/my-astro-site/` のようにリポジトリ名を含む形になっており、`base` の設定を入れてあります。この設定については、このチャプターの最後にある「補足：リポジトリ名を `ユーザー名.github.io` 以外にした場合」で説明しているので、同じようにリポジトリ名を変えて公開したい方はそちらを読んでください。設定の実物は、見本リポジトリの `astro.config.mjs` と `src/consts.ts` で確認できます。
 :::
 
 ---
