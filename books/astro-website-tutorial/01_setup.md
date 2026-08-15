@@ -92,6 +92,11 @@ my-astro-site/
 ├── node_modules/        # インストールされたパッケージ（触らない）
 ├── public/              # そのまま配信されるファイル（favicon等）
 ├── src/                 # ソースコード（ここを編集していく）
+│   ├── assets/          # テンプレートに付属する画像
+│   ├── components/      # 部品（ウェルカム画面用のサンプル）
+│   │   └── Welcome.astro
+│   ├── layouts/         # ページの共通枠（サンプル）
+│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro  # トップページ
 ├── .gitignore           # Gitの管理対象外ファイルの設定
@@ -119,24 +124,29 @@ my-astro-site/
 
 ## トップページを書き換えてみる
 
-`src/pages/index.astro` を開くと、次のような内容になっています。
+開発サーバーを起動した直後にブラウザに表示されているのは、Astroが用意しているウェルカム画面です。これを作っているのが `src/pages/index.astro` で、開くと次のような内容になっています。
 
-```html
+```html:src/pages/index.astro
 ---
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<!-- HTML! -->
-<h1>Hello, Astronaut!</h1>
+<Layout>
+    <Welcome />
+</Layout>
 ```
+
+`Layout` と `Welcome` は、`src/layouts/` と `src/components/` に入っているサンプルの部品です。この本ではこれらを使わず、自分でページを組み立てていきます。
 
 （テンプレートのバージョンによって中身は多少異なります）
 
 これを次の内容に書き換えてください。
 
-```html
+```html:src/pages/index.astro
 ---
 ---
 
@@ -153,6 +163,8 @@ console.log('This runs in your terminal, not the browser!');
 ```
 
 保存してブラウザを見ると、「わたしのサイト」という見出しが表示されます。
+
+これで `Welcome.astro` と `Layout.astro` は使われなくなりますが、残しておいても表示には影響しません。気になる場合は `src/components/`・`src/layouts/`・`src/assets/` ごと削除してかまいません。
 
 ファイルの先頭にある `---` で挟まれた部分は次の章で説明します。今は「Astroファイルの決まりごと」と思っておいてください。
 
