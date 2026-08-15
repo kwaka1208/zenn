@@ -157,15 +157,37 @@ schema: z.object({
 npm run dev
 ```
 
-エラーが出なければ、記事は正しく読み込まれています。試しに、`first-post.md` の `pubDate` の行を削除して保存してみてください。次のようなエラーが表示されるはずです。
+エラーが出なければ、記事は正しく読み込まれています。試しに、`first-post.md` の `pubDate` の行を削除して保存してみてください。ターミナルに次のようなエラーが表示されるはずです。
 
 ```
-[InvalidContentEntryDataError] blog → first-post data does not match
-collection schema.
-pubDate: Required
+[ERROR] [glob-loader] Failed to reload first-post.md: blog → first-post data does not match collection schema.
+
+  pubDate: Expected type "date", received "object"
 ```
 
-「`pubDate` が必須なのにありません」と教えてくれました。確認したら、`pubDate` の行を元に戻しておいてください。
+「blogコレクションの `first-post` という記事が、決めたルールに合っていません。`pubDate` を日付として読み取れませんでした」という意味です。日付を書き忘れたときも、日付ではない値を書いたときも、このエラーになります。
+
+確認できたら、`pubDate` の行を元に戻してください。エラーの表示が消えれば大丈夫です。
+
+:::message
+エラーの文面は、お使いのAstroのバージョンによって多少異なります。`data does not match collection schema` と出ていれば、「frontmatterがスキーマに合っていない」という同じ意味だと考えてください。
+:::
+
+### frontmatterでエラーが出たときは
+
+frontmatterは**YAML**という書式で書きます。書き方の決まりが少し細かく、次のようなエラーが出たら記法のミスを疑ってください。
+
+```
+[ERROR] [glob-loader] Failed to reload first-post.md: bad indentation of a mapping entry
+```
+
+「行頭の空き方（インデント）がおかしい」という意味です。よくある原因は次の3つです。
+
+- **全角スペースが混ざっている**：日本語入力のまま書くと起こりがちです。frontmatterで使う空白はすべて半角です
+- **コロンのあとに半角スペースがない**：`pubDate:2026-08-01` ではなく `pubDate: 2026-08-01` と書きます
+- **行頭に余計なスペースがある**：frontmatterの各行は、行頭から書き始めます
+
+なお、行を書き換えている途中でエディタが自動保存すると、一瞬だけこのエラーが出ることがあります。その場合は書き終えて保存し直せば消えるので、気にしなくて大丈夫です。
 
 まだ記事はページとして表示されません。記事を画面に出すのは次の章で行います。
 

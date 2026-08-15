@@ -224,9 +224,15 @@ URLに日本語（`/tags/カメラ/`）を使っていますが、ブラウザ�
 }
 ```
 
-あわせて、`src/consts.ts` の `NAV_ITEMS` に「タグ一覧」を追加しておきましょう。
+あわせて、`src/consts.ts` の `NAV_ITEMS` に「タグ」を追加しておきましょう。ファイル全体は次のようになります。
 
-```ts:src/consts.ts（NAV_ITEMSのみ）
+```ts:src/consts.ts
+export const SITE = {
+  title: "わたしのサイト",
+  description: "趣味と日々の記録を綴る個人サイトです。",
+  author: "わかばやし",
+} as const;
+
 export const NAV_ITEMS = [
   { label: "ホーム", href: "/" },
   { label: "ブログ", href: "/blog/" },

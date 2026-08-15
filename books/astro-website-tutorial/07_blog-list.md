@@ -92,7 +92,7 @@ const posts = await getCollection('blog');
 - `astro:content` はAstroが用意している記事管理用のモジュールです
 - `await` は「取得が終わるまで待つ」という意味のキーワードです。`getCollection()` は非同期（結果が返るまで少し時間がかかる）関数なので、`await` を忘れるとデータが取れません
 
-この処理は**ビルド時に実行される**ことを思い出してください。訪問者がページを開くたびに記事を読み込むのではなく、サイトを作る時点で一覧が完成しています。だから表示が速いのです。
+この記事の読み込みは、訪問者がページを開いたときではなく、**サイトを作る（ビルドする）ときに実行されます**。訪問者に届くのは、記事一覧ができあがった状態のHTMLです。だから表示が速いのです。
 
 ### 取得した記事の中身
 
@@ -146,9 +146,17 @@ post.data.pubDate.toLocaleDateString('ja-JP')
 
 ## ナビゲーションにブログを追加する
 
-ヘッダーのメニューからブログ一覧に行けるようにしましょう。`src/consts.ts` の `NAV_ITEMS` に1行追加するだけです。
+ヘッダーのメニューからブログ一覧に行けるようにしましょう。`src/consts.ts` の `NAV_ITEMS` に「ブログ」の1行を追加します。
 
-```ts:src/consts.ts（NAV_ITEMSのみ）
+ファイル全体は次のようになります（`SITE` は第3章で書いたままです）。
+
+```ts:src/consts.ts
+export const SITE = {
+  title: "わたしのサイト",
+  description: "趣味と日々の記録を綴る個人サイトです。",
+  author: "わかばやし",
+} as const;
+
 export const NAV_ITEMS = [
   { label: "ホーム", href: "/" },
   { label: "ブログ", href: "/blog/" },
