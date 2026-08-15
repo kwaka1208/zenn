@@ -111,7 +111,26 @@ const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
 
 各コンポーネントの `<style>` に直接書いていた色（`#ccc` など）を、CSS変数に置き換えていきます。コンポーネントのスコープ付きスタイルの中からも、グローバルに定義したCSS変数は参照できます。
 
-**`src/components/Header.astro`** の `<style>` を次のように変更します。
+**`src/components/Header.astro`** は、テンプレートとスタイルの両方を変更します。
+
+まず、ヘッダーの中身を `header-wrapper` というdivで包みます。罫線は画面の端まで引き、中身だけをコンテンツ幅に揃えたいからです。テンプレート部分を次のようにしてください。
+
+```html:src/components/Header.astro（テンプレート部分）
+<div class="header-wrapper">
+  <header>
+    <a href="/" class="site-title">{SITE.title}</a>
+    <nav>
+      <ul>
+        {NAV_ITEMS.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </header>
+</div>
+```
+
+続いて `<style>` を次のように変更します。色をCSS変数に置き換えるとともに、罫線をいま追加した `.header-wrapper` に移しています。
 
 ```html
 <style>
@@ -147,23 +166,6 @@ const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
     color: var(--color-accent);
   }
 </style>
-```
-
-あわせて、ヘッダーの中身を `header-wrapper` で包んで、罫線は画面の端まで・中身はコンテンツ幅に揃えます。テンプレート部分を次のようにしてください。
-
-```html:src/components/Header.astro（テンプレート部分）
-<div class="header-wrapper">
-  <header>
-    <a href="/" class="site-title">{SITE.title}</a>
-    <nav>
-      <ul>
-        {NAV_ITEMS.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
-        ))}
-      </ul>
-    </nav>
-  </header>
-</div>
 ```
 
 **`src/components/Footer.astro`** の `<style>` も変数に置き換えます。

@@ -18,7 +18,13 @@ Astroの動作には `v22.12.0` 以上のバージョンが必要です。
 v22.14.0   ← このように表示されればOK
 ```
 
-表示されない場合や古いバージョンの場合は [Node.js公式サイト](https://nodejs.org/ja) からLTS版をインストールしてください。
+表示されない場合や、古いバージョンだった場合は、Node.jsをインストール（または更新）してください。手順は、別の本『開発環境構築ガイド』の「Node.js のインストール」の章で解説しています。Windows・macOS・Linuxのそれぞれについて説明しているので、お使いのOSに合わせて進めてください。
+
+https://zenn.dev/kwaka1208/books/dev-env-setup/viewer/06_nodejs
+
+:::message
+この章では **fnm** というバージョン管理ツールを使う方法を紹介しています。バージョンの切り替えが簡単になるので、これからいろいろ試していきたい方にはおすすめです。とりあえず動けばよいという方は、[Node.js公式サイト](https://nodejs.org/ja) からLTS版をインストールしてもかまいません。
+:::
 
 ---
 
@@ -34,7 +40,7 @@ npm create astro@latest my-astro-site
 
 | 質問 | 選ぶもの |
 |---|---|
-| How would you like to start your new project?（どのテンプレートで始めますか？） | **A basic, minimal starter**（最小構成） |
+| How would you like to start your new project?（どのテンプレートで始めますか？） | **A basic, helpful starter project**（最小構成） |
 | Install dependencies?（パッケージをインストールしますか？） | **Yes** |
 | Initialize a new git repository?（Gitリポジトリを作りますか？） | **Yes** |
 
@@ -63,7 +69,11 @@ npm run dev
 ┃ Local    http://localhost:4321/
 ```
 
-ブラウザで `http://localhost:4321/` を開くと、「Astro」とだけ書かれたシンプルなページが表示されます。
+ブラウザで `http://localhost:4321/` を開くと、次のようなシンプルなページが表示されます。
+
+![開発サーバー起動直後のトップページ](/images/astro-website-tutorial/dev-server-top.png)
+
+「To get started, open the src/pages directory in your project.」（始めるには、プロジェクトの `src/pages` フォルダを開いてください）と書かれています。この表示はAstroのバージョンによって変わることがあります。
 
 :::message
 `4321` はAstroの開発サーバーが使うポート番号です。「4、3、2、1、発射！」というカウントダウンにちなんだ遊び心のある番号です（Astroはロケットがモチーフ）。
@@ -71,18 +81,9 @@ npm run dev
 開発サーバーを止めたいときは、ターミナルで `Ctrl + C` を押します。
 :::
 
-### コードを変更しても画面が変わらないときは
-
-Astroにはファイルを保存すると自動的にブラウザの表示が更新される機能があります。もし変更が反映されない場合は、**ハードリロード**（キャッシュを無視した再読み込み）を試してください。
-
-| OS | キー操作 |
-|---|---|
-| Mac | `Cmd + Shift + R` |
-| Windows / Linux | `Ctrl + Shift + R` |
-
 ---
 
-## フォルダ構成を確認する
+## できあがったフォルダの中身
 
 作成されたフォルダの中身を確認してみましょう。
 
@@ -100,7 +101,7 @@ my-astro-site/
 └── tsconfig.json        # TypeScriptの設定ファイル
 ```
 
-最小構成なので、ファイルはこれだけです。**このチュートリアルで主に編集するのは `src/` フォルダの中**です。
+最小構成なので、ファイルはこれだけです。このチュートリアルで主に編集するのは、**`src/` フォルダの中**です。
 
 ### `src/pages/` フォルダの特別な役割
 
@@ -109,8 +110,8 @@ my-astro-site/
 | ファイル | URL |
 |---|---|
 | `src/pages/index.astro` | `/`（トップページ） |
-| `src/pages/about.astro` | `/about` |
-| `src/pages/blog/index.astro` | `/blog` |
+| `src/pages/about.astro` | `/about/` |
+| `src/pages/blog/index.astro` | `/blog/` |
 
 これを**ファイルベースルーティング**と呼びます。「ページを増やしたいときはファイルを増やす」という直感的な仕組みです。
 
@@ -154,6 +155,19 @@ console.log('This runs in your terminal, not the browser!');
 保存してブラウザを見ると、「わたしのサイト」という見出しが表示されます。
 
 ファイルの先頭にある `---` で挟まれた部分は次の章で説明します。今は「Astroファイルの決まりごと」と思っておいてください。
+
+### コードを変更しても画面が変わらないときは
+
+いま体験したように、Astroにはファイルを保存すると自動的にブラウザの表示が更新される機能があります。もし変更が反映されない場合は、**ハードリロード**（キャッシュを無視した再読み込み）を試してください。
+
+| OS | キー操作 |
+|---|---|
+| Mac | `Cmd + Shift + R` |
+| Windows / Linux | `Ctrl + Shift + R` |
+
+### それでも解決しないときは
+
+環境構築は、この本の中でいちばんつまずきやすいところです。エラーメッセージが出て先に進めない場合は、コメント欄で気軽に質問してください。表示されたエラーの文面をそのまま貼っていただけると、状況がつかみやすくなります。
 
 ---
 

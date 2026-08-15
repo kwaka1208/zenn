@@ -51,7 +51,10 @@
       "Bash(python3 x.py \"https://support.nintendo.com/jp/switch/parentalcontrols/app/index.html\")",
       "Bash(python3 x.py \"https://support.apple.com/ja-jp/guide/mac-help/mchlc5595037/mac\")",
       "WebFetch(domain:zenn.dev)",
-      "Bash(python3 x.py \"https://support.microsoft.com/ja-jp/family-safety/set-up-microsoft-family-safety\")"
+      "Bash(python3 x.py \"https://support.microsoft.com/ja-jp/family-safety/set-up-microsoft-family-safety\")",
+      "Read(//Users/kwaka1208/.claude/skills/**)",
+      "Read(//Users/kwaka1208/.claude/**)",
+      "Bash(xxd)"
     ]
   }
 }
