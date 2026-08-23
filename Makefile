@@ -1,7 +1,7 @@
 .PHONY: preview new open
 
 # プレビュー起動
-preview:
+serve:
 	open http://localhost:8000
 	npx zenn preview
 
