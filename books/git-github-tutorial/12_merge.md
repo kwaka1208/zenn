@@ -10,19 +10,35 @@ title: 合流させる（merge とコンフリクト）
 
 **マージ**は、あるブランチの変更を、別のブランチに取り込む操作です。
 
-```
-merge前:
-main:     A --- B
-                 \
-feature:          C --- D
+マージ前は、`main` と `feature` が枝分かれしたままの状態です。
 
-merge後:
-main:     A --- B ------- M
-                 \       /
-feature:          C --- D
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
 ```
 
-`M` が合流を表す**マージコミット**です。
+`main` に `feature` をマージすると、両方の変更を合わせ持つコミットが新しく作られます。
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
+    checkout main
+    merge feature id: "M"
+```
+
+`M` が合流を表す**マージコミット**です。枝分かれした2つの流れが、ここで1本に戻ります。
 
 ---
 
@@ -75,18 +91,29 @@ Fast-forward
 
 `main` が枝分かれしてから一度も進んでいない場合、Gitは合流用の新しいコミットを作りません。`main` という目印を、単に先へ移動させるだけで済むからです。これを**早送り**（fast-forward）と呼びます。
 
-```
-merge前:
-main:     A --- B
-                 \
-add-links:        C
+マージ前は、`main` が `B`、`add-links` が `C` を指しています。
 
-merge後:  A --- B --- C
-                      ↑
-                   main と add-links が同じ場所を指す
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch add-links
+    checkout add-links
+    commit id: "C"
 ```
 
-履歴は一本道のままです。
+マージ後は、`main` の目印が `C` まで進むだけです。新しいコミットは作られません。
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+```
+
+いまは `main` と `add-links` が、どちらも `C` を指している状態です。履歴は一本道のままです。
 
 使い終わったブランチを削除しておきます。
 

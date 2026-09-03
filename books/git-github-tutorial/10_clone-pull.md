@@ -140,9 +140,14 @@ Gitには、取ってくるコマンドが2つあります。
 
 つまり、次の関係です。
 
+```mermaid
+flowchart LR
+    G["GitHub<br/>リモートリポジトリ"] -- "git fetch" --> O["origin/main<br/>手元にあるリモートの控え"]
+    O -- "git merge origin/main" --> M["main<br/>自分の作業ブランチ"]
+    G -- "git pull（fetch + merge）" --> M
 ```
-git pull = git fetch + git merge
-```
+
+`git pull` は、この2つの動作をまとめて実行してくれるコマンドです。
 
 ### `fetch` の使いどころ
 
@@ -174,10 +179,13 @@ git merge origin/main
 
 重要なのは、これが自動更新されないことです。GitHub上で誰かがpushしても、自分が `fetch` または `pull` するまで、手元の `origin/main` は古いままです。
 
-```
-リモート（GitHub）:  A --- B --- C  ← 誰かがCをpushした
-手元の origin/main:  A --- B       ← fetchするまで気づかない
-手元の main:         A --- B
+```mermaid
+flowchart TD
+    G["GitHub の main<br/>A → B → C（誰かが C をpushした）"]
+    O["手元の origin/main<br/>A → B"]
+    M["手元の main<br/>A → B"]
+    G -. "fetch するまで伝わらない" .-> O
+    O --> M
 ```
 
 「なぜか最新になっていない」と感じたら、まず `git fetch` を実行してみてください。

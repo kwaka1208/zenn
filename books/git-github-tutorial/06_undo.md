@@ -13,6 +13,17 @@ Gitを使う大きな理由のひとつが、「間違えても元に戻せる�
 | `commit` したが、まだ `push` していない | `git commit --amend` / `git reset` |
 | `push` して他の人と共有済み | `git revert` |
 
+図にすると、次のような分かれ道になります。
+
+```mermaid
+flowchart TD
+    Q{"どこまで進んだ？"}
+    Q -- "まだ add していない" --> A["git restore<br/>編集を捨てる"]
+    Q -- "add したが commit 前" --> B["git restore --staged<br/>ステージから降ろす"]
+    Q -- "commit したが push 前" --> C["git commit --amend / git reset<br/>コミットをやり直す"]
+    Q -- "push して共有済み" --> D["git revert<br/>打ち消すコミットを作る"]
+```
+
 ---
 
 ## 編集を取り消す（addする前）
@@ -184,10 +195,16 @@ git revert a1b2c3d
 
 これは「指定したコミットの変更を打ち消す、**新しいコミット**を作る」という動作です。
 
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    commit id: "C'" type: HIGHLIGHT
 ```
-変更前の履歴:  A --- B --- C
-revert後:      A --- B --- C --- C'（Cを打ち消すコミット）
-```
+
+`C'` が「`C` を打ち消すコミット」です。
 
 過去の履歴は一切書き換わりません。「Cというコミットがあった」という事実も、「それを取り消した」という事実も、両方が残ります。
 

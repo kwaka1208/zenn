@@ -18,11 +18,20 @@ title: ブランチを使う
 
 ブランチを使えば、本流（`main`）はそのままに、別の枝で自由に実験できます。うまくいったら本流に合流させ、失敗したら枝ごと捨てればよいのです。
 
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch "実験用の枝"
+    checkout "実験用の枝"
+    commit id: "D"
+    commit id: "E"
+    checkout main
+    commit id: "C"
 ```
-main:     A --- B --- C
-                 \
-実験用の枝:        D --- E
-```
+
+丸ひとつが1回のコミット（記録）です。`B` の時点で枝が分かれ、`main` は `C` へ、実験用の枝は `D` `E` へと、別々の流れで進んでいます。お互いの作業は干渉しません。
 
 ---
 

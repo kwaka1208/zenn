@@ -210,24 +210,56 @@ GitHubのPR画面を再読み込みしてください。**追加したコミッ�
 | **Squash and merge** | 全コミットを1つにまとめて取り込む | 細かいコミットが多く、履歴を整理したいとき |
 | **Rebase and merge** | コミットを一列に並べ直して取り込む | 履歴を一本道に保ちたいとき |
 
-図にすると次のようになります。
+図にすると次のようになります。まず、マージする前の状態です。`add-categories` に `C` `D` `E` の3つのコミットがあります。
 
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch add-categories
+    checkout add-categories
+    commit id: "C"
+    commit id: "D"
+    commit id: "E"
 ```
-元の状態:
-main:           A --- B
-                       \
-add-categories:         C --- D --- E
 
-Create a merge commit:
-main:           A --- B --------- M
-                       \         /
-                        C --- D E
+**Create a merge commit**: 3つのコミットをそのまま残し、合流点として `M` を作ります。
 
-Squash and merge:
-main:           A --- B --- CDE（1つにまとまる）
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch add-categories
+    checkout add-categories
+    commit id: "C"
+    commit id: "D"
+    commit id: "E"
+    checkout main
+    merge add-categories id: "M"
+```
 
-Rebase and merge:
-main:           A --- B --- C --- D --- E
+**Squash and merge**: `C` `D` `E` がひとつのコミットにまとまって `main` に載ります。
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "CDE"
+```
+
+**Rebase and merge**: `C` `D` `E` が `main` の続きとして並べ直されます。枝分かれの跡は残りません。
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    commit id: "D"
+    commit id: "E"
 ```
 
 :::message
@@ -283,16 +315,20 @@ git fetch --prune
 
 ここまでの流れをまとめると、次のようになります。
 
-```
-1. main を最新にする         git switch main && git pull
-2. ブランチを作る             git switch -c feature/xxx
-3. 作業してコミット           git add . && git commit -m "..."
-4. pushする                  git push -u origin feature/xxx
-5. GitHubでPRを作る
-6. レビューを受けて直す        （3と4を繰り返す）
-7. マージする                 GitHub上でボタンをクリック
-8. ローカルを最新にする        git switch main && git pull
-9. ブランチを削除する          git branch -d feature/xxx
+```mermaid
+flowchart TD
+    A["1. main を最新にする<br/>git switch main && git pull"]
+    B["2. ブランチを作る<br/>git switch -c feature/xxx"]
+    C["3. 作業してコミット<br/>git add . && git commit"]
+    D["4. push する<br/>git push -u origin feature/xxx"]
+    E["5. GitHubでPRを作る"]
+    F{"6. レビューは通った？"}
+    G["7. マージする<br/>GitHub上でボタンをクリック"]
+    H["8. ローカルを最新にする<br/>git switch main && git pull"]
+    I["9. ブランチを削除する<br/>git branch -d feature/xxx"]
+    A --> B --> C --> D --> E --> F
+    F -- "修正が必要" --> C
+    F -- "OK" --> G --> H --> I
 ```
 
 **この9ステップが、現代のソフトウェア開発でもっとも標準的な進め方**です。GitHub Flowと呼ばれることもあります。
