@@ -1,0 +1,23 @@
+title: はじめてのGitとGitHub - コマンドラインで学ぶバージョン管理
+summary: バージョン管理ツール「Git」と、その共有サービス「GitHub」をゼロから学ぶ初心者向けチュートリアルです。メモ帳リポジトリを育てながら、コミット・履歴・やり直し・ブランチ・プルリクエストまでを、すべてコマンドライン操作で段階的に解説します。
+topics: [git, github, 初心者向け, cli, バージョン管理]
+published: false
+price: 0
+chapters:
+  - 00_about
+  - 01_why-git
+  - 02_setup
+  - 03_first-repo
+  - 04_commit
+  - 05_history
+  - 06_undo
+  - 07_gitignore
+  - 08_github-setup
+  - 09_push
+  - 10_clone-pull
+  - 11_branch
+  - 12_merge
+  - 13_pull-request
+  - 14_team
+  - 15_troubleshoot
+  - 16_finish
