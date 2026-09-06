@@ -99,7 +99,7 @@ ls .git
 HEAD		config		description	hooks		info		objects		refs
 ```
 
-Windowsでは表形式になりますが、並んでいる名前は同じです。
+Windowsでは表形式になります。Gitのバージョンによっては `branches` などが加わることもありますが、気にしなくて大丈夫です。
 
 いまは意味がわからなくて大丈夫です。「履歴の実体はここにある」とだけ覚えておいてください。
 

@@ -132,10 +132,10 @@ git check-ignore -v drafts/idea.md
 ```
 
 ```
-.gitignore:14:drafts/	drafts/idea.md
+.gitignore:13:drafts/	drafts/idea.md
 ```
 
-「`.gitignore` の14行目の `drafts/` という記述によって無視されています」という意味です。ルールが増えてくると重宝します。
+「`.gitignore` の13行目の `drafts/` という記述によって無視されています」という意味です。ルールが増えてくると重宝します。
 
 無視されているファイルの一覧を見たいときは、次のように書きます。
 

@@ -217,7 +217,8 @@ git log --oneline --graph --all
 * 3c4d5e6 (HEAD -> add-categories) 読みたい本をジャンル別に整理
 * 2b3c4d5 todoをカテゴリ別に整理
 * 9b8c7d6 (origin/main, main) 読みたい本に「人間失格」を追加
-* 7f3a9c2 todoの進捗を更新
+* 8a7b6c5 READMEに構成と使い方を追記
+* c1d2e3f todoの進捗を更新
 ```
 
 `main` は `9b8c7d6` で止まっていて、そこから `add-categories` が2つ先に進んでいることが読み取れます。

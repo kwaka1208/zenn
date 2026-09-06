@@ -200,7 +200,7 @@ git reset --hard HEAD~1
 You are in 'detached HEAD' state.
 ```
 
-`git switch コミットID` などで、ブランチから離れた状態です。
+`git switch --detach コミットID` などで、ブランチから離れた状態です。
 
 ```bash
 git switch main
@@ -249,7 +249,8 @@ git config --global core.quotepath false
 ### 改行コードの警告が出る
 
 ```
-warning: LF will be replaced by CRLF the next time Git touches it
+warning: LF will be replaced by CRLF in notes/todo.md.
+The file will have its original line endings in your working directory
 ```
 
 WindowsとmacOS/Linuxで改行コードの扱いが違うことによる警告です。次の設定で統一できます。

@@ -133,13 +133,28 @@ git branch -d add-links
 git switch -c update-readme
 ```
 
-```markdown:README.md
+````markdown:README.md
 # わたしのメモ帳（個人用）
 
 日々のメモを Markdown で管理するリポジトリです。
-```
 
-1行目だけを変えました。コミットします。
+## 構成
+
+- `notes/todo.md` … やることリスト
+- `notes/books.md` … 読みたい本のリスト
+
+## 使い方
+
+メモを編集したら、コミットして push します。
+
+```bash
+git add .
+git commit -m "メモを更新"
+git push
+```
+````
+
+1行目だけを変えました（2行目以降は第9章のままです）。コミットします。
 
 ```bash
 git add README.md
@@ -152,19 +167,17 @@ git commit -m "READMEのタイトルに補足を追加"
 git switch main
 ```
 
-```markdown:notes/books.md
-# 読みたい本
+```markdown:notes/links.md
+# 参考リンク
 
-- 銀河鉄道の夜
-- 吾輩は猫である
-- こころ
-- 人間失格
-- 坊っちゃん
+- Git公式ドキュメント: https://git-scm.com/doc
+- GitHub Docs: https://docs.github.com/ja
+- Pro Git（日本語版）: https://git-scm.com/book/ja/v2
 ```
 
 ```bash
-git add notes/books.md
-git commit -m "読みたい本に「坊っちゃん」を追加"
+git add notes/links.md
+git commit -m "参考リンクにPro Gitを追加"
 ```
 
 この時点で、履歴は枝分かれしています。
@@ -174,8 +187,8 @@ git log --oneline --graph --all
 ```
 
 ```
-* 5e6f7a8 (HEAD -> main) 読みたい本に「坊っちゃん」を追加
-| * 4d5e6f7 (update-readme) READMEのタイトルに補足を追加
+* 5e6f7a8 (HEAD -> main) 参考リンクにPro Gitを追加
+| * 6f7a8b9 (update-readme) READMEのタイトルに補足を追加
 |/
 * 1a2b3c4 参考リンクのメモを追加
 ```
@@ -195,7 +208,7 @@ Merge branch 'update-readme'
 既定のメッセージのままでよいので、そのまま保存して閉じます（vimなら `:wq` と入力してEnter）。
 
 ```
-Merge made by the 'recursive' strategy.
+Merge made by the 'ort' strategy.
  README.md | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
@@ -209,8 +222,8 @@ git log --oneline --graph --all
 ```
 *   9a8b7c6 (HEAD -> main) Merge branch 'update-readme'
 |\
-| * 4d5e6f7 (update-readme) READMEのタイトルに補足を追加
-* | 5e6f7a8 読みたい本に「坊っちゃん」を追加
+| * 6f7a8b9 (update-readme) READMEのタイトルに補足を追加
+* | 5e6f7a8 参考リンクにPro Gitを追加
 |/
 * 1a2b3c4 参考リンクのメモを追加
 ```
@@ -243,11 +256,26 @@ git branch -d update-readme
 git switch -c rename-title
 ```
 
-```markdown:README.md
+````markdown:README.md
 # 山田太郎のメモ帳
 
 日々のメモを Markdown で管理するリポジトリです。
+
+## 構成
+
+- `notes/todo.md` … やることリスト
+- `notes/books.md` … 読みたい本のリスト
+
+## 使い方
+
+メモを編集したら、コミットして push します。
+
+```bash
+git add .
+git commit -m "メモを更新"
+git push
 ```
+````
 
 ```bash
 git add README.md
@@ -260,11 +288,26 @@ git commit -m "READMEのタイトルに名前を入れる"
 git switch main
 ```
 
-```markdown:README.md
+````markdown:README.md
 # My Notes
 
 日々のメモを Markdown で管理するリポジトリです。
+
+## 構成
+
+- `notes/todo.md` … やることリスト
+- `notes/books.md` … 読みたい本のリスト
+
+## 使い方
+
+メモを編集したら、コミットして push します。
+
+```bash
+git add .
+git commit -m "メモを更新"
+git push
 ```
+````
 
 ```bash
 git add README.md
@@ -314,7 +357,7 @@ Unmerged paths:
 
 ### 2. ファイルを開く
 
-`README.md` を開くと、見慣れない記号が入っています。
+`README.md` を開くと、見慣れない記号が入っています。ぶつかったのは1行目だけなので、記号が入るのもファイルの先頭部分だけです。
 
 ```
 <<<<<<< HEAD
@@ -324,6 +367,8 @@ Unmerged paths:
 >>>>>>> rename-title
 
 日々のメモを Markdown で管理するリポジトリです。
+
+（以降は変更がないので、そのまま続きます）
 ```
 
 記号の意味は次のとおりです。
@@ -346,11 +391,26 @@ Unmerged paths:
 
 今回は3つ目を選んでみます。
 
-```markdown:README.md
+````markdown:README.md
 # My Notes（山田太郎のメモ帳）
 
 日々のメモを Markdown で管理するリポジトリです。
+
+## 構成
+
+- `notes/todo.md` … やることリスト
+- `notes/books.md` … 読みたい本のリスト
+
+## 使い方
+
+メモを編集したら、コミットして push します。
+
+```bash
+git add .
+git commit -m "メモを更新"
+git push
 ```
+````
 
 :::message alert
 `<<<<<<<`、`=======`、`>>>>>>>` の記号を消し忘れたままコミットしてしまう事故は、非常によくあります。保存する前に、記号が1つも残っていないか必ず確認してください。

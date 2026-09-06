@@ -46,7 +46,7 @@ git commit -m "初回コミット: READMEを追加"
 
 ```
 [main (root-commit) a1b2c3d] 初回コミット: READMEを追加
- 1 file changed, 2 insertions(+)
+ 1 file changed, 3 insertions(+)
  create mode 100644 README.md
 ```
 
@@ -57,7 +57,7 @@ git commit -m "初回コミット: READMEを追加"
 | `main` | `main` ブランチにコミットした |
 | `root-commit` | このリポジトリの最初のコミット |
 | `a1b2c3d` | このコミットのID（後述） |
-| `1 file changed, 2 insertions(+)` | 1ファイルが変わり、2行追加された |
+| `1 file changed, 3 insertions(+)` | 1ファイルが変わり、3行追加された |
 
 ### `-m` オプションとは
 

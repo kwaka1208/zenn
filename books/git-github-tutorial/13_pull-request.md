@@ -290,9 +290,9 @@ git pull
 ```
 Updating 9a8b7c6..2f3e4d5
 Fast-forward
- notes/books.md | 8 +++++++-
- notes/todo.md  | 12 ++++++++++--
- 2 files changed, 18 insertions(+), 2 deletions(-)
+ notes/books.md |  6 ++++++
+ notes/todo.md  | 10 +++++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 ```
 
 ローカルのブランチも削除します。

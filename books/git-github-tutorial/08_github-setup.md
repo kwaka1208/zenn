@@ -28,7 +28,7 @@ https://github.com/signup
 
 ## 二要素認証を設定する
 
-GitHubでは二要素認証（2FA）の設定が必須になっています。アカウントを乗っ取られると、公開しているコードを改ざんされる可能性があるため、必ず設定してください。
+GitHubでは、コードを投稿するユーザーに二要素認証（2FA）の設定が義務づけられています。アカウントを乗っ取られると、公開しているコードを改ざんされる可能性があるため、必ず設定してください。
 
 1. 右上のアイコン → **Settings**
 2. 左メニューの **Password and authentication**
@@ -56,10 +56,12 @@ GitHubでは二要素認証（2FA）の設定が必須になっています。�
 :::details HTTPSを使いたい場合
 HTTPSでは、パスワードの代わりに**パーソナルアクセストークン（PAT）** を使います。
 
-1. GitHubの Settings → Developer settings → Personal access tokens → Tokens (classic)
+1. GitHubの Settings → Developer settings → Personal access tokens → Fine-grained tokens
 2. **Generate new token** をクリック
-3. `repo` にチェックを入れて生成
+3. 対象のリポジトリと、`Contents` の `Read and write` 権限を指定して生成
 4. 表示されたトークンをコピー（**この画面を閉じると二度と見られません**）
+
+以前からある Tokens (classic) も使えますが、リポジトリ単位で権限を絞れる fine-grained トークンのほうが安全です。
 
 pushするときにパスワードを聞かれたら、このトークンを貼り付けます。毎回入力しなくて済むよう、次の設定をしておくと便利です。
 

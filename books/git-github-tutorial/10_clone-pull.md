@@ -106,10 +106,13 @@ git pull
 
 ```
 remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 From github.com:taro/my-notes
-   7f3a9c2..9b8c7d6  main       -> origin/main
-Updating 7f3a9c2..9b8c7d6
+   8a7b6c5..9b8c7d6  main       -> origin/main
+Updating 8a7b6c5..9b8c7d6
 Fast-forward
  notes/books.md | 1 +
  1 file changed, 1 insertion(+)
