@@ -51,9 +51,6 @@ https://works.crssrds.jp/learn/location/
 
 https://works.crssrds.jp/learn/phishing/
 
-
-
-
 ## ネットにアクセスするだけでわかること
 ワンクリック詐欺サイトなどで、あなたの情報としてもっともらしいものを表示して個人情報を取得したように思い込ませることがあります。
 ある程度の情報はサイトにアクセスするだけで取得できますが、それで個人を特定することはできないので騙されないようにしましょう。
@@ -65,3 +62,9 @@ https://www.cman.jp/network/support/go_access.cgi
 以下の記事も参考にしてみてください
 
 https://zenn.dev/kwaka1208/articles/digital-literacy-materials
+
+## その他
+
+インターネットに限定したものではありませんが、消費者庁の以下のサイトも勉強になります。
+
+[体験型教材 鍛えよう、消費者力](https://www.kportal.caa.go.jp/shohisha-ryoku/)
