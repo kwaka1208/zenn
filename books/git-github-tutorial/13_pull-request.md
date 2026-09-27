@@ -42,12 +42,15 @@ git branch -a
 ```
   add-categories
 * main
-  remotes/origin/HEAD -> origin/main
   remotes/origin/add-categories
   remotes/origin/main
 ```
 
 `-a` は「リモートのブランチも含めて表示」というオプションです。`remotes/origin/add-categories` があれば、GitHub側にも存在しています。
+
+:::message
+環境によっては `remotes/origin/HEAD -> origin/main` という行も表示されます。この章で確認するのは、`remotes/origin/add-categories` があることです。
+:::
 
 :::details pushしていなかった場合
 次のコマンドで送ってください。
@@ -200,9 +203,13 @@ GitHubのPR画面を再読み込みしてください。**追加したコミッ�
 
 内容に納得できたら、**Conversation** タブに戻って **Merge pull request** をクリックします。
 
-### 3つのマージ方法
+### マージ方法を選ぶ
 
-ボタンの右の三角をクリックすると、3つの選択肢が出ます。
+ボタンの右の三角をクリックすると、リポジトリで許可されているマージ方法が表示されます。代表的な方法は次の3つです。
+
+:::message
+利用できる方法は、リポジトリの設定やRulesetsによって異なります。許可されている方法だけが表示されるため、3つすべてが表示されるとは限りません。
+:::
 
 | 方法 | 動作 | 向いている場面 |
 |---|---|---|
@@ -240,35 +247,37 @@ gitGraph
     merge add-categories id: "M"
 ```
 
-**Squash and merge**: `C` `D` `E` がひとつのコミットにまとまって `main` に載ります。
+**Squash and merge**: `C` `D` `E` の変更内容が、ひとつの新しいコミット `S` にまとまって `main` に載ります。`S` は元の3コミットとは異なるSHAを持ちます。
 
 ```mermaid
 %%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
 gitGraph
     commit id: "A"
     commit id: "B"
-    commit id: "CDE"
+    commit id: "S"
 ```
 
-**Rebase and merge**: `C` `D` `E` が `main` の続きとして並べ直されます。枝分かれの跡は残りません。
+**Rebase and merge**: `C` `D` `E` に対応する新しいコミットが、`main` の続きとして並びます。枝分かれの跡は残りません。
 
 ```mermaid
 %%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
 gitGraph
     commit id: "A"
     commit id: "B"
-    commit id: "C"
-    commit id: "D"
-    commit id: "E"
+    commit id: "C'"
+    commit id: "D'"
+    commit id: "E'"
 ```
+
+`C'` `D'` `E'` は、変更内容はそれぞれ `C` `D` `E` に対応しますが、元とは異なるSHAを持つ新しいコミットです。
 
 :::message
-どれを選ぶかはチームの方針次第です。迷ったら **Create a merge commit** で構いません。「いつ、どのPRで入った変更か」がいちばんはっきり残ります。
+どれを選ぶかはチームの方針次第です。**Create a merge commit** は作業ブランチのコミットをそのまま残すため、「いつ、どのPRで入った変更か」がはっきり残ります。
 
-個人のリポジトリで、細かいコミットを整理したい場合は **Squash and merge** が便利です。
+**Squash and merge** と **Rebase and merge** では新しいSHAのコミットが作られるため、元のブランチは `main` にマージ済みと判定されない場合があります。
 :::
 
-**Confirm merge** をクリックすると、マージが完了します。
+本演習では、後の `git branch -d add-categories` まで安全に進められるよう、**Create a merge commit** を選択します。選択後、**Confirm merge** をクリックするとマージが完了します。
 
 ### ブランチを削除する
 
@@ -295,11 +304,15 @@ Fast-forward
  2 files changed, 15 insertions(+), 1 deletion(-)
 ```
 
-ローカルのブランチも削除します。
+ローカルのブランチも削除します。本演習では **Create a merge commit** を使ったため、`add-categories` のコミットは `main` の履歴に含まれており、安全な `-d` で削除できます。
 
 ```bash
 git branch -d add-categories
 ```
+
+:::message
+**Squash and merge** または **Rebase and merge** を選んだ場合、元のコミットとはSHAが異なるため、`git branch -d` が「マージ済みではない」と判定して止まることがあります。その場合は、変更内容が `main` に反映されていることを差分や動作確認で確かめてから、`git branch -D add-categories` で削除します。
+:::
 
 リモートで削除されたブランチの情報が手元に残っている場合は、次のコマンドで整理できます。
 
@@ -323,13 +336,19 @@ flowchart TD
     D["4. push する<br/>git push -u origin feature/xxx"]
     E["5. GitHubでPRを作る"]
     F{"6. レビューは通った？"}
-    G["7. マージする<br/>GitHub上でボタンをクリック"]
+    G["7. マージする<br/>本演習: Create a merge commit"]
     H["8. ローカルを最新にする<br/>git switch main && git pull"]
-    I["9. ブランチを削除する<br/>git branch -d feature/xxx"]
+    J{"選んだマージ方法は？"}
+    I["9. Create a merge commit<br/>git branch -d feature/xxx"]
+    K["9. Squash / Rebase<br/>反映確認後 git branch -D feature/xxx"]
     A --> B --> C --> D --> E --> F
     F -- "修正が必要" --> C
-    F -- "OK" --> G --> H --> I
+    F -- "OK" --> G --> H --> J
+    J -- "Create a merge commit" --> I
+    J -- "Squash / Rebase" --> K
 ```
+
+本演習は **Create a merge commit** に固定しているため、`-d` の流れを進みます。Squash/Rebaseの場合は、変更内容が `main` に反映されていることを確認してから `-D` で削除します。
 
 **この9ステップが、現代のソフトウェア開発でもっとも標準的な進め方**です。GitHub Flowと呼ばれることもあります。
 
@@ -355,12 +374,15 @@ This branch has conflicts that must be resolved
 
 ### ローカルで解決する（おすすめ）
 
-複雑な場合は、手元で解決するほうが確実です。
+複雑な場合は、手元で解決するほうが確実です。まずGitHub上の最新情報を取得してから、PRの作業ブランチに `origin/main` を取り込みます。
 
 ```bash
+git fetch origin
 git switch add-categories
-git merge main
+git merge origin/main
 ```
+
+`git fetch origin` はリモート追跡ブランチを更新します。手元の `main` が古くても、`origin/main` を指定すればGitHub上の最新の `main` を取り込めます。
 
 コンフリクトが出るので、第12章と同じ手順で解決します。
 
@@ -384,9 +406,10 @@ pushすると、PR画面のコンフリクト表示が消えます。
 - baseが取り込み先、compareが取り込み元
 - 説明には「なぜ変えたか」を書く
 - 同じブランチにpushすれば、PRは自動で更新される
-- マージ方法は3種類。迷ったらmerge commit
-- マージ後は `git pull` でローカルを最新にし、ブランチを削除する
-- コンフリクトはローカルで解決するほうが確実
+- 利用できるマージ方法はリポジトリの設定やRulesetsによって異なる
+- 本演習では **Create a merge commit** を使う
+- マージ後は `git pull` でローカルを最新にし、方式に応じてブランチを削除する
+- コンフリクトは `git fetch origin` のあと `origin/main` を取り込み、ローカルで解決するほうが確実
 
 ---
 

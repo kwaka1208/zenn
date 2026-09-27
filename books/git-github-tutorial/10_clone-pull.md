@@ -98,10 +98,10 @@ cd ~/git-practice/my-notes
 cat notes/books.md
 ```
 
-「人間失格」は入っていません。取り込みましょう。
+「人間失格」は入っていません。本書ではmerge方式で取り込むため、オプションで明示します。
 
 ```bash
-git pull
+git pull --no-rebase
 ```
 
 ```
@@ -127,7 +127,7 @@ git log --oneline
 履歴にも、`my-notes-copy` で作ったコミットが反映されています。
 
 :::message
-`Fast-forward`（早送り）という表示は、「自分のほうには新しいコミットがなかったので、リモートの状態にそのまま進めました」という意味です。いちばん素直な取り込み方です。
+`Fast-forward`（早送り）という表示は、「自分のほうには新しいコミットがなかったので、リモートの状態にそのまま進めました」という意味です。merge方式を指定していても、分岐がなければ新しいmerge commitは作られず、早送りになります。
 :::
 
 ---
@@ -139,41 +139,50 @@ Gitには、取ってくるコマンドが2つあります。
 | コマンド | 動作 |
 |---|---|
 | `git fetch` | リモートの最新情報を**取ってくるだけ**。作業中のファイルは変わらない |
-| `git pull` | 取ってきて、**さらに自分のブランチに合流させる** |
+| `git pull` | 取ってきたあと、設定やオプションで選ばれた方式で現在のブランチへ統合する |
 
-つまり、次の関係です。
+`git pull` がfetch後に使う主な方式は次のとおりです。
+
+| 方式 | 動作 |
+|---|---|
+| merge | 必要ならmerge commitを作って統合する。本書ではこの方式を使う |
+| rebase | ローカルコミットをリモートの続きへ並べ直す |
+| fast-forward only | 早送りできる場合だけ進め、分岐していたら停止する |
+
+本書の `git pull --no-rebase` は、「fetchしてからmerge方式で統合する」と明示したものです。
 
 ```mermaid
 flowchart LR
-    G["GitHub<br/>リモートリポジトリ"] -- "git fetch" --> O["origin/main<br/>手元にあるリモートの控え"]
-    O -- "git merge origin/main" --> M["main<br/>自分の作業ブランチ"]
-    G -- "git pull（fetch + merge）" --> M
+    G["GitHub<br/>リモートリポジトリ"] -- "fetch" --> O["origin/main<br/>手元にあるリモートの控え"]
+    O -- "選んだ方式で統合<br/>merge / rebase / ff-only" --> M["main<br/>自分の作業ブランチ"]
+    G -- "git pull<br/>fetch + 設定された統合" --> M
 ```
 
-`git pull` は、この2つの動作をまとめて実行してくれるコマンドです。
+設定やコマンドラインオプションによって結果が変わるため、`git pull` が常に `fetch + merge` になるわけではありません。チームの方針がある場合は、それに合わせます。
 
 ### `fetch` の使いどころ
 
-「いきなり合流させるのは怖い。まず何が来ているか確認したい」というときに使います。
+「いきなり統合するのは怖い。まず何が来ているか確認したい」というときに使います。
 
 ```bash
-git fetch
+git fetch origin
 ```
 
 取得後、リモートの状態と自分の状態を比べられます。
 
 ```bash
-git log --oneline main..origin/main
+git log --oneline --graph --decorate main..origin/main
+git diff main..origin/main
 ```
 
-「自分の `main` にはなくて、`origin/main` にあるコミット」の一覧です。内容を確認して問題なければ、合流させます。
+「自分の `main` にはなくて、`origin/main` にあるコミット」と差分を確認できます。内容を理解して問題なければ、本書の方式で統合します。
 
 ```bash
 git merge origin/main
 ```
 
 :::message
-慣れるまでは `git pull` で構いません。ただし、大きなプロジェクトや、他の人が頻繁に変更しているリポジトリでは、`fetch` してから中身を見る習慣が役に立ちます。
+慣れるまでは、方式を明示した `git pull --no-rebase` でもかまいません。ただし、大きなプロジェクトや、他の人が頻繁に変更しているリポジトリでは、`fetch` してから中身を見る習慣が役に立ちます。
 :::
 
 ### `origin/main` とは
@@ -214,28 +223,33 @@ Please commit your changes or stash them before you merge.
 ```bash
 git add .
 git commit -m "作業中の変更を記録"
-git pull
+git pull --no-rebase
 ```
 
 ### 2. 一時的に退避する（stash）
 
-「まだコミットするほどの状態じゃない」というときは、`git stash` で一時的に脇へどけられます。
+「まだコミットするほどの状態じゃない」というときは、`git stash` で一時的に脇へどけられます。未追跡ファイルも必要なら、`-u` を付けます。
 
 ```bash
-git stash
-git pull
-git stash pop
-```
-
-`git stash` で変更を退避し、`git stash pop` で戻します。退避したものの一覧は次のコマンドで見られます。
-
-```bash
+git stash push -u -m "pull前の作業退避"
+git status
 git stash list
+git pull --no-rebase
+git stash pop
+git status
 ```
+
+`-u` は追跡済みの変更に加えて未追跡ファイルも退避しますが、`.gitignore` で無視されているファイルは含みません。`git status` で作業ツリーが片付いたこと、`git stash list` で退避が作られたことを確認してからpullします。
+
+:::message alert
+`git stash pop` で戻す変更と、pullで取り込んだ変更が同じ箇所にあると、競合することがあります。その場合は `git status` で対象を確認し、通常の競合と同じように内容を直して `git add` します。
+
+競合した場合など、stashが一覧に残ることがあります。作業内容が正しく戻ったことを確認してから、不要になったstashを整理してください。
+:::
 
 ### 3. 変更を捨てる
 
-不要な変更なら、第6章の `git restore` で捨ててから `pull` します。
+不要な変更なら、第6章「やり直す（restore・amend・reset・revert）」の `git restore` で捨ててからpullします。
 
 ---
 
@@ -250,42 +264,60 @@ cd gitignore
 ls
 ```
 
-第7章で紹介した `.gitignore` テンプレート集です。中身を見たり、履歴をたどったりできます。
+第7章「記録しないファイルを決める（.gitignore）」で紹介した `.gitignore` テンプレート集です。中身を見たり、履歴をたどったりできます。
 
 ```bash
 git log --oneline -10
 ```
 
 :::message
-公開リポジトリは、誰でもcloneして読めます。ただし**書き込む（pushする）権限はありません**。変更を提案したいときは、第13章で学ぶプルリクエストという仕組みを使います。
+公開リポジトリは、誰でもcloneして読めます。ただし、cloneしただけではそのリポジトリへ**書き込む（pushする）権限は得られません**。変更を提案したいときは、第13章のプルリクエストを扱う章で学ぶ仕組みを使います。
 
-なお、他人のリポジトリをcloneするときはHTTPSのURLで構いません。SSHが必要になるのは、自分に書き込み権限があるリポジトリです。
+HTTPSとSSHは接続・認証の方式であり、書き込み権限そのものではありません。公開リポジトリを読むだけなら認証不要のHTTPSが手軽です。HTTPSでも安全なcredential helperで認証すれば、権限のあるリポジトリへpushできます。反対に、SSHのURLを使ってもGitHub上の権限が自動で付くわけではありません。
 :::
 
 ---
 
 ## 練習用フォルダを片付ける
 
-このあとは元の `my-notes` だけを使います。複製したフォルダは、削除しても残しておいてもかまいません。削除する場合は次のとおりです。
+このあとは元の `my-notes` だけを使います。複製したフォルダは、削除しても残しておいてもかまいません。
+
+削除する場合の第一案は、Finder（macOS）、エクスプローラー（Windows）、Linuxのファイルマネージャーを使う方法です。`~/git-practice` を開き、`my-notes-copy` と `gitignore` だけを選んでゴミ箱へ移動します。元の `my-notes` を選んでいないことを、名前と場所で確認してください。
+
+:::details コマンドで削除する場合
+コマンド操作に慣れている場合も、先に現在地と対象を確認します。
 
 macOS / Linux:
 
 ```bash
 cd ~/git-practice
-rm -rf my-notes-copy
-rm -rf gitignore
+pwd
+ls -la
 ```
 
 Windows（PowerShell 7）:
 
 ```powershell
 cd ~/git-practice
-rm -Recurse -Force my-notes-copy
-rm -Recurse -Force gitignore
+Get-Location
+Get-ChildItem -Force
 ```
 
-:::message alert
-どちらも、確認なしでフォルダごと削除するコマンドです。`-r` / `-Recurse` が「中身ごと」、`-f` / `-Force` が「確認せずに」を意味します。パスを打ち間違えると大切なデータが消えます。実行前に、消したいものだけを指定しているか必ず確認してください。
+表示された場所が `git-practice` で、対象が `my-notes-copy` と `gitignore` だけであることを確認してから削除します。
+
+macOS / Linux:
+
+```bash
+rm -r -- my-notes-copy gitignore
+```
+
+Windows（PowerShell 7）:
+
+```powershell
+Remove-Item -Recurse my-notes-copy, gitignore
+```
+
+`rm -rf` や `-Force` のような確認を省く指定は、この片付けでは使いません。それでも再帰削除は中身ごと消す操作です。パスを変数やワイルドカードに置き換えず、実行前にもう一度確認してください。
 :::
 
 ---
@@ -294,10 +326,14 @@ rm -Recurse -Force gitignore
 
 - `git clone URL` でリポジトリを履歴ごと複製する
 - cloneすると `origin` は設定済み
-- `git pull` でリモートの変更を取り込む
-- `git fetch` は取ってくるだけ、`git pull` は取り込んで合流まで行う
+- `git pull` はfetch後、設定やオプションで選ばれた方式で統合する
+- 本書では `git pull --no-rebase` でmerge方式を明示する
+- `git fetch` は取ってくるだけなので、統合前に履歴と差分を確認できる
 - `origin/main` は「最後に確認したリモートの状態」で、自動では更新されない
-- 作業中の変更があってpullできないときは、コミットするか `git stash`
+- 作業中の変更があってpullできないときは、コミットするか `git stash push -u`
+- stashを戻すときにも競合する可能性がある
+- HTTPS/SSHと、リポジトリへの書き込み権限は別の話
+- フォルダの削除はGUIを第一案にし、対象と場所を確認する
 
 ---
 

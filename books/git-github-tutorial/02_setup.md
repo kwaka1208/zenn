@@ -38,14 +38,14 @@ PS C:\Users\taro>
 
 ## PowerShell 7 を用意する（Windowsのみ）
 
-Windowsには、名前のよく似たものが2つ入っています。
+Windowsには **Windows PowerShell 5.1** が標準で入っています。一方、この本で使う **PowerShell 7** は別の製品なので、入っていなければ追加でインストールします。
 
-| 名前 | アイコン | この本での扱い |
-|---|---|---|
-| **Windows PowerShell**（5.1） | 青地 | 使いません |
-| **PowerShell**（7以降） | 黒地 | **こちらを使います** |
+| 名前 | アイコン | 導入状態 | この本での扱い |
+|---|---|---|---|
+| **Windows PowerShell**（5.1） | 青地 | Windowsに標準搭載 | 使いません |
+| **PowerShell**（7以降） | 黒地 | 必要に応じて別途導入 | **こちらを使います** |
 
-古いほうの5.1は、ファイルに文字を書き込むときの文字コードが特殊（UTF-16）で、この本の手順どおりに進めても結果が変わってしまうことがあります。7以降ではUTF-8が標準になったため、macOSやLinuxと同じ感覚で進められます。
+Windows PowerShell 5.1は、ファイルに文字を書き込むときの文字コードが特殊（UTF-16）で、この本の手順どおりに進めても結果が変わってしまうことがあります。PowerShell 7以降ではUTF-8が標準になったため、macOSやLinuxと同じ感覚で進められます。
 
 いま開いている画面がどちらかは、次のコマンドでわかります。
 
@@ -125,12 +125,16 @@ winget install --id Git.Git -e
 
 インストールが終わったら、PowerShellを一度閉じて開き直してください。開き直さないと、`git` コマンドがまだ見つからないことがあります。
 
-### Linux
+### Linux（Ubuntu / Debian系）
+
+UbuntuやDebianなど、`apt`を使うディストリビューションでは次のようにインストールします。
 
 ```bash
 sudo apt update
 sudo apt install git -y
 ```
+
+Fedora、Red Hat Enterprise Linux、Arch Linuxなど、ほかのディストリビューションを使っている場合は、Git公式サイトのLinux向けインストール案内、または各ディストリビューションの公式手順を確認してください。
 
 インストールが終わったら、もう一度 `git --version` を実行して確認してください。
 
@@ -159,7 +163,7 @@ git config --global user.email "taro@example.com"
 - **メールアドレス**: 普段使っているもので問題ありません
 
 :::message alert
-ここで登録したメールアドレスは、**コミット履歴に残り、公開リポジトリでは誰でも見られる状態になります**。プライベートなアドレスを知られたくない場合は、GitHubが用意する非公開用アドレス（`12345678+username@users.noreply.github.com` という形式）を使えます。第8章でアカウントを作ったあと、GitHubの設定画面から確認して、この設定を上書きしてください。
+ここで登録したメールアドレスは、**コミット履歴に残り、公開リポジトリでは誰でも見られる状態になります**。プライベートなアドレスを知られたくない場合は、GitHubが用意する非公開用アドレス（`12345678+username@users.noreply.github.com` という形式）を使えます。第8章「GitHubのアカウントとSSH鍵の準備」でアカウントを作ったあと、GitHubの設定画面から確認して、この設定を上書きしてください。
 :::
 
 ### `--global` とは
@@ -178,7 +182,7 @@ Gitでは、最初にできる作業ラインを**ブランチ**と呼びます�
 git config --global init.defaultBranch main
 ```
 
-ブランチについては第11章で詳しく説明します。いまは「作業ラインの名前を `main` に揃えた」とだけ理解しておけば大丈夫です。
+ブランチについては第11章「ブランチを使う」で詳しく説明します。いまは「作業ラインの名前を `main` に揃えた」とだけ理解しておけば大丈夫です。
 
 ---
 
@@ -242,7 +246,7 @@ Windows（PowerShell 7）:
 
 ```powershell
 cd ~
-mkdir git-practice
+New-Item -ItemType Directory -Force git-practice
 cd git-practice
 ```
 
@@ -251,11 +255,11 @@ cd git-practice
 | コマンド | 意味 |
 |---|---|
 | `cd ~` | ホームディレクトリに移動する（`~` がホームを表す） |
-| `mkdir git-practice` | `git-practice` というフォルダを作る |
+| `mkdir -p git-practice` / `New-Item -ItemType Directory -Force git-practice` | `git-practice` というフォルダを作る。すでにあってもエラーにしない |
 | `cd git-practice` | 作ったフォルダの中に移動する |
 
 :::message
-macOS / Linux で付けている `-p` は、「同じ名前のフォルダがすでにあってもエラーにしない」という指定です。PowerShellの `mkdir` にはこのオプションがないため、付けずに実行します。
+macOS / Linuxでは `mkdir` に `-p`、PowerShellでは `New-Item` に `-Force` を付けています。どちらも、同じ名前のフォルダがすでにある状態でこの手順を再実行してもエラーにしないための指定です。
 :::
 
 いまどこにいるかは、次のコマンドで確認できます。

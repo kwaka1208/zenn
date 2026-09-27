@@ -10,7 +10,7 @@ Gitを使う大きな理由のひとつが、「間違えても元に戻せる�
 |---|---|
 | 編集したが、まだ `add` していない | `git restore` |
 | `add` したが、まだ `commit` していない | `git restore --staged` |
-| `commit` したが、まだ `push` していない | `git commit --amend` / `git reset` |
+| `commit` したが、まだ他の人と共有していない | `git commit --amend` / `git reset` |
 | `push` して他の人と共有済み | `git revert` |
 
 図にすると、次のような分かれ道になります。
@@ -20,7 +20,7 @@ flowchart TD
     Q{"どこまで進んだ？"}
     Q -- "まだ add していない" --> A["git restore<br/>編集を捨てる"]
     Q -- "add したが commit 前" --> B["git restore --staged<br/>ステージから降ろす"]
-    Q -- "commit したが push 前" --> C["git commit --amend / git reset<br/>コミットをやり直す"]
+    Q -- "commit したが共有前" --> C["git commit --amend / git reset<br/>コミットをやり直す"]
     Q -- "push して共有済み" --> D["git revert<br/>打ち消すコミットを作る"]
 ```
 
@@ -71,7 +71,16 @@ git restore .
 
 `git add` はしたけれど、「やっぱりこのファイルは今回のコミットに含めたくない」というときです。
 
+前の節では変更を捨てたので、演習用に `notes/todo.md` へ仮の項目をもう一度追加します。
+
+```markdown:notes/todo.md
+- [ ] ステージ解除を練習する
+```
+
+差分があることを確認してから、ステージに載せます。
+
 ```bash
+git diff
 git add notes/todo.md
 git status
 ```
@@ -86,9 +95,17 @@ Changes to be committed:
 
 ```bash
 git restore --staged notes/todo.md
+git status
 ```
 
-これでステージから降ります。**ファイルの中身は変わりません**。「次のコミットに含める」という予約を取り消しただけです。
+`Changes not staged for commit` に戻れば成功です。**ファイルの中身は変わりません**。「次のコミットに含める」という予約を取り消しただけです。
+
+演習用の変更は、このあとの章へ持ち越さないように片付けます。
+
+```bash
+git restore notes/todo.md
+git status
+```
 
 :::message
 `git restore` と `git restore --staged` の違いは重要です。
@@ -123,7 +140,7 @@ git commit --amend --no-edit
 `--no-edit` は「メッセージはそのままでいい」という指定です。直前のコミットに、あとから追加したファイルが含まれた状態になります。
 
 :::message alert
-`--amend` は、直前のコミットを**新しいコミットに置き換えます**。コミットIDも変わります。すでに `push` して他の人と共有しているコミットに使うと、相手の履歴と食い違ってトラブルになります。**pushする前だけ**に使ってください。
+`--amend` は、直前のコミットを**新しいコミットに置き換えます**。コミットIDも変わります。すでに `push` して他の人と共有しているコミットには使わず、**まだ共有していないコミットだけ**に使ってください。共有済みなら、後述する `git revert` で変更を打ち消します。
 :::
 
 ---
@@ -140,46 +157,75 @@ git commit --amend --no-edit
 | `--mixed`（既定） | 取り消す | 取り消す | そのまま |
 | `--hard` | 取り消す | 取り消す | **元に戻す（変更が消える）** |
 
+本編で使う `main` の履歴を壊さないように、ここからは練習専用ブランチとダミーコミットを使います。まず、作業ツリーがきれいなことを確認してから準備します。
+
+```bash
+git status
+git switch -c practice-reset
+echo "resetの練習" > practice-reset.txt
+git add practice-reset.txt
+git commit -m "reset練習用のコミット"
+```
+
+:::message alert
+`git status` に変更が表示された場合は、先にコミットするか、必要な変更を退避してください。変更が残ったまま `reset --hard` を試してはいけません。
+:::
+
 ### `--soft`: コミットだけ取り消す
 
 ```bash
 git reset --soft HEAD~1
+git status
 ```
 
 直前のコミットが取り消され、その内容が**ステージに載ったまま**残ります。「コミットメッセージを書き直したい」「もう少し変更を足してからコミットし直したい」というときに便利です。
+
+次のモードも同じダミーコミットで試せるよう、コミットし直します。
+
+```bash
+git commit -m "reset練習用のコミット"
+```
 
 ### `--mixed`: ステージからも降ろす
 
 ```bash
 git reset HEAD~1
+git status
 ```
 
 コミットが取り消され、変更は**作業ツリーに残る**（ステージからは降りる）状態になります。オプションを書かないとこのモードになります。
 
-「add するファイルを選び直したい」というときに使います。
+「add するファイルを選び直したい」というときに使います。最後のモードに備えて、もう一度コミットします。
+
+```bash
+git add practice-reset.txt
+git commit -m "reset練習用のコミット"
+```
 
 ### `--hard`: 完全に巻き戻す
 
+この例は、練習専用ブランチのダミーコミットだけが対象で、`git status` がきれいなことを確認してから実行します。
+
 ```bash
+git status
 git reset --hard HEAD~1
 ```
 
-コミットも変更も、すべてなかったことになります。ファイルの中身も1つ前のコミット時点に戻ります。
-
-:::message alert
-`--hard` は、Gitでもっとも危険なコマンドのひとつです。作業中の変更が問答無用で消えます。使う前に、次の2点を確認してください。
-
-1. 本当に捨ててよい変更か
-2. `git status` で、消えて困るものが残っていないか
-
-もし迷うなら、`--hard` の代わりにまず `--soft` を試してください。あとから捨てることはできますが、捨てたものを拾うのは大変です。
-:::
-
-`HEAD~1` の数字を変えれば、複数のコミットをまとめて取り消せます。
+ダミーコミットと、そこで追加した `practice-reset.txt` がなくなります。確認したら `main` に戻り、練習用ブランチを削除します。
 
 ```bash
-git reset --hard HEAD~3
+git switch main
+git branch -d practice-reset
+git status
 ```
+
+:::message alert
+`reset --hard` の危険性は、push前か後かでは決まりません。**現在のステージ内容と追跡済みファイルの変更を消す**ことが危険なのです。
+
+実行するのは、対象コミットを正しく確認し、`git status` がきれいで、必要なコミットを後述するrescue branchなどで保護した場合だけにしてください。迷うなら `--soft` や `--mixed` を使い、内容を確認してから整理します。
+:::
+
+`HEAD~1` の数字を変えると複数のコミットをまとめて対象にできますが、本編の履歴で安易に試してはいけません。まず `git log --oneline` で対象を確認してください。
 
 ---
 
@@ -211,7 +257,7 @@ gitGraph
 :::message
 `reset` と `revert` の使い分けは、次のように覚えてください。
 
-- **自分だけの履歴** → `reset`（なかったことにする）
+- **まだ共有していない履歴** → 必要に応じて `reset`（なかったことにする）
 - **共有済みの履歴** → `revert`（取り消したことを記録に残す）
 :::
 
@@ -262,11 +308,18 @@ e8d9a0b HEAD@{1}: commit: 消してしまったコミット
 
 `reflog` は、`HEAD` が移動したすべての記録です。`git log` には出てこない「消したはずのコミット」も残っています。
 
-戻りたい地点のIDがわかったら、そこへ移動できます。
+戻したい地点のIDがわかったら、まずそのコミットにブランチ名を付けて、非破壊的に保護します。
 
 ```bash
-git reset --hard e8d9a0b
+git branch rescue e8d9a0b
+git show rescue
 ```
+
+これなら現在のブランチや作業中のファイルを動かさず、コミットが失われないようにできます。内容を確認してから、目的に応じて `git switch rescue` で移動したり、必要なコミットを `cherry-pick` や `merge` で取り込んだりします。
+
+:::message alert
+救出の最初の手段として `reset --hard` は使いません。現在の変更や履歴まで失う可能性があるため、まず `git branch rescue コミットID` で保護するのが安全です。
+:::
 
 :::message
 `reflog` が記録しているのは、`HEAD` やブランチが**どこを指していたか**の移動履歴です。裏を返すと、**一度もコミットしていない編集は `reflog` にも残りません**。だからこそ、「区切りがついたらこまめにコミットする」ことが、いちばんの保険になります。
@@ -280,16 +333,17 @@ git reset --hard e8d9a0b
 |---|---|
 | 編集を捨てる | `git restore ファイル` |
 | ステージから降ろす | `git restore --staged ファイル` |
-| 直前のコミットを修正 | `git commit --amend` |
-| コミットを取り消す（変更は残す） | `git reset HEAD~1` |
-| 完全に巻き戻す | `git reset --hard HEAD~1` |
+| 未共有の直前コミットを修正 | `git commit --amend` |
+| 未共有のコミットを取り消す（変更は残す） | `git reset HEAD~1` |
+| cleanな作業ツリーで完全に巻き戻す | `git reset --hard HEAD~1` |
 | 共有済みの変更を打ち消す | `git revert コミットID` |
-| 消したコミットを探す | `git reflog` |
+| 消したコミットを探して保護する | `git reflog` → `git branch rescue コミットID` |
 
-覚えておきたい原則は2つです。
+覚えておきたい原則は3つです。
 
 1. **こまめにコミットしておけば、たいていのミスは取り返せる**
-2. **`--hard` と `--amend` は、pushする前だけに使う**
+2. **`--amend` や履歴を動かす `reset` は、まだ共有していないコミットだけに使う**
+3. **`reset --hard` はpush前後に関係なく、消える内容を確認し、作業ツリーがcleanな場合だけに使う**
 
 ---
 

@@ -19,7 +19,7 @@ https://github.com/signup
 3. **ユーザー名**: URLの一部になります（`github.com/ユーザー名`）
 
 :::message
-ユーザー名は、あとから変更できますが、**変更すると過去のリポジトリURLが変わります**。他の人が参照していたリンクが切れるため、最初に納得のいくものを決めておくのがおすすめです。英数字とハイフンが使えます。
+ユーザー名はあとから変更できます。多くの旧リポジトリURLは新しいURLへリダイレクトされますが、プロフィールURLやGitHub Pagesなどは同じ扱いではありません。旧ユーザー名がほかの人に使われた場合なども含め、転送が恒久的に保証されるわけではないため、最初に納得のいく名前を決めておくのがおすすめです。英数字とハイフンが使えます。
 :::
 
 登録後、メールアドレスの確認を求められます。届いたメールの案内に従って完了させてください。
@@ -28,62 +28,65 @@ https://github.com/signup
 
 ## 二要素認証を設定する
 
-GitHubでは、コードを投稿するユーザーに二要素認証（2FA）の設定が義務づけられています。アカウントを乗っ取られると、公開しているコードを改ざんされる可能性があるため、必ず設定してください。
+GitHubでは、コードを投稿するユーザーを対象に二要素認証（2FA）の導入が進められています。表示される案内や期限はアカウントによって異なる場合がありますが、アカウントの乗っ取りを防ぐため、早めに設定してください。
 
 1. 右上のアイコン → **Settings**
 2. 左メニューの **Password and authentication**
 3. **Two-factor authentication** の項目から設定
 
-認証アプリ（Google AuthenticatorやMicrosoft Authenticatorなど）を使う方法が一般的です。
+認証アプリ（Google AuthenticatorやMicrosoft Authenticatorなど）のほか、画面に表示される利用可能な方法から選びます。GitHubの画面や選択肢は変わることがあるため、その時点の案内に従ってください。
 
 :::message alert
-設定時に表示される**リカバリーコード**は、必ず保存してください。スマートフォンを機種変更したり紛失したりしたときに、アカウントに入る唯一の手段になります。印刷するか、パスワードマネージャーに保存しておきましょう。
+設定時に表示される**リカバリーコード**は、必ず保存してください。スマートフォンを機種変更したり紛失したりしたときに使える、重要な復旧手段のひとつです。普段使う端末とは別の安全な場所に印刷して保管するか、パスワードマネージャーに保存しておきましょう。登録済みのほかの認証方法を使える場合もあるため、常に「唯一の手段」とは限りません。
 :::
 
 ---
 
 ## 認証方式を決める
 
-自分のパソコンからGitHubに接続するには、「自分が本人である」ことを証明する必要があります。方法は2つあります。
+自分のパソコンからGitHubに接続するには、「自分が本人である」ことを証明する必要があります。主な方法は2つあります。
 
 | 方式 | 特徴 |
 |---|---|
-| **SSH** | 鍵ファイルを使う。一度設定すれば、以降はパスワード入力不要 |
-| **HTTPS** | アクセストークンを使う。設定は簡単だが、トークンの管理が必要 |
+| **SSH** | 鍵ファイルを使う。ssh-agentに登録すれば、毎回の入力を減らせる |
+| **HTTPS** | PATや認証支援ツールを使う。OSの安全な保管場所と組み合わせられる |
 
 この本では**SSH**を使います。最初の設定に少し手間がかかりますが、一度済ませてしまえば毎回の操作が楽になるからです。
 
 :::details HTTPSを使いたい場合
-HTTPSでは、パスワードの代わりに**パーソナルアクセストークン（PAT）** を使います。
+HTTPSでは、Git Credential ManagerやGitHub CLIなどの認証支援ツールを使うと、認証情報をOSの安全な保管場所へ保存できます。利用できるなら、これらを第一選択にしてください。
 
-1. GitHubの Settings → Developer settings → Personal access tokens → Fine-grained tokens
-2. **Generate new token** をクリック
-3. 対象のリポジトリと、`Contents` の `Read and write` 権限を指定して生成
-4. 表示されたトークンをコピー（**この画面を閉じると二度と見られません**）
+- macOS: Keychainと連携するcredential helper、Git Credential Manager、GitHub CLI
+- Windows: Git for Windowsに同梱されるGit Credential Manager、GitHub CLI
+- Linux: Git Credential Manager、GitHub CLI、デスクトップ環境の安全な資格情報ストア
 
-以前からある Tokens (classic) も使えますが、リポジトリ単位で権限を絞れる fine-grained トークンのほうが安全です。
-
-pushするときにパスワードを聞かれたら、このトークンを貼り付けます。毎回入力しなくて済むよう、次の設定をしておくと便利です。
+現在の設定は次のコマンドで確認できます。
 
 ```bash
-git config --global credential.helper store
+git config --global --get-all credential.helper
 ```
 
-ただしこの方法では、トークンが平文でパソコンに保存されます。OSごとに用意されている安全な保管場所を使うほうがおすすめです。
-
-macOS:
+macOSでKeychainを使う例:
 
 ```bash
 git config --global credential.helper osxkeychain
 ```
 
-Windows（PowerShell 7）:
+WindowsでGit Credential Managerを使う例:
 
 ```powershell
 git config --global credential.helper manager
 ```
 
-`manager` はGit for Windowsに同梱されているGit Credential Managerのことで、トークンをWindowsの資格情報マネージャーに保管します。
+GitHub CLIを使う場合は、インストール後に次のコマンドでブラウザ認証を進められます。
+
+```bash
+gh auth login
+```
+
+`credential.helper store` は認証情報を平文で保存するため、この本では使いません。GitHubの画面や利用できる認証方法は変更されることがあるため、組織の方針や公式ドキュメントも確認してください。
+
+PATを手動で作る必要がある場合は、GitHubの **Settings** → **Developer settings** → **Personal access tokens** から、対象リポジトリと必要最小限の権限だけを指定します。表示されたトークンをファイルへ平文で保存しないでください。
 :::
 
 ---
@@ -92,8 +95,8 @@ git config --global credential.helper manager
 
 SSH鍵は、**2つでひと組**のファイルです。
 
-- **秘密鍵**（`id_ed25519`）: 自分のパソコンに保管する。**絶対に人に渡さない**
-- **公開鍵**（`id_ed25519.pub`）: GitHubに登録する。人に見られても問題ない
+- **秘密鍵**（例: `id_ed25519_github`）: 自分のパソコンに保管する。**絶対に人に渡さない**
+- **公開鍵**（例: `id_ed25519_github.pub`）: GitHubに登録する。人に見られても問題ない
 
 イメージとしては、公開鍵が「南京錠」、秘密鍵が「その鍵」です。GitHubに南京錠を預けておき、接続のたびに「この錠を開けられる鍵を持っています」と証明する仕組みです。
 
@@ -101,7 +104,7 @@ SSH鍵は、**2つでひと組**のファイルです。
 
 ## 既存の鍵を確認する
 
-すでに鍵を作ったことがあるかもしれません。まず確認します。
+すでに鍵を作ったことがあるかもしれません。まず公開鍵の候補を確認します。
 
 macOS / Linux:
 
@@ -112,140 +115,181 @@ ls -la ~/.ssh
 Windows（PowerShell 7）:
 
 ```powershell
-ls -Force ~/.ssh
+Get-ChildItem -Force ~/.ssh
 ```
 
-`id_ed25519` と `id_ed25519.pub` があれば、作成済みです。次の節は飛ばして「公開鍵をGitHubに登録する」へ進んでください。
+`.pub` が付いた公開鍵と、同じ名前から `.pub` を除いた秘密鍵がそろっているか確認します。ただし、ファイルがあるだけでGitHub用とは限りません。仕事のサーバーや別サービス、別のGitHubアカウントで使っている可能性があります。
 
-次のように「そんなファイルやフォルダはない」と出た場合は、これから作ります。
+公開鍵の指紋とコメントは、次のように確認できます。
 
-macOS / Linux:
-
-```
-No such file or directory
+```bash
+ssh-keygen -lf ~/.ssh/id_ed25519.pub
 ```
 
-Windows（PowerShell 7）:
+ファイル名は、実際に見つかった公開鍵へ置き換えてください。GitHubの **Settings** → **SSH and GPG keys** に登録済みの鍵と照合し、次をすべて確認できた場合だけ再利用します。
 
-```
-パス 'C:\Users\taro\.ssh' が存在しないため検出できません。
-```
+1. 自分が作った鍵で、用途がわかる
+2. 公開鍵と対応する秘密鍵が、このパソコンにそろっている
+3. その鍵をGitHub認証に使ってよい
+4. 別のGitHubアカウント専用の鍵ではない
+
+:::message alert
+用途がわからない既存鍵を上書きしたり、別のサービス用の鍵を無断で使い回したりしないでください。判断できない場合は、次の節でGitHub用の別名の鍵を新しく作るのが安全です。
+:::
+
+再利用する鍵を決めた場合は、以降の `~/.ssh/id_ed25519_github` を、その秘密鍵のパスへ読み替えてください。
 
 ---
 
 ## SSH鍵を作る
 
+既存鍵を再利用しない場合は、この本専用の名前で作ります。
+
+macOS / Linux:
+
 ```bash
-ssh-keygen -t ed25519 -C "taro@example.com"
+ssh-keygen -t ed25519 -C "taro@example.com" -f "$HOME/.ssh/id_ed25519_github"
 ```
 
-`-C` の後ろは、鍵を見分けるためのコメントです。メールアドレスを入れるのが慣習です。
+Windows（PowerShell 7）:
 
-実行すると3つ質問されます。
-
-```
-Enter file in which to save the key (/Users/taro/.ssh/id_ed25519):
+```powershell
+ssh-keygen -t ed25519 -C "taro@example.com" -f "$HOME/.ssh/id_ed25519_github"
 ```
 
-保存先です。**そのままEnter**でかまいません。Windowsでは `C:\Users\taro/.ssh/id_ed25519` のように表示されます。
+`-C` の後ろは、鍵を見分けるためのコメントです。メールアドレスを入れるのが慣習です。`-f` でGitHub用の保存先を明示しているため、既定名の既存鍵を上書きしません。
+
+すでに同名の鍵がある場合は上書きの確認が表示されます。**上書きせず**、用途を確認するか、`id_ed25519_github_2` など別の名前に変えてください。
+
+続いてパスフレーズを聞かれます。
 
 ```
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-パスフレーズです。秘密鍵を使うときのパスワードにあたります。
+パスフレーズは、秘密鍵を使うときのパスワードにあたります。
 
 :::message
 パスフレーズは設定することを推奨します。万一パソコンを盗まれても、秘密鍵だけでは使えなくなるからです。
 
-「毎回入力するのは面倒」という場合は、次の節の ssh-agent を使えば、1度入力するだけで済むようになります。
+「毎回入力するのは面倒」という場合は、次の節のssh-agentを使えば入力回数を減らせます。
 :::
 
-完成すると、次のように表示されます。
-
-```
-Your identification has been saved in /Users/taro/.ssh/id_ed25519
-Your public key has been saved in /Users/taro/.ssh/id_ed25519.pub
-```
-
-Windowsでは、パスの部分が `C:\Users\taro/.ssh/...` のようになります。
-
 :::message alert
-`.pub` が付いていないほう（`id_ed25519`）が秘密鍵です。**この中身は絶対に他人に見せたり、リポジトリにコミットしたりしないでください。** チャットに貼る、スクリーンショットに写す、といった事故も起きがちです。
+`.pub` が付いていないほうが秘密鍵です。**この中身は絶対に他人に見せたり、リポジトリにコミットしたりしないでください。** チャットに貼る、スクリーンショットに写す、といった事故も起きがちです。
 :::
 
 ---
 
 ## ssh-agentに鍵を登録する（推奨）
 
-パスフレーズを毎回入力せずに済むよう、ssh-agentという仕組みに鍵を預けます。
+パスフレーズを毎回入力せずに済むよう、ssh-agentという仕組みに鍵を預けます。OSによって起動方法や保存先が異なります。
 
-macOS / Linux:
+### macOS
+
+macOS標準のApple版OpenSSHでは、Keychainと連携できます。
 
 ```bash
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_github
 ```
 
-Windows（PowerShell 7）:
-
-Windowsでは、ssh-agentがWindowsのサービスとして用意されています。パソコンの起動時に自動で立ち上がるようにしてから、鍵を登録します。
-
-```powershell
-Get-Service ssh-agent | Set-Service -StartupType Automatic
-Start-Service ssh-agent
-ssh-add ~/.ssh/id_ed25519
-```
-
-:::message
-1行目の `Set-Service` は、Windowsの設定を変更するため**管理者権限**が必要です。「アクセスが拒否されました」と出た場合は、スタートメニューで「PowerShell 7」を右クリックし、「管理者として実行」で開き直してから、1行目と2行目を実行してください。この設定は最初の1回だけで済みます。
-:::
-
-さらに、次の設定ファイルを作っておくと、毎回 `ssh-add` する必要がなくなります。
-
-macOS:
+`~/.ssh/config` には次のように書きます。
 
 ```:~/.ssh/config
 Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_ed25519_github
   UseKeychain yes
   AddKeysToAgent yes
 ```
 
-Windows（PowerShell 7）/ Linux:
+`--apple-use-keychain` と `UseKeychain` はmacOS専用です。ほかのOSでは使いません。
+
+### Windows（PowerShell 7）
+
+WindowsにはWindows OpenSSHのssh-agentサービスがあります。まず、使用しているSSHを確認します。
+
+```powershell
+Get-Command ssh
+```
+
+この手順では、Windowsの `C:\Windows\System32\OpenSSH\ssh.exe` とssh-agentサービスを組み合わせます。Git for Windows付属のSSHなど別の実装を使う場合は、同じagentと設定を使うように統一してください。異なる実装を混ぜると、登録した鍵が見えないことがあります。
+
+ssh-agentサービスを自動起動にする操作は、**管理者として開いたPowerShell 7** で最初の1回だけ実行します。
+
+```powershell
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+```
+
+その後、通常のPowerShell 7で鍵を登録します。
+
+```powershell
+ssh-add "$HOME/.ssh/id_ed25519_github"
+```
+
+`C:\Users\ユーザー名\.ssh\config` には次のように書きます。拡張子は付けません。
 
 ```:~/.ssh/config
 Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_ed25519_github
+  AddKeysToAgent yes
+```
+
+### Linux
+
+デスクトップ環境などがssh-agentを起動済みなら、そのagentへ登録します。
+
+```bash
+ssh-add ~/.ssh/id_ed25519_github
+```
+
+`Could not open a connection to your authentication agent.` と出る場合は、現在のシェル用に起動してから登録します。
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_github
+```
+
+この `eval` で設定した接続情報は、現在のシェルやログインセッションを終えると使えなくなる場合があります。永続化の方法はディストリビューションやデスクトップ環境によって異なるため、その環境のagent管理方法に従ってください。
+
+`~/.ssh/config` には次のように書けます。
+
+```:~/.ssh/config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
   AddKeysToAgent yes
 ```
 
 :::message
-`UseKeychain` はmacOS専用の設定なので、WindowsとLinuxでは書きません。書いてしまうと `Bad configuration option` というエラーになります。
-
-Windowsでのこのファイルの置き場所は `C:\Users\ユーザー名\.ssh\config` です。拡張子は付けません。メモ帳で保存すると `config.txt` になってしまうことがあるので、VS Codeなどのエディタで保存してください。
+`AddKeysToAgent yes` は、接続時に鍵をagentへ追加しやすくする設定です。agent自体をOS起動後も永続化する設定ではありません。
 :::
 
 ---
 
 ## 公開鍵をGitHubに登録する
 
-公開鍵の中身を表示します。
+この本で新しく作った公開鍵の中身を表示します。
+
+macOS / Linux:
 
 ```bash
-cat ~/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519_github.pub
 ```
 
-```
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... taro@example.com
+Windows（PowerShell 7）:
+
+```powershell
+Get-Content ~/.ssh/id_ed25519_github.pub
 ```
 
-この1行をすべてコピーします。
+既存鍵を再利用する場合は、選んだ公開鍵のパスへ置き換えてください。表示された `ssh-ed25519` で始まる1行をすべてコピーします。
 
 :::message
 コピーが難しいときは、次のコマンドでクリップボードに直接入れられます。
@@ -253,13 +297,13 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... taro@example.com
 macOS:
 
 ```bash
-pbcopy < ~/.ssh/id_ed25519.pub
+pbcopy < ~/.ssh/id_ed25519_github.pub
 ```
 
 Windows（PowerShell 7）:
 
 ```powershell
-Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
+Get-Content ~/.ssh/id_ed25519_github.pub | Set-Clipboard
 ```
 :::
 
@@ -272,6 +316,8 @@ Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
 5. **Key type**: `Authentication Key` のまま
 6. **Key**: コピーした内容を貼り付け
 7. **Add SSH key** をクリック
+
+GitHubの画面名や配置は変わることがあります。見つからない場合はSettings内で「SSH keys」を探してください。
 
 ---
 
@@ -291,13 +337,11 @@ ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
-`yes` と入力してEnterを押します。
-
-:::message
-表示されたフィンガープリントが、GitHubが公開している値と一致しているかを確認するのが本来の作法です。上に示した `SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU` はGitHubのed25519鍵の正しい値です。最新の一覧は次のページで確認できます。
+表示されたフィンガープリントを、GitHubが公開している最新の一覧と照合します。
 
 https://docs.github.com/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
-:::
+
+一致していることを確認できたら、`yes` と入力してEnterを押します。
 
 次のメッセージが出れば成功です。
 
@@ -312,13 +356,15 @@ Hi taro! You've successfully authenticated, but GitHub does not provide shell ac
 
 1. 公開鍵（`.pub` のほう）を登録したか。秘密鍵を貼ってしまっていないか
 2. 貼り付けた内容が途中で切れていないか
-3. 鍵が ssh-agent に登録されているか
+3. `~/.ssh/config` の `IdentityFile` が、選んだ秘密鍵を指しているか
+4. 使用中のSSHとssh-agentが同じ組み合わせか
+5. 鍵がssh-agentに登録されているか
 
 ```bash
 ssh-add -l
 ```
 
-何も表示されなければ、`ssh-add ~/.ssh/id_ed25519` を実行してください。
+何も表示されなければ、OS別の手順に戻って、選んだ秘密鍵を `ssh-add` してください。
 
 詳しい状況を見たいときは、`-v` を付けて実行すると経過が表示されます。
 
@@ -331,7 +377,7 @@ ssh -vT git@github.com
 
 ## コミット用のメールアドレスを見直す
 
-第2章で触れた、メールアドレスの非公開設定をここで行います。
+第2章「Gitを使う準備」で触れた、メールアドレスの非公開設定をここで行います。
 
 1. GitHubの Settings → **Emails**
 2. **Keep my email addresses private** にチェック
@@ -354,9 +400,12 @@ git config --global user.email "12345678+ユーザー名@users.noreply.github.co
 ## この章のまとめ
 
 - GitHubアカウントを作り、二要素認証を設定した
+- 既存のSSH鍵は用途と登録先を確認してから再利用する
 - SSH鍵を作成し、公開鍵をGitHubに登録した
+- ssh-agentの使い方はOSやSSH実装によって異なる
 - `ssh -T git@github.com` で接続を確認した
 - 秘密鍵は絶対に外に出さない
+- HTTPSでは平文保存を避け、安全なcredential helperを使う
 - コミット用メールアドレスは非公開用に設定できる
 
 ---

@@ -39,7 +39,7 @@ Windows（PowerShell 7）:
 
 ```powershell
 cd ~/git-practice/my-notes
-New-Item .gitignore
+New-Item -ItemType File .gitignore
 ```
 
 中身を書きます。
@@ -48,7 +48,7 @@ New-Item .gitignore
 # macOSが自動生成するファイル
 .DS_Store
 
-# エディタの設定
+# このプロジェクトでは共有しないエディタ設定
 .vscode/
 .idea/
 
@@ -59,6 +59,10 @@ New-Item .gitignore
 # 個人的な下書き（共有しない）
 drafts/
 ```
+
+:::message
+`.vscode/` には、個人用設定だけでなく、チームで共有したい設定、タスク、デバッグ設定、推奨拡張機能が入ることもあります。フォルダ全体を除外するか、必要なファイルをコミットするかは、プロジェクトやチームの方針で決めてください。上の例では、共有しない方針として除外しています。
+:::
 
 :::message
 `.gitignore` はドットで始まる隠しファイルです。エディタで見えないときは、隠しファイルを表示する設定に切り替えてください。VS Codeなら標準で表示されます。
@@ -151,25 +155,36 @@ git status --ignored
 
 **`.gitignore` が効くのは、まだGitが知らないファイル（Untracked）に対してだけです。** 一度コミットしてしまったファイルは、あとから `.gitignore` に書いても無視されません。
 
-その場合は、Gitの管理下から外す必要があります。
+その場合は、最初に対象を `.gitignore` へ追加して、今後誤って再追加されないようにします。
+
+```gitignore:.gitignore
+secret.txt
+node_modules/
+```
+
+次に、ファイル本体は残したまま、Gitの管理下から外します。
 
 ```bash
 git rm --cached secret.txt
 ```
 
-`--cached` は「**ファイルは残したまま**、Gitの管理からだけ外す」という指定です。これを付け忘れると、ファイル本体が削除されるので注意してください。
-
-外したあとにコミットします。
-
-```bash
-git commit -m "secret.txtを管理対象から外す"
-```
+`--cached` は「**ファイルは残したまま**、Gitの管理からだけ外す」という指定です。これを付け忘れると、ファイル本体も削除対象になるので注意してください。
 
 フォルダごと外したいときは、`-r`（再帰的）を付けます。
 
 ```bash
 git rm -r --cached node_modules/
 ```
+
+状態を確認し、`.gitignore` の変更と追跡解除を一緒にコミットします。
+
+```bash
+git status
+git add .gitignore
+git commit -m "管理対象から外してgitignoreに追加"
+```
+
+この順序なら、追跡を外したファイルがUntrackedとして残り、誤って再追加されることを防げます。
 
 :::message alert
 **すでにpushしてしまった秘密情報は、これだけでは安全になりません。**
@@ -192,9 +207,12 @@ git rm -r --cached node_modules/
 Thumbs.db
 *.log
 *.swp
-.vscode/
 .idea/
 ```
+
+:::message
+`.vscode/` は一律の除外対象にはしていません。チームで共有したい設定がある場合はコミットし、個人固有の設定だけを選んで除外するなど、プロジェクトの方針に合わせてください。
+:::
 
 ### Node.js / JavaScript
 
@@ -257,8 +275,9 @@ Thumbs.db
 - 秘密情報・自動生成物・一時ファイルは `.gitignore` で除外する
 - `.gitignore` 自体はコミットして共有する
 - `.gitignore` は**まだコミットしていないファイル**にしか効かない
-- コミット済みのものは `git rm --cached` で管理から外す
+- コミット済みのものは、`.gitignore` へ追加してから `git rm --cached` で管理から外す
 - pushしてしまった秘密鍵は、消すより先に**無効化して作り直す**
+- エディタ設定を共有するかどうかは、プロジェクトやチームの方針で決める
 - 自分の環境固有のものはグローバル設定へ
 
 ---

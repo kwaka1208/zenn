@@ -28,7 +28,7 @@ git branch -a
 *** Please tell me who you are.
 ```
 
-名前とメールアドレスが未設定です。第2章の設定を行ってください。
+名前とメールアドレスが未設定です。第2章「Gitの準備と初期設定」の設定を行ってください。
 
 ```bash
 git config --global user.name "Your Name"
@@ -84,14 +84,21 @@ git commit -m "大きなファイルを除外"
 ! [rejected]        main -> main (fetch first)
 ```
 
-リモートに、自分がまだ持っていない変更があります。
+リモートに、自分がまだ持っていない変更があります。すぐに合流せず、まず取得して履歴の差を確認します。
 
 ```bash
-git pull
+git fetch origin
+git log --oneline --graph --left-right HEAD...origin/main
+```
+
+内容を確認できたら、本書で使ってきたmerge方式で取り込み、pushします。
+
+```bash
+git merge origin/main
 git push
 ```
 
-`git pull` でコンフリクトが起きたら、第12章の手順で解決してください。
+`git merge` でコンフリクトが起きたら、第12章「合流させる（mergeとコンフリクト）」の手順で解決してください。
 
 ### `Permission denied (publickey)`
 
@@ -154,45 +161,68 @@ error: Your local changes to the following files would be overwritten by checkou
 # 1. コミットする
 git add . && git commit -m "作業途中"
 
-# 2. 一時的に退避する
-git stash
+# 2. 未追跡ファイルも含めて一時的に退避する
+git stash push -u -m "作業退避"
 
 # 3. 変更を捨てる（戻せません）
 git restore .
 ```
 
-退避した変更は、あとで戻せます。
+既定の `git stash` は未追跡ファイルを含みません。新しく作ったファイルも持ち運ぶときは、`-u` を付けます。退避した変更は、移動先の状態を確認してから戻します。
 
 ```bash
+git status
 git stash pop
+git status
 ```
+
+`git stash pop` でもコンフリクトが起きることがあります。その場合は、ファイルを修正してから `git add` し、解消します。
 
 ### 間違ったブランチで作業してしまった
 
-まだコミットしていない場合、`stash` で持ち運べます。
+まだコミットしていない場合、未追跡ファイルも含めて `stash` で持ち運べます。
 
 ```bash
-git stash
+git stash push -u -m "作業退避"
 git switch 正しいブランチ
+git status
 git stash pop
+git status
 ```
 
-コミットまでしてしまった場合は、正しいブランチにそのコミットを移します。
+`git stash pop` でコンフリクトが起きた場合は、内容を確認して解消してください。
+
+コミットまでしてしまった場合は、まず状態とコミットIDを確認します。
 
 ```bash
-# 1. コミットIDを確認する
-git log --oneline -1
+git status
+git log --oneline -3
+```
 
-# 2. 正しいブランチに移動して取り込む
+作業ツリーがcleanであることを確認したら、正しいブランチにコミットを取り込みます。不安なら、先に `git branch rescue-before-move コミットID` として退避用ブランチを作ってください。
+
+```bash
 git switch 正しいブランチ
 git cherry-pick コミットID
-
-# 3. 元のブランチから取り消す
-git switch 間違えたブランチ
-git reset --hard HEAD~1
 ```
 
 `git cherry-pick` は「特定のコミットだけを、いまのブランチに取り込む」コマンドです。
+
+元のブランチが**まだpushされておらず**、移したコミットが**直前の1コミット**で、作業ツリーが**clean**な場合に限り、元のブランチを巻き戻せます。
+
+```bash
+git switch 間違えたブランチ
+git status
+git reset --hard HEAD~1
+```
+
+すでにpushして共有したコミットは、履歴を書き換えず、打ち消すコミットを作ります。
+
+```bash
+git switch 間違えたブランチ
+git revert コミットID
+git push
+```
 
 ### 過去に戻ったまま迷子になった
 
@@ -222,13 +252,22 @@ git switch -c 救出用ブランチ名
 git reflog
 ```
 
-`HEAD` が移動したすべての記録が出ます。戻りたい地点を見つけて移動します。
+`HEAD` が移動したすべての記録が出ます。戻りたいコミットIDを見つけたら、まずその地点を指す救出用ブランチを作ります。
 
 ```bash
-git reset --hard 戻りたいコミットID
+git branch rescue 戻りたいコミットID
+git log --oneline rescue -3
 ```
 
-**`reset --hard` の直後、`--amend` の直後、ブランチ削除の直後**なら、たいてい `reflog` から救出できます。
+内容を確認し、その地点から作業を続けるなら切り替えます。
+
+```bash
+git switch rescue
+```
+
+元のブランチ自体をその地点へ戻す `git reset --hard` は、現在の変更が不要または退避済みで、対象ブランチと戻り先を確認できた場合だけの最終手段です。
+
+**`reset --hard` の直後、`--amend` の直後、ブランチ削除の直後**なら、たいてい `reflog` からコミットを救出できます。
 
 ### `git restore` で消してしまった変更
 
@@ -253,21 +292,15 @@ warning: LF will be replaced by CRLF in notes/todo.md.
 The file will have its original line endings in your working directory
 ```
 
-WindowsとmacOS/Linuxで改行コードの扱いが違うことによる警告です。次の設定で統一できます。
-
-```bash
-# macOS / Linux
-git config --global core.autocrlf input
-
-# Windows
-git config --global core.autocrlf true
-```
-
-チームで揃えたい場合は、リポジトリに `.gitattributes` を置く方法もあります。
+WindowsとmacOS/Linuxで改行コードの扱いが違うことによる警告です。まず、プロジェクトの `.gitattributes` とチームの方針を確認してください。たとえば、チームでLFに統一すると合意した場合は、次のファイルをリポジトリに置いてコミットします。
 
 ```:.gitattributes
 * text=auto eol=lf
 ```
+
+`.gitattributes` はそのリポジトリを使う全員に共有されるため、チームの方針を揃えるのに向いています。
+
+`core.autocrlf` のグローバル設定は、ほかのリポジトリにも影響します。既存プロジェクトでは一律に変更せず、`.gitattributes` がない場合もチームや教材の指定を確認してから設定してください。
 
 ### エディタから抜けられない
 
@@ -361,9 +394,9 @@ git config --global core.editor "code --wait"
 
 | コマンド | 意味 |
 |---|---|
-| `git stash` | 変更を退避する |
+| `git stash push -u -m "作業退避"` | 未追跡ファイルを含めて変更を退避する |
 | `git stash list` | 退避の一覧 |
-| `git stash pop` | 退避を戻す |
+| `git stash pop` | 退避を戻す（コンフリクトすることがある） |
 | `git stash drop` | 退避を捨てる |
 
 ### ファイル操作コマンドの対応表
@@ -377,11 +410,17 @@ git config --global core.editor "code --wait"
 | 一覧を見る | `ls` | `ls` |
 | 隠しファイルも見る | `ls -a` | `ls -Force` |
 | フォルダを作る | `mkdir -p 名前` | `mkdir 名前` |
-| 空のファイルを作る | `touch 名前` | `New-Item 名前` |
+| 空のファイルを作る | `touch 名前` | `New-Item -ItemType File 名前` |
 | ファイルの中身を見る | `cat 名前` | `cat 名前` |
 | 文字を書き込む | `echo "文字" > 名前` | `echo "文字" > 名前` |
-| フォルダごと削除する | `rm -rf 名前` | `rm -Recurse -Force 名前` |
+| フォルダごと削除する | Finderやファイルマネージャーで削除 | エクスプローラーで削除 |
 | 公開鍵をコピーする | `pbcopy < ファイル`（macOS） | `Get-Content ファイル \| Set-Clipboard` |
+
+:::message alert
+フォルダごとの削除は、まずGUIで対象を確認して削除するのが安全です。CLIが必要な場合は、削除前に `pwd` と `ls` で現在地と対象名を確認してください。macOS/Linuxでは `rm -rf 名前`、PowerShellでは `Remove-Item -Recurse -Force 名前` を使えますが、どちらも削除した内容を簡単には戻せません。
+:::
+
+Linuxのクリップボード操作はデスクトップ環境によって異なります。たとえば、X11では `xclip`、Waylandでは `wl-copy` を別途インストールして使います。利用できない場合は、公開鍵を表示して手動でコピーしてください。
 
 ---
 
@@ -420,7 +459,7 @@ hint: 'git pull' before pushing again.
 ## この章のまとめ
 
 - 困ったらまず `git status`、`git log --oneline --graph --all`、`git branch -a`
-- コミットしてあれば、`git reflog` でたいてい救出できる
+- コミットしてあれば、`git reflog` で探して救出用ブランチに保護する
 - Gitのエラーメッセージには対処法が書いてある
 - 早見表は、覚えようとせず必要なときに見返す
 

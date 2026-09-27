@@ -10,20 +10,7 @@ title: 合流させる（merge とコンフリクト）
 
 **マージ**は、あるブランチの変更を、別のブランチに取り込む操作です。
 
-マージ前は、`main` と `feature` が枝分かれしたままの状態です。
-
-```mermaid
-%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
-gitGraph
-    commit id: "A"
-    commit id: "B"
-    branch feature
-    checkout feature
-    commit id: "C"
-    commit id: "D"
-```
-
-`main` に `feature` をマージすると、両方の変更を合わせ持つコミットが新しく作られます。
+マージ前は、`main` と `feature` が枝分かれしたままの状態です。ここでは、枝分かれしたあとに両方のブランチが進んでいます。
 
 ```mermaid
 %%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
@@ -35,10 +22,28 @@ gitGraph
     commit id: "C"
     commit id: "D"
     checkout main
+    commit id: "E"
+```
+
+このように履歴が枝分かれしている状態で `main` に `feature` をマージすると、両方の変更を合わせ持つコミットが新しく作られます。
+
+```mermaid
+%%{init: {'gitGraph': {'rotateCommitLabel': false}}}%%
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
+    checkout main
+    commit id: "E"
     merge feature id: "M"
 ```
 
 `M` が合流を表す**マージコミット**です。枝分かれした2つの流れが、ここで1本に戻ります。
+
+一方、取り込み先の `main` が枝分かれ後に進んでいなければ、通常は新しいコミットを作らない **fast-forward** になります。次の節で実際に確認します。
 
 ---
 
@@ -231,7 +236,9 @@ git log --oneline --graph --all
 枝分かれと合流が、そのまま履歴に残りました。
 
 :::message
-異なるファイルを変更している限り、Gitは自動的にきれいに合流させてくれます。「AさんがファイルXを、BさんがファイルYを直した」という状況なら、何も考えずにマージできます。
+異なるファイルの変更は、通常はGitが自動的に合流させてくれます。ただし、自動マージできたことは変更後の内容が正しいことを保証しません。APIや設定など、ファイルをまたぐ関係が食い違うこともあります。
+
+マージ後は差分や履歴を確認し、可能ならテストや動作確認も行いましょう。
 :::
 
 ブランチを削除します。
@@ -450,13 +457,17 @@ git branch -d rename-title
 
 ## マージをやめたいとき
 
-コンフリクトが複雑で「いったん中止したい」と思ったら、いつでも元の状態に戻せます。
+コンフリクトが複雑で「いったん中止したい」と思ったら、次のコマンドで通常はマージ開始前の状態に戻せます。
 
 ```bash
 git merge --abort
 ```
 
-マージ前の状態に完全に戻ります。慌てて変な解決をするより、いったん中止して落ち着いてから取り組むほうが安全です。
+:::message alert
+マージを始める前に `git status` で `working tree clean` と表示されることを確認してください。開始前から未コミットの変更があると、`git merge --abort` で完全に復元できない場合があります。必要な変更は、先にコミットするか `git stash` で退避します。
+:::
+
+慌てて変な解決をするより、いったん中止して落ち着いてから取り組むほうが安全です。
 
 ---
 
@@ -501,7 +512,7 @@ git push
 
 - `git merge ブランチ名` で、そのブランチの変更を取り込む
 - `main` が進んでいなければfast-forward（履歴は一本道のまま）
-- 進んでいればマージコミットができる
+- 進んでいれば、通常のマージではマージコミットができる
 - 同じ場所を両方で変更するとコンフリクトする
 - 解決は「記号を消して、最終形にして、`git add` して `git commit`」
 - 中止したいときは `git merge --abort`

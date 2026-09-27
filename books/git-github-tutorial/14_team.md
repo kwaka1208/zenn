@@ -26,20 +26,33 @@ title: チームで開発する
 
 ## mainブランチを保護する
 
-チーム開発では、`main` を「常に正常に動く状態」に保つことが重要です。GitHubには、そのための設定があります。
+チーム開発では、`main` を「常に正常に動く状態」に保つことが重要です。GitHubには、**Rulesets**と従来の**branch protection rule**という2種類の設定があります。画面と設定手順は別なので、どちらか利用できるほうを選びます。
+
+### Rulesetsを使う場合
+
+1. **Settings** → **Rules** → **Rulesets**
+2. **New ruleset** → **New branch ruleset** をクリック
+3. 対象ブランチに `main` を指定し、必要なルールを有効にする
+4. Enforcement statusを **Active** にして保存する
+
+### 従来のbranch protection ruleを使う場合
 
 1. **Settings** → **Branches**
-2. **Add branch ruleset**（または **Add rule**）をクリック
-3. 対象ブランチに `main` を指定
+2. **Add branch protection rule** をクリック
+3. Branch name patternに `main` を指定し、必要なルールを有効にして保存する
 
-よく使う設定は次のとおりです。
+よく使う設定は次のとおりです。画面によって項目名やまとめ方が少し異なります。
 
 | 設定 | 効果 |
 |---|---|
-| Require a pull request before merging | `main` への直接pushを禁止し、PR経由のみにする |
+| Require a pull request before merging | bypass権限がない人による `main` への直接pushを防ぎ、PR経由にする |
 | Require approvals | 指定した人数の承認がないとマージできない |
 | Require status checks to pass | 自動テストが通らないとマージできない |
 | Block force pushes | `git push --force` を禁止する |
+
+:::message alert
+第9章で作ったPrivateリポジトリをGitHub Freeで使っている場合、そのPrivateリポジトリではRulesetsとbranch protectionを利用できません。練習するには、機密情報が入っていないことを確認してPublicへ変更するか、Privateリポジトリで対応するプランを使います。どちらも難しければ、この節は読むだけで構いません。
+:::
 
 :::message
 ひとりのプロジェクトでも「PR必須」にしておくと、うっかり `main` に直接コミットする事故を防げます。ただし、承認人数を1以上にすると自分ではマージできなくなるので、ひとりの場合は0にしておきます。
@@ -189,7 +202,9 @@ git branch -d feature/search-notes
 |---|---|
 | **Comment** | 感想や質問だけ。承認も却下もしない |
 | **Approve** | 承認する。マージしてよい |
-| **Request changes** | 修正を求める。直るまでマージできない |
+| **Request changes** | 修正を求める。必須レビューと変更要求の解消を求めるルールが有効で、マージする人にbypass権限がない場合は、解消されるまでマージできない |
+
+ルールを設定していないリポジトリでは、**Request changes**が付いていても常にマージが禁止されるとは限りません。
 
 ### 手元で動かして確認する
 
@@ -284,6 +299,10 @@ git merge upstream/main
 
 「大きく作り込んでから全部やり直し」を防げる、実用的な機能です。
 
+:::message alert
+Draft Pull Requestの利用可否は、リポジトリの公開範囲とGitHubのプランによって異なります。GitHub FreeのPrivateリポジトリでは利用できません。試す場合は、機密情報がないことを確認してPublicへ変更するか、対応するプランやOrganizationを使います。対応できなければ、この節は読むだけで構いません。
+:::
+
 ### テンプレート
 
 リポジトリに次のファイルを置いておくと、PRやIssueを作るときに自動で内容が埋まります。
@@ -308,7 +327,7 @@ git merge upstream/main
 ## この章のまとめ
 
 - Collaboratorとしてメンバーを招待する
-- `main` はブランチ保護でPR必須にする
+- 利用できる場合は、Rulesetsまたはbranch protectionで `main` を保護する
 - Issueで作業を管理し、PRの説明に `Closes #番号` と書いて連携させる
 - 作業開始前の `git switch main && git pull` を習慣にする
 - レビューはコードに対して行い、人に対して行わない
