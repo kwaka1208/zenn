@@ -1,0 +1,16 @@
+title: アプリ開発 で学ぶ AI API入門（さくらのAI Engine）
+summary: 言葉を1つ入れると、AI が図鑑のデータを作ってカードにしてくれる Web アプリを動かしながら、プログラムから AI を使うしくみを学びます。パソコンへのインストールは不要で、ブラウザだけで進められます。
+topics: [ai, api, javascript, codespaces, sakura]
+published: false
+price: 0
+chapters:
+  - 01_about
+  - 02_get-token
+  - 03_setup
+  - 04_run
+  - 05_look-inside
+  - 06_customize-card
+  - 07_rules-and-temperature
+  - 08_broken-json
+  - 09_challenge
+  - 10_troubleshooting
