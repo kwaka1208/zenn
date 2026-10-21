@@ -103,10 +103,24 @@ Macでも、SafariではなくChromeを使えば、スマートフォンと同�
 
 もう1つの確認には、主に次のような方法があります。
 
-- **確認コードを表示するアプリ**：30秒ごとに変わる6桁の数字を、アプリで表示します。Appleの「パスワード」アプリにもこの機能があります。Androidの方は、Google認証システム（Google Authenticator）などのアプリを使います。
+- **確認コードを表示するアプリ**：30秒ごとに変わる6桁の数字を、アプリで表示します。Appleの「パスワード」アプリにもこの機能があります。Androidの方は、Google認証システム（Google Authenticator）やMicrosoft Authenticatorなどのアプリを使います。
 - **SMS（ショートメッセージ）**：ログインのたびに、携帯電話の番号あてに確認コードが届きます。
 - **メール**：ログインのたびに、登録しているメールアドレスあてに確認コードが届きます。
 - **サービスが提供しているアプリ**：ログインしようとすると、そのサービスのスマートフォンアプリに通知が届き、アプリ上で承認します。**ワンタップで承認が完了する**場合があるので、とくに慎重に操作してください。
+
+確認コードを表示するアプリは、次のリンクからダウンロードできます。
+
+**Google認証システム（Google Authenticator）**
+
+https://apps.apple.com/jp/app/id388497605
+
+https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2
+
+**Microsoft Authenticator**
+
+https://apps.apple.com/jp/app/id983156458
+
+https://play.google.com/store/apps/details?id=com.azure.authenticator
 
 選べるのであれば、確認コードを表示するアプリか、サービスが提供しているアプリがおすすめです。SMSやメールは、電話番号やメールアカウントが乗っ取られると確認コードも盗まれてしまうためです。
 
