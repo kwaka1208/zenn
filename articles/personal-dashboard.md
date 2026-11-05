@@ -1,5 +1,5 @@
 ---
-title: "GitHub Pages＋Firebaseで作る、自分専用のダッシュボード"
+title: "GitHub Pages＋Firebaseで自分専用のダッシュボードを作ろう"
 emoji: "🧭"
 type: "tech"
 topics: ["firebase", "githubpages", "javascript", "css", "dashboard"]
