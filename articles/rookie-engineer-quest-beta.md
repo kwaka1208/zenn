@@ -3,7 +3,7 @@ title: エンジニアの「読む・書く」をRPGで体験する「ルーキ�
 emoji: "🗺️"
 type: idea
 topics: [GitHub, Git, ドキュメント, 教育, OSS]
-published: false
+published: true
 ---
 
 ## はじめに
