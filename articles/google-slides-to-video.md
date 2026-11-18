@@ -102,15 +102,15 @@ Googleスライドに、作ったスライドをそのまま動画に変換す�
 
 ### 使ったスライド
 
-<!-- TODO: GoogleスライドのURLを入れる -->
+https://docs.google.com/presentation/d/1IKmRSE6cWkEb4AIhgY09keJdvrH2hCvLwF9J5XXL3YM/edit?usp=sharing
 
 ### 変換後の動画（Google Vids）
 
-<!-- TODO: Google VidsのURLを入れる -->
+https://docs.google.com/videos/d/1Q7RTwn7Uxx7YtQfOuAECcR9DuqZhLuhr_BuMLc-fADg/play?usp=sharing
 
 ### YouTubeで公開した動画
 
-<!-- TODO: YouTubeのURLを入れる -->
+https://youtu.be/s-rAR5EJO-4
 
 ## まとめ
 
