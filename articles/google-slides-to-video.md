@@ -1,5 +1,5 @@
 ---
-title: Googleスライドの動画変換機能は研修動画づくりにおすすめ
+title: Googleスライドの動画変換機能が研修動画作成におすすめ
 emoji: "🎬"
 type: idea
 topics: [Googleスライド, GoogleVids, 動画, GoogleWorkspace, AI]
