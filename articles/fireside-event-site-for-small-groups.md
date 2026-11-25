@@ -3,7 +3,7 @@ title: 小さなグループのための、ゆっくり届くイベント管理�
 emoji: 🔥
 type: idea
 topics: [OSS, Firebase, GitHubActions, GitHubPages, イベント管理]
-published: false
+published: true
 ---
 
 ## はじめに
